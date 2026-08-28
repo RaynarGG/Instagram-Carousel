@@ -5,7 +5,7 @@
     "model": "gemini-3.1-flash-image",
     "aspect_ratio": "3:4",
     "image_size": "2K",
-    "mime_type": "image/png"
+    "mime_type": "image/jpeg"
   },
   "images": [
     {

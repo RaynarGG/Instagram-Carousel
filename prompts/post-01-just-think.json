@@ -1,0 +1,160 @@
+{
+  "post": "01-just-think",
+  "title": "People chose electric shocks over 15 minutes alone with their thoughts",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/png"
+  },
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "cover-room-in-void",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-a",
+        "scale"
+      ],
+      "headline": "PEOPLE CHOSE ELECTRIC SHOCKS OVER 15 MINUTES ALONE WITH THEIR THOUGHTS",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A bare white observation room floating alone in absolute black void, seen from a high three-quarter angle with the ceiling cut away like an architectural dollhouse cross-section, so the interior is fully visible. Inside the room, a single human figure sits on a plain wooden chair at an empty table, shoulders collapsed forward, hands in the lap, face turned away and not visible. On the table sits one small red push-button on a scuffed metal box with a thin cable running off the edge. The button glows faintly. Thin pale cyan light traces radiate outward from the room across the black void like data lines disappearing into nothing. In the upper right, a circular inset cut-out shows an extreme close-up of a fingertip hovering a centimetre above that same red button, rendered sharper and brighter than the main scene, its edge crisp against the void. Cold clinical overhead light inside the room, and a warm amber practical glow spilling from the button across the table surface. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, and thin tick marks along the right edge. High contrast, deep blacks, fine film grain, documentary and unpolished. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s1b",
+      "slug": "cover-button-macro",
+      "slide": 1,
+      "variant": "b",
+      "keywords": [
+        "cover",
+        "archetype-a",
+        "scale",
+        "variant-b"
+      ],
+      "headline": "PEOPLE CHOSE ELECTRIC SHOCKS OVER 15 MINUTES ALONE WITH THEIR THOUGHTS",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. In the immediate foreground, a small red push-button device rendered at impossible scale, filling the upper two thirds of the frame, sliced open along one side to reveal its internal layers: brass contacts, coiled copper wire, a bundle of thin coloured leads. Behind it and far below, tiny by comparison, a bare windowless room with a single chair and a lone seated figure, lit by one cold ceiling light. The scale between the two is deliberately impossible. Behind everything, a huge semi-transparent human brain silhouette burnt into the dark concrete background, partially hidden by the button. One hard directional key light from the right, everything else collapsing into shadow, plus a warm amber practical light source inside the frame catching the copper. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: cold grey and deep brown tones plus one warm amber accent. High contrast, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "room-front-on",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "rehook",
+        "room",
+        "facts"
+      ],
+      "headline": "INSIDE THE JUST THINK EXPERIMENT AT VIRGINIA",
+      "prompt": "Photojournalistic composite, 3:4 vertical. A completely bare windowless institutional room photographed straight on with a slightly wide lens: one plain wooden chair standing alone in the centre and filling the upper two thirds of the frame, blank off-white plaster walls with visible cracks and patch marks, worn grey linoleum floor, a single caged ceiling light throwing a hard cold pool of light onto the floor. Utterly empty, faintly unsettling, symmetrical composition. A warm amber practical light leaking in from a gap under a door on the left, the only warm note in the frame. Restricted palette: cold off-white and grey plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner. High contrast, deep blacks, fine film grain, documentary and unpolished, imperfect surfaces, dust. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
+    },
+    {
+      "id": "s2b",
+      "slug": "room-overhead",
+      "slide": 2,
+      "variant": "b",
+      "keywords": [
+        "rehook",
+        "room",
+        "facts",
+        "variant-b"
+      ],
+      "headline": "INSIDE THE JUST THINK EXPERIMENT AT VIRGINIA",
+      "prompt": "Photojournalistic composite, 3:4 vertical, shot from directly overhead. A bare institutional room seen from above through a cut-away ceiling: one wooden chair and one empty table on worn linoleum filling the upper two thirds of the frame, the geometry stark and diagrammatic, one hard pool of ceiling light. Long shadows radiate from the furniture. A warm amber glow bleeds in from one corner. Restricted palette: cold grey plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge, like a floor plan turned into a dossier page. High contrast, fine film grain. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
+    },
+    {
+      "id": "s3a",
+      "slug": "finger-on-button",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "number",
+        "archetype-c",
+        "macro"
+      ],
+      "headline": "67% OF THE MEN SHOCKED THEMSELVES",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Extreme macro: a human index finger filling the upper two thirds of the frame, pressing hard down onto a small worn red push-button, the fingertip blanched white under the pressure, tendon visible in the knuckle, skin texture and fine hairs sharp. The button is set in a scratched metal plate. Everything beyond the hand collapses into deep warm black. One hard directional key light from the right raking across the knuckles, plus a warm amber practical glow bleeding up from around the button rim as if the contact is hot. In the upper right, a circular inset cut-out shows the same button from directly above, scorched at the edges, rendered sharper and brighter than the main scene. Restricted palette: deep brown-black plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner. Very high contrast, shallow depth of field, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no visible face"
+    },
+    {
+      "id": "s3b",
+      "slug": "button-grid-worn",
+      "slide": 3,
+      "variant": "b",
+      "keywords": [
+        "number",
+        "archetype-c",
+        "macro",
+        "variant-b"
+      ],
+      "headline": "67% OF THE MEN SHOCKED THEMSELVES",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A grid of identical small red push-buttons on a dark scratched metal panel filling the upper two thirds of the frame, seen from a low raking angle so the row recedes into shadow. Roughly two out of every three buttons are visibly worn down, scorched and depressed; the rest are untouched and clean. The difference between worn and untouched is unmistakable. One hard directional key light from the left, plus a warm amber practical glow rising from the depressed buttons. Restricted palette: gunmetal grey and deep black plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. High contrast, fine film grain, documentary, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no numbers, no borders, no frame"
+    },
+    {
+      "id": "s4a",
+      "slug": "printed-paper",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "paper",
+        "breather"
+      ],
+      "headline": "SCIENCE · VOL 345 · 4 JULY 2014",
+      "prompt": "Photojournalistic composite, 3:4 vertical, shot slightly from above. A loose stack of printed academic journal pages filling the upper two thirds of the frame on a dark walnut desk, one page lifted and curling at the corner, a pair of reading glasses resting at the edge of the frame. The printed text is completely out of focus and unreadable, pure grey texture with no discernible letters. A single warm amber desk lamp from the upper left, dust visible in the beam, everything beyond the pages falling into deep shadow. Restricted palette: warm amber and deep brown. High contrast, fine film grain, documentary, worn paper, imperfect surfaces. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no legible words, no captions, no watermark, no logos, nothing readable, no borders, no frame, no people"
+    },
+    {
+      "id": "s5a",
+      "slug": "phone-glow-face",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "reframe",
+        "phone",
+        "today"
+      ],
+      "headline": "IT WAS NEVER BOREDOM. IT WAS THE EMPTY ROOM.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A young adult sitting on a sofa in a dark living room late at night, seen from a low three-quarter angle, filling the upper two thirds of the frame. The only light source is the phone screen in their hands, throwing a hard cool glow up onto the face and chest while the entire room behind collapses into warm near-black. The expression is blank and absorbed, mouth slightly open, eyes reflecting the screen. A single warm amber practical light far in the background, a street lamp through the window, the only warm note. The screen itself is blown out to pure white with nothing readable on it. Restricted palette: deep warm brown-black plus one cool screen highlight and one warm amber accent. Shallow depth of field, high contrast, fine film grain, documentary and unflattering. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, no brand marks on the phone, nothing legible on the screen, no borders, no frame"
+    },
+    {
+      "id": "s5b",
+      "slug": "two-rooms-one-frame",
+      "slide": 5,
+      "variant": "b",
+      "keywords": [
+        "reframe",
+        "phone",
+        "today",
+        "variant-b"
+      ],
+      "headline": "IT WAS NEVER BOREDOM. IT WAS THE EMPTY ROOM.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A split composite held in one frame, the two figures filling the upper two thirds: on the left, a figure sitting on a plain chair in a bare white empty room under cold ceiling light, hands empty in the lap; on the right, the same figure in the same posture on a sofa in a dark room, now lit only by a phone screen. The two halves share one continuous floor line so it reads as one space, not two panels. No visible divider, the transition happens in shadow. One hard cold key light on the left, one cool screen glow on the right, and a warm amber practical light bleeding across the seam between them. Restricted palette: cold grey and warm brown-black plus one amber accent. Tiny illegible technical annotation text in the top-left corner. High contrast, fine film grain, documentary. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no split-screen line"
+    },
+    {
+      "id": "s6a",
+      "slug": "morning-table",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm"
+      ],
+      "headline": "WE SHARE DAILY FINDINGS FROM THE WORLD OF PSYCHOLOGY",
+      "prompt": "Photojournalistic composite, 3:4 vertical. Low warm morning sunlight raking through a plain window onto an empty wooden table filling the upper two thirds of the frame: a closed notebook, a pencil, a cup of coffee with steam catching the light. Nobody in frame. Long soft shadows stretch across the grain of the wood. Calm, unhurried, the visual opposite of a dark room lit by a screen. Restricted palette: warm amber, beige and deep brown. High contrast, shallow depth of field, fine film grain, documentary, imperfect surfaces, dust in the light. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
+    },
+    {
+      "id": "s6b",
+      "slug": "room-warm-again",
+      "slide": 6,
+      "variant": "b",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "variant-b"
+      ],
+      "headline": "WE SHARE DAILY FINDINGS FROM THE WORLD OF PSYCHOLOGY",
+      "prompt": "Photojournalistic composite, 3:4 vertical. The same bare institutional room as before, but now warm: low amber morning light floods through a doorway that was previously closed, falling across the single wooden chair and the worn linoleum floor, chair and light beam filling the upper two thirds of the frame. The chair is empty and slightly turned, as if someone just got up and left. Dust hangs in the light beam. The walls are the same cracked off-white, but everything reads warm instead of clinical. Restricted palette: warm amber and beige plus deep brown shadow. High contrast, fine film grain, documentary. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
+    }
+  ]
+}

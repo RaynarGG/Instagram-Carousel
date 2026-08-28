@@ -1,0 +1,193 @@
+name: Bilder & Slides
+
+# Vom Handy aus: Actions -> "Bilder & Slides" -> Run workflow.
+# Ergebnis landet auf dem Branch social-assets, Links in out/<post>/LINKS.md
+# und als Vorschau in der Run-Summary.
+
+on:
+  workflow_dispatch:
+    inputs:
+      was:
+        description: "Was soll gebaut werden?"
+        type: choice
+        default: beides
+        options: [beides, nur-bilder, nur-slides]
+      post:
+        description: "Post-Ordner (prompts/post-<x>.json und posts/<x>.json)"
+        default: "01-just-think"
+      only:
+        description: "Filter — id, slug, Stichwort oder slide:2. Leer = alle"
+        default: ""
+      bild_variante:
+        description: "Welche Bildvariante in die Slides?"
+        type: choice
+        default: a
+        options: [a, b]
+      neu_generieren:
+        description: "Vorhandene Bilder überschreiben"
+        type: boolean
+        default: false
+      freitext_prompt:
+        description: "Nur ein Bild aus Freitext (überschreibt post/only). Motiv beschreiben, Rest wird ergänzt."
+        default: ""
+      freitext_name:
+        description: "Kurzname für das Freitext-Bild"
+        default: "adhoc"
+  push:
+    paths:
+      - "prompts/**.json"
+      - "posts/**.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-images
+  cancel-in-progress: false
+
+env:
+  ASSET_BRANCH: social-assets
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Abhängigkeiten
+        run: npm install --no-audit --no-fund
+
+      - name: Asset-Branch holen (oder anlegen)
+        run: |
+          set -e
+          mkdir -p assets && cd assets
+          git init -q
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch --depth=1 origin "$ASSET_BRANCH" 2>/dev/null; then
+            git checkout -q -b "$ASSET_BRANCH" FETCH_HEAD
+            echo "Branch $ASSET_BRANCH geholt."
+          else
+            git checkout -q -b "$ASSET_BRANCH"
+            echo "Branch $ASSET_BRANCH wird neu angelegt."
+          fi
+
+      - name: Parameter auflösen
+        id: p
+        env:
+          IN_POST: ${{ inputs.post }}
+          IN_WAS: ${{ inputs.was }}
+          IN_TEXT: ${{ inputs.freitext_prompt }}
+          IN_NAME: ${{ inputs.freitext_name }}
+        run: |
+          POST="${IN_POST:-01-just-think}"
+          WAS="${IN_WAS:-beides}"
+          if [ -n "$IN_TEXT" ]; then
+            node scripts/adhoc.mjs \
+              --post "99-adhoc" \
+              --slug "${IN_NAME:-adhoc}" \
+              --text "$IN_TEXT" \
+              --file prompts/_adhoc.json
+            echo "file=prompts/_adhoc.json" >> $GITHUB_OUTPUT
+            echo "post=99-adhoc"            >> $GITHUB_OUTPUT
+            echo "was=nur-bilder"           >> $GITHUB_OUTPUT
+          else
+            echo "file=prompts/post-$POST.json" >> $GITHUB_OUTPUT
+            echo "post=$POST"                   >> $GITHUB_OUTPUT
+            echo "was=$WAS"                     >> $GITHUB_OUTPUT
+          fi
+
+      - name: Bilder generieren
+        if: steps.p.outputs.was != 'nur-slides'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PROMPT_FILE: ${{ steps.p.outputs.file }}
+          IN_ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.neu_generieren }}
+        run: |
+          ARGS=""
+          [ "$FORCE" = "true" ] && ARGS="--force"
+          node scripts/gen-images.mjs \
+            --file "$PROMPT_FILE" \
+            --out assets/out \
+            --only "$IN_ONLY" $ARGS
+
+      - name: Bilder gegen die Convention prüfen
+        if: steps.p.outputs.was != 'nur-slides'
+        env:
+          PROMPT_FILE: ${{ steps.p.outputs.file }}
+        run: |
+          node scripts/check-images.mjs \
+            --file "$PROMPT_FILE" \
+            --out assets/out \
+            --branch "$ASSET_BRANCH"
+
+      - name: Chromium für das Slide-Rendering
+        if: steps.p.outputs.was != 'nur-bilder'
+        run: npx playwright install --with-deps chromium
+
+      - name: Slides rendern
+        if: steps.p.outputs.was != 'nur-bilder'
+        env:
+          POST: ${{ steps.p.outputs.post }}
+          IN_VARIANT: ${{ inputs.bild_variante }}
+        run: |
+          node scripts/render-slides.mjs \
+            --post "$POST" \
+            --out assets/out \
+            --image-variant "$IN_VARIANT"
+
+      - name: Slides in die Summary
+        if: steps.p.outputs.was != 'nur-bilder'
+        env:
+          POST: ${{ steps.p.outputs.post }}
+        run: |
+          DIR="assets/out/$POST/slides"
+          if [ -d "$DIR" ]; then
+            echo "## Slides — $POST" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            for f in "$DIR"/*.png; do
+              URL="https://raw.githubusercontent.com/${{ github.repository }}/$ASSET_BRANCH/out/$POST/slides/$(basename "$f")"
+              echo -n "<img src=\"$URL\" width=\"150\"> " >> $GITHUB_STEP_SUMMARY
+            done
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Ergebnis pushen
+        run: |
+          cd assets
+          git add -A out
+          if git diff --cached --quiet; then
+            echo "Nichts Neues zu pushen."
+          else
+            git commit -q -m "images: ${{ steps.p.outputs.post }} (run ${{ github.run_number }})"
+            git push -q origin "$ASSET_BRANCH"
+            echo "Auf $ASSET_BRANCH gepusht."
+          fi
+
+      - name: Download-Paket an den Run hängen
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.p.outputs.post }}-run${{ github.run_number }}
+          path: assets/out/${{ steps.p.outputs.post }}
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Wo liegt was
+        env:
+          POST: ${{ steps.p.outputs.post }}
+        run: |
+          {
+            echo "### Links"
+            echo ""
+            echo "- Alle Bild-Links: [\`out/$POST/LINKS.md\`](https://github.com/${{ github.repository }}/blob/$ASSET_BRANCH/out/$POST/LINKS.md)"
+            echo "- Ordner: [\`out/$POST\`](https://github.com/${{ github.repository }}/tree/$ASSET_BRANCH/out/$POST)"
+            echo "- Als ZIP: unten am Run unter *Artifacts*"
+          } >> $GITHUB_STEP_SUMMARY

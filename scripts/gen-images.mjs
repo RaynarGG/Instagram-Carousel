@@ -138,8 +138,8 @@ async function normalise(buf) {
       note = `von ${w}x${h} oben auf 3:4 beschnitten (Fusszone bleibt)`;
     }
   }
-  const full = await pipeline.png().toBuffer();
-  const small = await sharp(full).resize(1080, 1440, { fit: 'fill' }).png({ compressionLevel: 9 }).toBuffer();
+  const full = await pipeline.jpeg().toBuffer();
+  const small = await sharp(full).resize(1080, 1440, { fit: 'fill' }).jpeg({ compressionLevel: 9 }).toBuffer();
   return { buf: full, small, note };
 }
 
@@ -151,7 +151,7 @@ await fs.mkdir(path.join(outDir, '1080'), { recursive: true });
 const done = [], failed = [], skipped = [];
 
 for (const img of jobs) {
-  const target = path.join(outDir, `${img.file}.png`);
+  const target = path.join(outDir, `${img.file}.jpeg`);
   if (!FORCE && await exists(target)) { skipped.push(img.id); console.log(`· ${img.id.padEnd(5)} ${img.file}  — existiert, übersprungen`); continue; }
   if (DRY) { console.log(`· ${img.id.padEnd(5)} ${img.file}  — würde generiert (${img.model}, ${img.aspect_ratio}, ${img.image_size})`); continue; }
 
@@ -160,7 +160,7 @@ for (const img of jobs) {
     const b64 = await generate(img);
     const { buf, small, note } = await normalise(Buffer.from(b64, 'base64'));
     await fs.writeFile(target, buf);
-    if (small) await fs.writeFile(path.join(outDir, '1080', `${img.file}.png`), small);
+    if (small) await fs.writeFile(path.join(outDir, '1080', `${img.file}.jpeg`), small);
     console.log(`ok${note ? `  (${note})` : ''}`);
     done.push(img.id);
   } catch (e) {

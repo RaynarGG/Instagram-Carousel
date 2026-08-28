@@ -1,5 +1,5 @@
 {
-  "name": "content-creation",
+  "name": "instagram-carousel",
   "private": true,
   "type": "module",
   "engines": { "node": ">=20" },
@@ -10,8 +10,6 @@
     "dry": "node scripts/gen-images.mjs --dry-run"
   },
   "dependencies": {
-    "@fontsource/anton": "^5.2.5",
-    "@fontsource/figtree": "^5.2.5",
     "playwright": "^1.49.0",
     "sharp": "^0.33.5"
   }

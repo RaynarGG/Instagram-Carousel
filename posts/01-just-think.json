@@ -1,19 +1,22 @@
 {
   "post": "01-just-think",
   "title": "People chose electric shocks over 15 minutes alone with their thoughts",
+  "preset": "wsd-orange",
   "brand": "PSYCHOLOGY.",
   "kicker": "PSYCHOLOGY",
-  "_hinweis": "Sternchen markieren Akzentwörter: *so* wird orange. Sonst nichts formatieren.",
+  "width": 1080,
+  "height": 1440,
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer.",
   "slides": [
     {
       "n": 1, "type": "cover", "image": "s1a",
-      "headline": ["*PEOPLE CHOSE* ELECTRIC", "*SHOCKS* OVER *15 MINUTES*", "ALONE WITH *THEIR THOUGHTS*"],
+      "headline": ["[PEOPLE CHOSE] ELECTRIC", "[SHOCKS] OVER [15 MINUTES]", "ALONE WITH [THEIR THOUGHTS]"],
       "sub": "A 2014 SCIENCE STUDY NOBODY TALKS ABOUT ENOUGH",
-      "footer": "• SWIPE FOR MORE ➡ •"
+      "micro": "SWIPE FOR MORE"
     },
     {
-      "n": 2, "type": "facts", "image": "s2a",
-      "headline": ["INSIDE THE *JUST THINK*", "*EXPERIMENT* AT VIRGINIA"],
+      "n": 2, "type": "facts", "image": "s2a", "kicker": "",
+      "headline": ["INSIDE THE [JUST THINK]", "[EXPERIMENT] AT VIRGINIA"],
       "bullets": [
         "Timothy Wilson's team at the **University of Virginia**",
         "Published in **Science**, 2014, across **11 studies**",
@@ -22,27 +25,27 @@
       ]
     },
     {
-      "n": 3, "type": "stat", "image": "s3a",
-      "headline": ["*67% OF THE MEN*", "SHOCKED *THEMSELVES*"],
-      "body": "12 of 18 men. 6 of 24 women. One man pressed it *190 times*."
+      "n": 3, "type": "stat", "image": "s3a", "kicker": "",
+      "headline": ["[67% OF THE MEN]", "SHOCKED [THEMSELVES]"],
+      "body": "12 of 18 men. 6 of 24 women. One man pressed it [190 times]."
     },
     {
-      "n": 4, "type": "evidence", "image": "s4a",
+      "n": 4, "type": "evidence", "image": "s4a", "kicker": "",
       "cite": {
         "eyebrow": "SCIENCE · VOL 345 · 4 JULY 2014",
         "title": "Just think: the challenges of the disengaged mind",
         "authors": "Wilson, Reinhard, Westgate, Gilbert, Ellerbeck, Hahn, Brown & Shaked · pp. 75–77"
       },
-      "footer": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT"
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT"
     },
     {
-      "n": 5, "type": "stat", "image": "s5a",
-      "headline": ["IT WAS NEVER *BOREDOM*.", "IT WAS THE *EMPTY ROOM*."],
-      "body": "Give the same mind *one concrete thing to do* and the urge disappears."
+      "n": 5, "type": "stat", "image": "s5a", "kicker": "",
+      "headline": ["IT WAS NEVER [BOREDOM]", "IT WAS THE [EMPTY ROOM]"],
+      "body": "Give the same mind [one concrete thing to do] and the urge disappears."
     },
     {
       "n": 6, "type": "cta", "image": "s6a",
-      "headline": ["WE SHARE *DAILY*", "*FINDINGS* FROM THE", "*WORLD OF PSYCHOLOGY*"],
+      "headline": ["WE SHARE [DAILY]", "[FINDINGS] FROM THE", "[WORLD OF PSYCHOLOGY]"],
       "tag": "WSD · THE APP THAT PUTS SOMETHING IN THE EMPTY ROOM"
     }
   ]

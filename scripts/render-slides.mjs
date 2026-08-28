@@ -1,51 +1,115 @@
-// Baut aus posts/<post>.json + den generierten Bildern die fertigen Slides.
-// 1080 x 1440 (3:4), Headline in Anton, alles andere in Figtree, WSD-Farben.
+// Rendert aus posts/<post>.json + den generierten Bildern die fertigen Slides.
+// Typo-Engine identisch zur Skill `wsd-headline`: Anton in Versalien, Akzentwörter
+// mit Textur-Füllung (background-clip:text), Farben aus scripts/typo/presets.json.
 //
 //   node scripts/render-slides.mjs --post 01-just-think
 //   node scripts/render-slides.mjs --post 01-just-think --image-variant b
+//   node scripts/render-slides.mjs --post 01-just-think --preset tech-blue
 //
-// Sternchen im Text = Akzentwort:  "*PEOPLE CHOSE* ELECTRIC"
-// Doppelsternchen in Bullets = fett: "**University of Virginia**"
+// Headline-Syntax:  [IN KLAMMERN] = Akzentfarbe mit Textur, alles andere plain.
+// In Bullets zusätzlich **fett**.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { exists } from './lib.mjs';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const TYPO = path.join(HERE, 'typo');
+const PRESETS = JSON.parse(await fs.readFile(path.join(TYPO, 'presets.json'), 'utf8'));
 
 const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(`--${n}`); return i >= 0 && args[i + 1] ? args[i + 1] : d; };
 const POST    = opt('post', '01-just-think');
 const OUTROOT = opt('out', 'out');
-const VARIANT = opt('image-variant', '');   // "b" -> nimmt überall die B-Variante, wenn vorhanden
-
-const W = 1080, H = 1440;
-const INK = '#1F1D1B', CREAM = '#FDF7F1', ACC = '#EE9A54';
-const MUTED = 'rgba(253,247,241,.58)', HAIR = 'rgba(253,247,241,.14)';
+const VARIANT = opt('image-variant', '');
+const PRESET_CLI = opt('preset', '');
 
 const cfg = JSON.parse(await fs.readFile(path.join('posts', `${POST}.json`), 'utf8'));
+const P = PRESETS[PRESET_CLI || cfg.preset || 'wsd-orange'];
+if (!P) throw new Error(`Unbekanntes Preset. Verfügbar: ${Object.keys(PRESETS).filter(k => k[0] !== '_').join(', ')}`);
+
+const W = cfg.width || 1080;
+const H = cfg.height || 1440;            // 3:4 — siehe wsd-social-images/SKILL.md §1
+const PAD = Math.round(W * (cfg.padding ?? 0.045));
+
 const imgDir = path.join(OUTROOT, cfg.post);
-const outDir = path.join(OUTROOT, cfg.post, 'slides');
+const outDir = path.join(imgDir, 'slides');
 await fs.mkdir(outDir, { recursive: true });
 
-// ---- Schriften als data: URI einbetten, damit kein Netz gebraucht wird ----
-async function fontCss() {
-  const faces = [
-    ['Anton', 400, 'normal', '@fontsource/anton/files/anton-latin-400-normal.woff2'],
-    ['Figtree', 500, 'normal', '@fontsource/figtree/files/figtree-latin-500-normal.woff2'],
-    ['Figtree', 700, 'normal', '@fontsource/figtree/files/figtree-latin-700-normal.woff2'],
-    ['Figtree', 800, 'normal', '@fontsource/figtree/files/figtree-latin-800-normal.woff2'],
-  ];
-  const out = [];
-  for (const [fam, wt, st, rel] of faces) {
-    const p = path.join('node_modules', rel);
-    if (!await exists(p)) throw new Error(`Schrift fehlt: ${p} — npm install @fontsource/anton @fontsource/figtree`);
-    const b64 = (await fs.readFile(p)).toString('base64');
-    out.push(`@font-face{font-family:'${fam}';src:url(data:font/woff2;base64,${b64}) format('woff2');font-weight:${wt};font-style:${st};font-display:block}`);
-  }
-  return out.join('\n');
+/* ------------------------------------------------------------------ Fonts */
+async function fontFace(fam, file, weight = 400, style = 'normal') {
+  const b64 = (await fs.readFile(path.join(TYPO, 'fonts', file))).toString('base64');
+  return `@font-face{font-family:"${fam}";font-style:${style};font-weight:${weight};` +
+         `src:url(data:font/woff2;base64,${b64}) format("woff2");font-display:block}`;
+}
+const FONTS = (await Promise.all([
+  fontFace('Anton', 'anton-latin-400-normal.woff2', 400),
+  fontFace('Figtree', 'figtree-latin-400-normal.woff2', 400),
+  fontFace('Figtree', 'figtree-latin-700-normal.woff2', 700),
+  fontFace('Figtree', 'figtree-latin-800-normal.woff2', 800),
+  fontFace('Figtree', 'figtree-latin-400-italic.woff2', 400, 'italic'),
+])).join('\n');
+
+/* ----------------------------------------------------------------- Textur */
+// Wortwörtlich aus wsd-headline. Zwei Rauschebenen + Sheen + Farbverlauf,
+// per background-clip:text in die Buchstaben gestanzt.
+function noiseSVG({ size, fx, fy, octaves, seed, gain, bias, opacity = 1 }) {
+  gain *= opacity; bias *= opacity;
+  const svg =
+    `<svg xmlns='http://www.w3.org/2000/svg' width='${size}' height='${size}'>` +
+    `<filter id='n' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'>` +
+    `<feTurbulence type='fractalNoise' baseFrequency='${fx} ${fy}' numOctaves='${octaves}' seed='${seed}' stitchTiles='stitch' result='t'/>` +
+    `<feColorMatrix in='t' type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  ${gain} 0 0 0 ${bias}'/>` +
+    `</filter><rect width='100%' height='100%' filter='url(#n)'/></svg>`;
+  return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}")`;
+}
+function accentFill(p) {
+  const t = p.texture;
+  const streak = noiseSVG({ size: t.streakScale, fx: t.streakFreqX, fy: t.streakFreqY, octaves: t.streakOctaves,
+                            seed: t.streakSeed, gain: t.streakGain, bias: t.streakBias, opacity: t.streakOpacity });
+  const cloud = noiseSVG({ size: t.cloudScale, fx: t.cloudFreq, fy: t.cloudFreq, octaves: t.cloudOctaves,
+                           seed: t.cloudSeed, gain: t.cloudGain, bias: t.cloudBias, opacity: t.cloudOpacity });
+  return {
+    images: [streak, cloud,
+      `linear-gradient(180deg, rgba(255,255,255,${t.sheen}) 0%, rgba(255,255,255,0) 38%)`,
+      `linear-gradient(180deg, ${p.accentLight} -55%, ${p.accent} 18%, ${p.accent} 74%, ${p.accentDeep} 150%)`,
+    ].join(','),
+    sizes: [`${t.streakScale}px ${t.streakScale}px`, `${t.cloudScale}px ${t.cloudScale}px`, '100% 100%', '100% 100%'].join(','),
+  };
+}
+const FILL = accentFill(P);
+
+/* ----------------------------------------------------------------- Markup */
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+// [Klammern] = Akzent mit Textur
+const accentInline = s => esc(s).replace(/\[([^\]]*)\]/g, '<i class="a">$1</i>');
+// in Bullets/Body zusätzlich **fett**; [..] wird dort zu flächigem Akzent (kleine Schrift
+// verträgt keine Textur — die Fasern verschlucken die Buchstabenform)
+const bodyInline = s => esc(s)
+  .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+  .replace(/\[([^\]]*)\]/g, '<em class="flat">$1</em>');
+
+function headLines(h) {
+  const arr = Array.isArray(h) ? h : String(h).split('\n');
+  return arr.map(line => {
+    // Zeilen mit Unterlängen brauchen Luft, sonst stoßen sie in die nächste Zeile
+    const desc = /[,;()Q]/.test(line.replace(/[\[\]]/g, '')) ? ' desc' : '';
+    return `<div class="ln${desc}">${accentInline(line)}</div>`;
+  }).join('');
 }
 
-// ---- Bild finden -------------------------------------------------------
+/* ----------------------------------------------------------------- Layout */
+const LAYOUT = {
+  cover:    { photo: 0.72, headMax: 0.30 },
+  facts:    { photo: 0.50, headMax: 0.15 },
+  stat:     { photo: 0.72, headMax: 0.22 },
+  evidence: { photo: 1.00, headMax: 0.20 },
+  cta:      { photo: 1.00, headMax: 0.28 },
+};
+
 async function findImage(id) {
+  if (!id) return null;
   const wanted = VARIANT ? id.replace(/[ab]$/, VARIANT) : id;
   for (const dir of [path.join(imgDir, '1080'), imgDir]) {
     if (!await exists(dir)) continue;
@@ -56,126 +120,160 @@ async function findImage(id) {
   return null;
 }
 async function dataUri(file) {
-  const b64 = (await fs.readFile(file)).toString('base64');
-  return `data:image/png;base64,${b64}`;
+  return `data:image/png;base64,${(await fs.readFile(file)).toString('base64')}`;
 }
 
-// ---- Text-Markup ------------------------------------------------------
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const acc = s => esc(s).replace(/\*([^*]+)\*/g, '<span class="a">$1</span>');
-const bold = s => esc(s).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<span class="a">$1</span>');
+const CSS = `
+${FONTS}
+*{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;background:#000;-webkit-font-smoothing:antialiased}
+.slide{width:${W}px;height:${H}px;background:${P.bg};position:relative;overflow:hidden;font-family:"Figtree",sans-serif}
 
-// ---- Layout je Typ ----------------------------------------------------
-const LAYOUT = {
-  cover:    { img: '70%', fade: 62, kicker: 68.5, head: 71.3, size: 91 },
-  facts:    { img: '54%', fade: 60, head: 56.0, size: 84 },
-  stat:     { img: '70%', fade: 62, head: 70.5, size: 106 },
-  evidence: { img: '100%', fade: null },
-  cta:      { img: '100%', fade: null, kicker: 69.5, head: 72.5, size: 100 },
+.photo{position:absolute;inset:0 0 auto 0;background-position:center top;background-size:cover;background-repeat:no-repeat}
+/* Foto läuft weich in den Grund aus, damit die Typo IM Bild sitzt statt darauf zu kleben */
+.photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) var(--g0), ${P.bg}CC var(--g1), ${P.bg} 100%),
+             linear-gradient(180deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 20%)}
+.miss{position:absolute;left:0;right:0;top:34%;text-align:center;font-weight:700;font-size:22px;
+  letter-spacing:.1em;color:${P.micro};padding:0 60px;line-height:1.7;z-index:3}
+
+.wm{position:absolute;top:${Math.round(W * 0.028)}px;right:${PAD}px;z-index:6;font-family:"Anton",sans-serif;
+  color:${P.kicker};font-size:${Math.round(W * 0.023)}px;letter-spacing:.13em;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+
+.stage{position:relative;z-index:4;width:${W}px;height:${H}px;
+  padding:0 ${PAD}px ${Math.round(H * 0.038)}px;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:${Math.round(W * 0.022)}px}
+
+.kick{display:flex;align-items:center;gap:${Math.round(W * 0.018)}px;width:100%;margin-bottom:${Math.round(W * 0.004)}px}
+.kick span{font-family:"Anton",sans-serif;color:${P.kicker};font-size:${Math.round(W * 0.0235)}px;
+  letter-spacing:.22em;line-height:1;white-space:nowrap;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.kick i{flex:1;height:2px;background:${P.rule};display:block}
+
+.head{width:100%;font-family:"Anton",sans-serif;text-align:center;text-transform:uppercase;
+  line-height:${cfg.leading ?? '.95'};letter-spacing:${cfg.tracking ?? '.004em'};
+  color:${P.plain};font-size:100px;
+  /* drop-shadow, NICHT text-shadow: bei background-clip:text läge der Textschatten
+     über der Füllung und die Schrift säuft ab. */
+  filter:${P.shadow}}
+.ln{white-space:nowrap;display:block}
+.ln.desc{padding-bottom:.07em}
+.head i.a{font-style:normal;
+  background-image:${FILL.images};
+  background-size:${FILL.sizes};
+  background-blend-mode:normal,normal,normal,normal;
+  background-position:0 0,0 0,0 0,0 0;
+  background-attachment:fixed,fixed,scroll,scroll;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent}
+
+.sub{width:100%;text-align:center;font-family:"Anton",sans-serif;color:${P.sub};text-transform:uppercase;
+  letter-spacing:.03em;line-height:1.12;font-size:${Math.round(W * 0.0345)}px;text-shadow:0 2px 10px rgba(0,0,0,.65)}
+.micro{width:100%;text-align:center;font-family:"Figtree",sans-serif;font-weight:700;color:${P.micro};
+  text-transform:uppercase;letter-spacing:.16em;font-size:${Math.round(W * 0.0175)}px}
+.tag{width:100%;text-align:center;font-family:"Figtree",sans-serif;font-weight:700;color:${P.accent};
+  text-transform:uppercase;letter-spacing:.14em;font-size:${Math.round(W * 0.019)}px}
+
+.body{width:100%;text-align:center;font-family:"Figtree",sans-serif;font-weight:600;color:${P.plain};
+  font-size:${Math.round(W * 0.0305)}px;line-height:1.34;text-shadow:0 3px 10px rgba(0,0,0,.6)}
+ul{width:100%;list-style:none;padding:0}
+li{font-family:"Figtree",sans-serif;font-weight:500;color:${P.plain};font-size:${Math.round(W * 0.0285)}px;
+  line-height:1.34;margin-bottom:${Math.round(W * 0.016)}px;display:flex;gap:${Math.round(W * 0.015)}px;
+  text-align:left;text-shadow:0 3px 10px rgba(0,0,0,.6)}
+li:last-child{margin-bottom:0}
+li:before{content:"";flex:0 0 ${Math.round(W * 0.0085)}px;height:${Math.round(W * 0.0085)}px;
+  background:${P.accent};border-radius:50%;margin-top:${Math.round(W * 0.015)}px}
+li b{font-weight:800}
+.flat{font-style:normal;color:${P.accent};font-weight:800}
+
+.cite{width:100%;border-top:2px solid ${P.rule};padding-top:${Math.round(W * 0.022)}px;text-align:center}
+.cite .l1{font-family:"Figtree",sans-serif;font-weight:700;font-size:${Math.round(W * 0.0185)}px;
+  letter-spacing:.16em;color:${P.accent};text-transform:uppercase}
+.cite .l2{font-family:"Anton",sans-serif;text-transform:uppercase;color:${P.plain};
+  font-size:${Math.round(W * 0.041)}px;line-height:.98;margin-top:${Math.round(W * 0.014)}px}
+.cite .l3{font-family:"Figtree",sans-serif;font-weight:400;font-style:italic;color:${P.micro};
+  font-size:${Math.round(W * 0.0195)}px;margin-top:${Math.round(W * 0.013)}px;line-height:1.4}
+`;
+
+/* --------------------------------------------------------------- Auto-Größe */
+// Eine Schriftgröße pro Slide, bestimmt durch die längste Zeile. Binäre Suche.
+const FIT = ([sel, maxW, maxH, minPx, maxPx]) => {
+  const el = document.querySelector(sel);
+  if (!el) return 0;
+  const lines = [...el.querySelectorAll('.ln')];
+  const fits = px => {
+    el.style.fontSize = px + 'px';
+    const wide = Math.max(...lines.map(l => l.scrollWidth));
+    return wide <= maxW && (maxH <= 0 || el.scrollHeight <= maxH);
+  };
+  let lo = minPx, hi = maxPx;
+  for (let i = 0; i < 26; i++) { const mid = (lo + hi) / 2; if (fits(mid)) lo = mid; else hi = mid; }
+  el.style.fontSize = lo.toFixed(2) + 'px';
+  return lo;
 };
 
-function fadeCss(from) {
-  if (from === null) return `linear-gradient(180deg,rgba(31,29,27,.22) 0%,rgba(31,29,27,.10) 40%,rgba(31,29,27,.66) 64%,rgba(31,29,27,.96) 88%,${INK} 100%)`;
-  return `linear-gradient(180deg,rgba(31,29,27,.18) 0%,rgba(31,29,27,0) 26%,rgba(31,29,27,.42) ${from}%,rgba(31,29,27,.94) ${from + 22}%,${INK} 100%)`;
-}
-
-function headlineHtml(lines, top, size) {
-  return `<h1 style="top:${top}%" data-size="${size}">` +
-    lines.map(l => `<div class="ln"><span class="tx">${acc(l)}</span></div>`).join('') + `</h1>`;
-}
-
-async function slideHtml(s) {
+/* -------------------------------------------------------------------- Bau */
+async function slideHtml(s, idx) {
   const L = { ...LAYOUT[s.type], ...(s.layout ?? {}) };
-  const file = s.image ? await findImage(s.image) : null;
-  const bg = file
-    ? `background-image:url('${await dataUri(file)}');background-size:cover;background-position:center top`
-    : `background:radial-gradient(120% 95% at 30% 15%,#3a2b1d 0%,#221a14 55%,${INK} 100%)`;
-  const missing = s.image && !file
-    ? `<div class="miss">BILD FEHLT · ${esc(s.image)} — erst \`gen-images\` laufen lassen</div>` : '';
+  const file = await findImage(s.image);
+  const photoPx = Math.round(H * L.photo);
+  const g0 = Math.min(88, Math.round(100 * (H * 0.42) / photoPx));
+  const g1 = Math.min(97, Math.round(100 * (H * 0.70) / photoPx));
+  const photoStyle = `height:${photoPx}px;--g0:${g0}%;--g1:${g1}%;` +
+    (file ? `background-image:url('${await dataUri(file)}')` : `background-image:radial-gradient(120% 95% at 30% 15%, ${P.accentDeep}55 0%, ${P.bg} 62%)`);
 
   let inner = '';
-  if (s.type === 'cover' || s.type === 'cta') {
-    inner += `<div class="kick" style="top:${L.kicker}%"><i></i><span>${esc(cfg.kicker ?? '')}</span><i></i></div>`;
-    inner += headlineHtml(s.headline, L.head, L.size);
-    if (s.sub)   inner += `<div class="sub" style="left:60px;right:60px;bottom:72px">${esc(s.sub)}</div>`;
-    if (s.tag)   inner += `<div class="tag">${esc(s.tag)}</div>`;
-  } else if (s.type === 'facts') {
-    inner += headlineHtml(s.headline, L.head, L.size);
-    inner += `<ul style="left:0;right:0;top:69.5%">` +
-      s.bullets.map(b => `<li><span>${bold(b)}</span></li>`).join('') + `</ul>`;
-  } else if (s.type === 'stat') {
-    inner += headlineHtml(s.headline, L.head, L.size);
-    if (s.body) inner += `<div class="body" style="left:52px;right:52px;bottom:64px">${bold(s.body)}</div>`;
-  } else if (s.type === 'evidence') {
-    inner += `<div class="cite"><div class="l1">${esc(s.cite.eyebrow)}</div>` +
-      `<div class="l2">${esc(s.cite.title)}</div>` +
-      `<div class="l3">${esc(s.cite.authors)}</div></div>`;
-  }
-  if (s.footer && s.type !== 'cta') inner += `<div class="swipe">${esc(s.footer)}</div>`;
+  if (s.kicker !== '' && (s.type === 'cover' || s.type === 'cta' || s.kicker))
+    inner += `<div class="kick"><i></i><span>${esc(s.kicker ?? cfg.kicker ?? '')}</span><i></i></div>`;
+  if (s.headline) inner += `<div class="head" id="h${idx}">${headLines(s.headline)}</div>`;
+  if (s.bullets)  inner += `<ul>${s.bullets.map(b => `<li><span>${bodyInline(b)}</span></li>`).join('')}</ul>`;
+  if (s.body)     inner += `<div class="body">${bodyInline(s.body)}</div>`;
+  if (s.cite)     inner += `<div class="cite"><div class="l1">${esc(s.cite.eyebrow)}</div>` +
+                            `<div class="l2">${esc(s.cite.title)}</div><div class="l3">${esc(s.cite.authors)}</div></div>`;
+  if (s.sub)      inner += `<div class="sub">${esc(s.sub)}</div>`;
+  if (s.tag)      inner += `<div class="tag">${esc(s.tag)}</div>`;
+  if (s.micro || s.footer) inner += `<div class="micro">${esc(s.micro ?? s.footer)}</div>`;
+
+  const missing = s.image && !file
+    ? `<div class="miss">BILD FEHLT · ${esc(s.image)}<br>erst die Bilder generieren lassen</div>` : '';
 
   return `<div class="slide" id="s${s.n}">
-    <div class="ph" style="height:${L.img};${bg}"><div class="fade" style="background:${fadeCss(L.fade ?? null)}"></div>${missing}</div>
-    <div class="wm">${esc(cfg.brand ?? '')}</div>
-    ${inner}
+    <div class="photo" style="${photoStyle}"></div>${missing}
+    ${cfg.brand ? `<div class="wm">${esc(cfg.brand)}</div>` : ''}
+    <div class="stage">${inner}</div>
   </div>`;
 }
 
-const css = `
-*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
-body{background:#000;margin:0}
-.slide{width:${W}px;height:${H}px;background:${INK};position:relative;overflow:hidden;font-family:'Figtree',sans-serif;color:${CREAM}}
-.ph{position:absolute;left:0;top:0;right:0}
-.ph .fade{position:absolute;inset:0}
-.miss{position:absolute;left:0;right:0;top:40%;text-align:center;font-weight:700;font-size:22px;letter-spacing:.1em;color:rgba(253,247,241,.35);padding:0 60px;line-height:1.6}
-.wm{position:absolute;top:30px;right:36px;font-weight:800;font-size:25px;letter-spacing:.13em;z-index:5;text-shadow:0 2px 8px rgba(0,0,0,.7)}
-.kick{position:absolute;left:36px;right:36px;display:flex;align-items:center;justify-content:center;gap:22px;z-index:5}
-.kick span{font-weight:700;font-size:22px;letter-spacing:.14em;white-space:nowrap;text-shadow:0 2px 8px rgba(0,0,0,.8)}
-.kick i{height:1.5px;flex:1;background:${CREAM};opacity:.85}
-h1{position:absolute;left:26px;right:26px;z-index:5}
-.ln{font-family:'Anton';text-transform:uppercase;text-align:center;white-space:nowrap;line-height:.90;letter-spacing:-.004em;text-shadow:0 6px 16px rgba(0,0,0,.75)}
-.ln .tx{display:inline-block;white-space:nowrap}
-.a{color:${ACC}}
-.sub{position:absolute;text-align:center;font-weight:700;font-size:31px;text-transform:uppercase;z-index:5;text-shadow:0 3px 10px rgba(0,0,0,.8)}
-.body{position:absolute;text-align:center;font-weight:600;font-size:33px;line-height:1.34;z-index:5;text-shadow:0 3px 10px rgba(0,0,0,.8)}
-.body .a,.body b{font-weight:800}
-.swipe{position:absolute;bottom:30px;left:0;right:0;text-align:center;font-weight:700;font-size:19px;letter-spacing:.16em;color:${MUTED};z-index:5}
-ul{position:absolute;list-style:none;z-index:5;padding:0 54px}
-li{font-weight:500;font-size:31px;line-height:1.32;margin-bottom:19px;display:flex;gap:16px;text-shadow:0 3px 10px rgba(0,0,0,.85)}
-li:before{content:"";flex:0 0 9px;height:9px;background:${ACC};margin-top:15px;border-radius:50%}
-li b{font-weight:800}
-.cite{position:absolute;left:60px;right:60px;bottom:60px;z-index:5;border-top:1.5px solid ${HAIR};padding-top:22px;text-align:center}
-.cite .l1{font-weight:700;font-size:20px;letter-spacing:.16em;color:${ACC}}
-.cite .l2{font-family:'Anton';text-transform:uppercase;font-size:44px;line-height:.96;margin-top:14px}
-.cite .l3{font-weight:500;font-size:21px;color:${MUTED};margin-top:14px}
-.tag{position:absolute;bottom:30px;left:0;right:0;text-align:center;font-weight:700;font-size:20px;letter-spacing:.14em;color:${ACC};z-index:5}
-`;
+const parts = [];
+for (let i = 0; i < cfg.slides.length; i++) parts.push(await slideHtml(cfg.slides[i], i));
 
-const fit = `function fitLines(){document.querySelectorAll('h1').forEach(h=>{const w=h.clientWidth;const base=parseFloat(h.dataset.size||'95');h.querySelectorAll('.ln').forEach(l=>{l.style.fontSize=base+'px';const tx=l.querySelector('.tx');if(tx.offsetWidth>w){l.style.fontSize=(base*w/tx.offsetWidth).toFixed(2)+'px';}});});}
-document.fonts.ready.then(()=>{fitLines();window.__fit=1;});`;
-
-const slides = [];
-for (const s of cfg.slides) slides.push(await slideHtml(s));
-
-const html = `<!doctype html><html><head><meta charset="utf-8"><style>${await fontCss()}${css}</style></head><body>${slides.join('\n')}<script>${fit}</script></body></html>`;
+const html = `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>${parts.join('\n')}</body></html>`;
 const tmp = path.join(outDir, '_render.html');
 await fs.writeFile(tmp, html);
 
 const { chromium } = await import('playwright');
-// CHROME_PATH nur für lokale Umgebungen mit vorinstalliertem Chromium; in CI leer lassen.
-const browser = await chromium.launch({ args: ['--no-sandbox'], ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
+const browser = await chromium.launch({
+  args: ['--no-sandbox'],
+  ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}),
+});
 const page = await browser.newPage({ viewport: { width: W, height: H } });
 await page.goto('file://' + path.resolve(tmp));
-await page.waitForFunction('window.__fit===1', { timeout: 30000 });
-await page.waitForTimeout(400);
+await page.evaluate(() => document.fonts.ready);
 
-const files = [];
+const maxW = W - 2 * PAD;
+for (let i = 0; i < cfg.slides.length; i++) {
+  const s = cfg.slides[i];
+  if (!s.headline) continue;
+  const L = { ...LAYOUT[s.type], ...(s.layout ?? {}) };
+  const size = await page.evaluate(FIT, [`#h${i}`, maxW, Math.round(H * L.headMax), 20, cfg.maxFontSize || 240]);
+  s._size = Math.round(size);
+}
+await page.waitForTimeout(300);
+
 for (const s of cfg.slides) {
   const out = path.join(outDir, `slide-${String(s.n).padStart(2, '0')}.png`);
   await (await page.$(`#s${s.n}`)).screenshot({ path: out });
-  files.push(out);
-  console.log(`· Slide ${s.n} -> ${out}`);
+  console.log(`· Slide ${s.n}  ${s.type.padEnd(9)} ${s._size ? s._size + 'px' : '—'}  -> ${out}`);
 }
 await browser.close();
 await fs.unlink(tmp);
-
-console.log(`\n${files.length} Slides gerendert (${W}x${H}) in ${outDir}`);
+console.log(`\n${cfg.slides.length} Slides · ${W}x${H} · Preset ${PRESET_CLI || cfg.preset || 'wsd-orange'}`);

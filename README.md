@@ -9,9 +9,16 @@ Regeln für die Bilder: `wsd-social-images` Skill (Format, Schichtaufbau, Archet
 
 ## Einmalig einrichten
 
-1. **API-Key als Secret ablegen** — Repo → Settings → Secrets and variables → Actions →
-   *New repository secret*
-   → Name `GEMINI_API_KEY`, Wert: dein Google-AI-Studio-Key.
+1. **API-Key als Secret ablegen.** Zwei Wege, beide funktionieren:
+   - **Environment-Secret** (so ist es aktuell eingerichtet): Settings → Environments →
+     Umgebung `GEMINI_API_KEY` → *Add environment secret*, Name `GEMINI_API_KEY`.
+     Damit der Job das Secret sieht, muss im Workflow `environment: GEMINI_API_KEY` am Job
+     stehen — steht dort. **Environment-Secrets sind für einen Job unsichtbar, der keine
+     `environment:`-Zeile hat.** Das ist der häufigste Grund für „Key ist nicht gesetzt".
+   - **Repository-Secret** (einfacher, ein Konzept weniger): Settings → Secrets and
+     variables → Actions → *New repository secret*, Name `GEMINI_API_KEY`. Dann kann die
+     `environment:`-Zeile im Workflow weg.
+
    Der Key gehört nirgendwo sonst hin: nicht in eine Datei, nicht in einen Commit, nicht in einen Chat.
 2. Fertig. Der Rest läuft über *Actions*.
 

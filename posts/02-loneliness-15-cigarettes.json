@@ -1,0 +1,52 @@
+{
+  "post": "02-loneliness-15-cigarettes",
+  "title": "Weak social ties carry the mortality risk of 15 cigarettes a day",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1440,
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer.",
+  "slides": [
+    {
+      "n": 1, "type": "cover", "image": "s1a",
+      "headline": ["[WEAK SOCIAL TIES] CARRY", "THE [MORTALITY RISK] OF", "[15 CIGARETTES] A DAY"],
+      "sub": "A 2010 META-ANALYSIS OF 308,849 PEOPLE",
+      "micro": "SWIPE FOR MORE"
+    },
+    {
+      "n": 2, "type": "facts", "image": "s2a", "kicker": "",
+      "headline": ["THE [LARGEST STUDY]", "ON [BEING ALONE]"],
+      "bullets": [
+        "Julianne Holt-Lunstad's team at **Brigham Young University**",
+        "Published in **PLOS Medicine**, 2010, pooling **148 studies**",
+        "**308,849 people**, each followed until the study ended",
+        "One question: does who is around you change **when** you die"
+      ]
+    },
+    {
+      "n": 3, "type": "stat", "image": "s3a", "kicker": "",
+      "headline": ["[50%] BETTER ODDS", "OF [STAYING ALIVE]"],
+      "body": "That is the whole intervention. Having people. [Odds ratio 1.50], across all 148 studies."
+    },
+    {
+      "n": 4, "type": "evidence", "image": "s4a", "kicker": "",
+      "cite": {
+        "eyebrow": "PLOS MEDICINE · VOL 7 · ISSUE 7 · JULY 2010",
+        "title": "Social relationships and mortality risk: a meta-analytic review",
+        "authors": "Holt-Lunstad, Smith & Layton · e1000316"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT"
+    },
+    {
+      "n": 5, "type": "stat", "image": "s5a", "kicker": "",
+      "headline": ["IT OUTRANKED [MOVING]", "IT OUTRANKED [BEING THIN]"],
+      "body": "The effect was larger than physical inactivity and obesity. [Nobody sells that as a health tip.]"
+    },
+    {
+      "n": 6, "type": "cta", "image": "s6a",
+      "headline": ["WE SHARE [DAILY]", "[FINDINGS] FROM THE", "[WORLD OF PSYCHOLOGY]"],
+      "tag": "WSD · THE APP THAT PUTS SOMEBODY IN THE OTHER CHAIR"
+    }
+  ]
+}

@@ -7,16 +7,36 @@
   "width": 1080,
   "height": 1440,
   "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer.",
+  "_caption_syntax": "Caption-Formel aus dem Playbook, 6 Bloecke: kern (1-2 Saetze + 2 Emojis) · detail (Zahlen, Namen, Daten) · kontext (was es bedeutet) · frage (an die Leser) · sources (PFLICHT) · hashtags (genau 5). Bloecke mit Leerzeile getrennt posten.",
+  "caption": {
+    "kern": "Loneliness doesn't just feel bad. It shows up in mortality data — at roughly the scale of smoking 15 cigarettes a day. 🚬💔",
+    "detail": "In 2010 Julianne Holt-Lunstad and her team at Brigham Young University pooled 148 separate studies covering 308,849 people. Those with strong social relationships had a 50% higher likelihood of surviving the follow-up period. Odds ratio: 1.50.",
+    "kontext": "Converted onto the risk axis tobacco researchers use, that gap sits at around 15 cigarettes a day. It was larger than the effect of physical inactivity, and larger than the effect of obesity — the two things we build entire industries around.",
+    "frage": "Who is the person you would call at 3am?",
+    "sources": "Sources: Holt-Lunstad, Smith & Layton — Social relationships and mortality risk: a meta-analytic review • PLOS Medicine 7(7): e1000316, July 2010 • doi.org/10.1371/journal.pmed.1000316",
+    "hashtags": "#psychology #loneliness #mentalhealth #science #relationships"
+  },
   "slides": [
     {
-      "n": 1, "type": "cover", "image": "s1a",
-      "headline": ["[15 CIGARETTES] A DAY", "AND YOU NEVER [SMOKED]", "A SINGLE ONE"],
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[LONELINESS] =",
+        "[15 CIGARETTES] A DAY"
+      ],
       "sub": "308,849 PEOPLE. ONE VERY UNCOMFORTABLE FINDING.",
       "micro": "SWIPE FOR MORE"
     },
     {
-      "n": 2, "type": "facts", "image": "s2a", "kicker": "",
-      "headline": ["THE [LARGEST STUDY]", "ON [BEING ALONE]"],
+      "n": 2,
+      "type": "facts",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "THE [LARGEST STUDY]",
+        "ON [BEING ALONE]"
+      ],
       "bullets": [
         "Julianne Holt-Lunstad's team at **Brigham Young University**",
         "Published in **PLOS Medicine**, 2010, pooling **148 studies**",
@@ -25,28 +45,49 @@
       ]
     },
     {
-      "n": 3, "type": "stat", "image": "s3a", "kicker": "",
-      "headline": ["[50%] BETTER ODDS", "OF [STAYING ALIVE]"],
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "[50%] BETTER ODDS",
+        "OF [STAYING ALIVE]"
+      ],
       "body": "That is the whole intervention. Having people. [Odds ratio 1.50] across all 148 studies."
     },
     {
-      "n": 4, "type": "evidence", "image": "s4a", "kicker": "",
+      "n": 4,
+      "type": "evidence",
+      "image": "s4a",
+      "kicker": "",
       "cite": {
         "eyebrow": "PLOS MEDICINE · VOL 7 · ISSUE 7 · JULY 2010",
-        "title": "Social relationships and mortality risk: a meta-analytic review",
-        "authors": "Holt-Lunstad, Smith & Layton · e1000316"
+        "title": "Social relationships and mortality risk",
+        "authors": "A meta-analytic review · Holt-Lunstad, Smith & Layton · e1000316"
       },
       "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT"
     },
     {
-      "n": 5, "type": "stat", "image": "s5a", "kicker": "",
-      "headline": ["IT OUTRANKED [MOVING]", "IT OUTRANKED [BEING THIN]"],
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "IT OUTRANKED [MOVING]",
+        "IT OUTRANKED [BEING THIN]"
+      ],
       "body": "The effect was larger than physical inactivity and obesity. [Nobody sells that as a health tip.]"
     },
     {
-      "n": 6, "type": "cta", "image": "s6a",
-      "headline": ["WE SHARE [DAILY]", "[FINDINGS] FROM THE", "[WORLD OF PSYCHOLOGY]"],
-      "tag": "WSD · THE APP THAT PUTS SOMEBODY IN THE OTHER CHAIR"
+      "n": 6,
+      "type": "cta",
+      "image": "s6a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "308,849 PEOPLE SAID SO"
     }
   ]
 }

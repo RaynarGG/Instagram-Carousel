@@ -10,28 +10,43 @@
   "images": [
     {
       "id": "s1a",
-      "slug": "cover-tower-cutaway",
+      "slug": "cover-smoker-empty-room",
       "slide": 1,
       "variant": "a",
-      "keywords": ["cover", "archetype-a", "scale"],
-      "headline": "15 CIGARETTES A DAY AND YOU NEVER SMOKED A SINGLE ONE",
-      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A colossal residential tower block standing alone in absolute black void, seen from a high three-quarter angle with its entire facade cut away like an architectural dollhouse cross-section, so a grid of dozens of identical small apartments is fully visible, filling the upper two thirds of the frame. In almost every cell a single tiny human figure sits alone, each in the same posture, each under the same cold ceiling light. One cell near the centre is rendered at impossible scale, far larger than the rest, showing a plain kitchen table with two chairs, one worn and occupied by a seated figure whose face is turned away, the other chair pushed in and untouched. The mismatch in scale is deliberate. In the upper right, a circular inset cut-out shows an extreme close-up of two coffee cups on that table, one stained and used, one clean and dry, rendered sharper and brighter than the main scene, its edge crisp against the void. Cold blue moonlight across the raw concrete facade, and a warm amber practical lamp glowing inside the enlarged cell, the only warm light in the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, and thin tick marks along the right edge. Restricted palette: cold concrete grey and deep blue-black plus one warm amber accent. High contrast, deep blacks, fine film grain, documentary and unpolished. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+      "keywords": [
+        "cover",
+        "archetype-a",
+        "scale",
+        "photoreal"
+      ],
+      "headline": "LONELINESS = 15 CIGARETTES A DAY",
+      "prompt": "Ultra-detailed cinematic photograph, 3:4 vertical, shot on 35mm film with a fast lens. A lone anonymous figure stands at a tall window in a dark apartment late at night, seen from behind and slightly to the side, filling the upper two thirds of the frame, the head turned away so no face is visible at any point. They are smoking; the cigarette ember is the brightest thing in the room and throws a small warm amber glow onto the hand and the window glass, a thin ribbon of smoke rising through it. Behind them the apartment is unmistakably built for more than one person and holds only them: a dining table with four chairs, three of them stacked and dust-covered, two clean plates still in the drying rack, a second coat hook standing empty. Through the window, far below and tiny by comparison, a whole city of separate lit windows stretches to the horizon, each one its own small lit box. In the upper right, a circular inset cut-out shows an extreme close-up of the ember itself, glowing and crumbling, rendered sharper and brighter than the main scene. One cold blue wash of city light from the window, and the cigarette ember as the warm amber practical light source in frame. Tiny illegible technical annotation text in the top-left corner, like a dossier page, and thin tick marks along the right edge. Restricted palette: cold blue-grey night plus one warm amber accent. High contrast, deep blacks, shallow depth of field, fine film grain, documentary and unposed. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no recognisable face, not a celebrity, not a public figure, no identifiable person"
     },
     {
       "id": "s1b",
-      "slug": "cover-two-chairs-scale",
+      "slug": "cover-ashtray-two-chairs",
       "slide": 1,
       "variant": "b",
-      "keywords": ["cover", "archetype-a", "scale", "variant-b"],
-      "headline": "15 CIGARETTES A DAY AND YOU NEVER SMOKED A SINGLE ONE",
-      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. In the immediate foreground, a plain wooden kitchen table with two chairs rendered at impossible scale, filling the upper two thirds of the frame, shot from a low angle so the table edge cuts across the sky. One chair is worn smooth and polished by decades of use, its seat dented; the other is pristine, dust-covered and clearly never sat in. Behind them and far below, tiny by comparison, an entire night city of separate lit apartment windows stretches to the horizon. Behind everything, a huge semi-transparent silhouette of a pair of human lungs burnt into the dark concrete background, partially hidden by the table. One hard cold directional key light from the left, everything else collapsing into shadow, plus a warm amber practical lamp hanging low over the used chair, catching the grain of the wood. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: cold grey-blue and deep brown tones plus one warm amber accent. High contrast, fine film grain, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no people"
+      "keywords": [
+        "cover",
+        "archetype-a",
+        "scale",
+        "photoreal",
+        "variant-b"
+      ],
+      "headline": "LONELINESS = 15 CIGARETTES A DAY",
+      "prompt": "Ultra-detailed cinematic photograph, 3:4 vertical, shot on 35mm film. In the immediate foreground, a heavy glass ashtray on a kitchen table rendered at impossible scale, filling the upper two thirds of the frame, packed with a dense field of stubbed-out cigarette ends, one still burning at the edge with a live amber ember and a thin line of smoke. Behind it and far below, tiny by comparison, the rest of the same kitchen: a table with two chairs, one worn smooth and pulled out, the other pristine, dust-covered and clearly never used. The scale between the ashtray and the room is deliberately impossible. Behind everything, a huge semi-transparent silhouette of two people seated facing each other burnt into the dark wall, partially hidden by the ashtray. One hard cold directional key light from the left, everything else collapsing into shadow, plus the live ember as the warm amber practical light source in frame, catching the glass. Tiny illegible technical annotation text in the top-left corner, like a dossier page. Restricted palette: cold grey-blue and deep brown plus one warm amber accent. High contrast, shallow depth of field, fine film grain, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no recognisable face, not a celebrity, not a public figure, no identifiable person, no people"
     },
     {
       "id": "s2a",
       "slug": "archive-hall-front-on",
       "slide": 2,
       "variant": "a",
-      "keywords": ["rehook", "archive", "facts"],
+      "keywords": [
+        "rehook",
+        "archive",
+        "facts"
+      ],
       "headline": "THE LARGEST STUDY ON BEING ALONE",
       "prompt": "Photojournalistic composite, 3:4 vertical. An enormous institutional archive hall photographed straight on with a slightly wide lens: two facing walls of identical dark grey filing cabinets receding into blackness, dozens upon dozens of drawers, filling the upper two thirds of the frame, the symmetry oppressive and diagrammatic. A single drawer near the centre stands pulled open, warm amber light spilling out of it across the polished concrete floor, the only warm note in the frame. Worn linoleum, scuffed cabinet paint, dust in the air. One cold caged ceiling light far above throwing a hard pool of light down the centre aisle. Restricted palette: cold grey and deep black plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. High contrast, deep blacks, fine film grain, documentary and unpolished, imperfect surfaces. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
     },
@@ -40,7 +55,12 @@
       "slug": "archive-overhead-grid",
       "slide": 2,
       "variant": "b",
-      "keywords": ["rehook", "archive", "facts", "variant-b"],
+      "keywords": [
+        "rehook",
+        "archive",
+        "facts",
+        "variant-b"
+      ],
       "headline": "THE LARGEST STUDY ON BEING ALONE",
       "prompt": "Photojournalistic composite, 3:4 vertical, shot from directly overhead. A dark polished floor seen from above, covered in a vast strict grid of identical small stacks of paper documents, over a hundred of them, receding to the edges of the frame and filling the upper two thirds, the geometry stark and diagrammatic. Each stack casts a long hard shadow in the same direction. One single stack near the centre is lit by a warm amber desk lamp just out of frame, glowing while every other stack stays cold and grey. The printed text on the pages is completely out of focus and unreadable, pure grey texture with no discernible letters. Restricted palette: cold grey plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge, like a floor plan turned into a dossier page. High contrast, fine film grain, dust. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no legible words, no captions, no watermark, no logos, nothing readable, no borders, no frame, no people"
     },
@@ -49,7 +69,11 @@
       "slug": "long-table-half-set",
       "slide": 3,
       "variant": "a",
-      "keywords": ["number", "archetype-c", "table"],
+      "keywords": [
+        "number",
+        "archetype-c",
+        "table"
+      ],
       "headline": "50% BETTER ODDS OF STAYING ALIVE",
       "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A very long communal dining table seen from a low raking angle so it recedes deep into shadow, filling the upper two thirds of the frame. The near half of the table is fully alive: plates still warm, glasses half full, napkins crumpled, chairs pushed back at angles as if people just stood up, everything bathed in the glow of a low amber pendant lamp hanging above it. The far half is the same table gone dead: every place setting grey with dust, cutlery untouched and perfectly aligned, chairs stacked upside down on the tabletop, no light reaching it at all. The split between the two halves is unmistakable and happens without a visible line. In the upper right, a circular inset cut-out shows an extreme close-up of the exact seam where the dust begins on the wood grain, rendered sharper and brighter than the main scene. One hard cold key light from the far end, plus the warm amber pendant as the practical light source in frame. Restricted palette: deep brown-black and cold grey plus one warm amber accent. Very high contrast, shallow depth of field, fine film grain, documentary, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no numbers, no borders, no frame, no people"
     },
@@ -58,7 +82,12 @@
       "slug": "mailbox-wall-worn",
       "slide": 3,
       "variant": "b",
-      "keywords": ["number", "archetype-c", "macro", "variant-b"],
+      "keywords": [
+        "number",
+        "archetype-c",
+        "macro",
+        "variant-b"
+      ],
       "headline": "50% BETTER ODDS OF STAYING ALIVE",
       "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A wall of identical small apartment mailboxes on scratched gunmetal panelling, filling the upper two thirds of the frame, seen from a low raking angle so the rows recede into shadow. Roughly half the boxes are worn smooth around the handle, opened daily, their flaps slightly ajar; the other half are sealed shut and overflowing, uncollected post jammed in the slots and fanning out, the paper yellowed. The difference between the used and the abandoned is unmistakable. One hard directional key light from the left, plus a single bare warm amber bulb above the worn half, its glow falling off sharply before it reaches the rest. Restricted palette: gunmetal grey and deep black plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. High contrast, fine film grain, documentary, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no numbers, no house numbers, no name plates, no borders, no frame"
     },
@@ -67,7 +96,11 @@
       "slug": "printed-paper",
       "slide": 4,
       "variant": "a",
-      "keywords": ["evidence", "paper", "breather"],
+      "keywords": [
+        "evidence",
+        "paper",
+        "breather"
+      ],
       "headline": "PLOS MEDICINE · VOL 7 · ISSUE 7 · JULY 2010",
       "prompt": "Photojournalistic composite, 3:4 vertical, shot slightly from above. A thick printed-out stack of academic journal pages filling the upper two thirds of the frame on a dark walnut desk, the top sheets fanned apart and marked up with a pencil, one page lifted and curling at the corner, a pair of reading glasses resting at the edge of the frame. The printed text is completely out of focus and unreadable, pure grey texture with no discernible letters. A single warm amber desk lamp from the upper left, dust visible in the beam, everything beyond the pages falling into deep shadow. Restricted palette: warm amber and deep brown. High contrast, fine film grain, documentary, worn paper, imperfect surfaces. The bottom 45 percent of the frame fades to pure solid black with no detail. no text, no lettering, no legible words, no captions, no watermark, no logos, nothing readable, no borders, no frame, no people"
     },
@@ -76,7 +109,11 @@
       "slug": "gym-and-table-one-frame",
       "slide": 5,
       "variant": "a",
-      "keywords": ["reframe", "archetype-d", "today"],
+      "keywords": [
+        "reframe",
+        "archetype-d",
+        "today"
+      ],
       "headline": "IT OUTRANKED MOVING. IT OUTRANKED BEING THIN.",
       "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A split composite held in one continuous frame, both halves filling the upper two thirds: on the left, a treadmill and a bathroom scale standing alone on a bare gym floor under hard cold fluorescent light, a pair of running shoes placed neatly beside them, everything clinical and blue-grey; on the right, a plain kitchen table with two chairs both pulled out and occupied by two seated figures leaning toward each other, faces turned away and not visible, lit by one low warm amber lamp. The two halves share one continuous floor line so it reads as a single room, not two panels. No visible divider, the transition happens in shadow. In the upper right, a small circular inset cut-out shows an extreme close-up of two hands resting on the table, rendered sharper and brighter than the main scene. One hard cold key light on the left, the warm amber practical lamp on the right bleeding across the seam between them. Restricted palette: cold blue-grey and warm brown-black plus one amber accent. Tiny illegible technical annotation text in the top-left corner. High contrast, fine film grain, documentary. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no brand marks, no borders, no frame, no collage grid lines, no split-screen line"
     },
@@ -85,7 +122,12 @@
       "slug": "small-gear-huge-chair",
       "slide": 5,
       "variant": "b",
-      "keywords": ["reframe", "archetype-a", "today", "variant-b"],
+      "keywords": [
+        "reframe",
+        "archetype-a",
+        "today",
+        "variant-b"
+      ],
       "headline": "IT OUTRANKED MOVING. IT OUTRANKED BEING THIN.",
       "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. In the immediate foreground on a dark concrete floor, a pair of running shoes, a bathroom scale and a dumbbell rendered absurdly small, like scattered toys, lit hard and cold. Behind them, rising to impossible scale and filling the upper two thirds of the frame, one single empty wooden dining chair, colossal, its legs cropped by the frame edge, its worn seat catching a low warm amber light from the right. The scale between the two is deliberately impossible. Behind everything, a huge semi-transparent silhouette of two people seated facing each other burnt into the dark concrete wall, partially hidden by the chair. One hard cold directional key light from the left, plus the warm amber practical light source raking across the chair. Restricted palette: cold grey-blue and deep brown plus one warm amber accent. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. High contrast, fine film grain, worn surfaces, dust. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, no brand marks on the shoes, nothing legible, no numbers on the scale, no borders, no frame, no people"
     },
@@ -94,7 +136,11 @@
       "slug": "morning-table-two-cups",
       "slide": 6,
       "variant": "a",
-      "keywords": ["cta", "positioning", "warm"],
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm"
+      ],
       "headline": "WE SHARE DAILY FINDINGS FROM THE WORLD OF PSYCHOLOGY",
       "prompt": "Photojournalistic composite, 3:4 vertical. Low warm morning sunlight raking through a plain window onto a wooden kitchen table filling the upper two thirds of the frame: two cups of coffee both steaming, two chairs both pulled out at angles, a closed notebook and a pencil pushed to one side. Nobody in frame, but the table is unmistakably set for two and just been used. Long soft shadows stretch across the grain of the wood. Calm, unhurried, the visual opposite of a single lit window in a dark tower. Restricted palette: warm amber, beige and deep brown. High contrast, shallow depth of field, fine film grain, documentary, imperfect surfaces, dust in the light. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people"
     },
@@ -103,7 +149,12 @@
       "slug": "tower-warm-again",
       "slide": 6,
       "variant": "b",
-      "keywords": ["cta", "positioning", "warm", "variant-b"],
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "variant-b"
+      ],
       "headline": "WE SHARE DAILY FINDINGS FROM THE WORLD OF PSYCHOLOGY",
       "prompt": "Photojournalistic composite, 3:4 vertical. The same colossal residential tower block with its facade cut away like a dollhouse cross-section, seen from a high three-quarter angle and filling the upper two thirds of the frame, but now warm: nearly every one of the dozens of small apartment cells glows with low amber lamplight instead of cold ceiling light, and in most cells two or three tiny figures sit together at tables, leaning toward each other. Only a handful of cells remain dark. Low golden evening light rakes across the concrete facade from the right. Warm amber is now the dominant light in the frame. Restricted palette: warm amber and beige plus deep brown shadow. High contrast, fine film grain, documentary, worn concrete, dust in the light. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
     }

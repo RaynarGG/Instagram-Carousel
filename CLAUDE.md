@@ -5,6 +5,12 @@ Instagram-Karussells für den Psychology-Account. Pro Post zwei Dateien:
 `posts/<x>.json` (die sechs Slides) und `prompts/post-<x>.json` (die Bildprompts).
 Aufbau, Felder und Syntax stehen im README.
 
+## Täglicher Ablauf
+Wenn ein neuer Post gebaut werden soll: **`docs/TAGESABLAUF.md`** ist die
+Arbeitsanweisung. Vier Schritte, nach jedem wird gestoppt und gefragt —
+Thema · Hook · restliche Slides und Caption · Bildideen. Nicht weiterbauen,
+bevor der Schritt freigegeben ist.
+
 ## Vor jedem Post lesen
 - **`README.md` → „Redaktionelle Haltung"** — die Tonalität. Kurzfassung: Unterhaltung
   vor Präzision, der Hook gewinnt im Zweifel, zuspitzen ist erlaubt, **erfinden nicht**,
@@ -13,6 +19,9 @@ Aufbau, Felder und Syntax stehen im README.
   die Sieben-Block-Prompt-Formel. Kein Prompt ohne warme Amber-Lichtquelle und
   ohne schwarze Fusszone.
 - **Skill `wsd-headline`** — Typografie und Headline-Look.
+- **`docs/playbook-technology.md`** — das Vorbild-Format: Farbregel
+  (konkret = Akzent, verbindend = weiss, keine Zeile einfarbig),
+  Slide-Grammatik, Caption-Formel mit Pflicht-`Sources:`-Zeile.
 
 ## Prüfen, bevor committet wird
 ```bash

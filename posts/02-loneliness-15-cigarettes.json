@@ -10,8 +10,8 @@
   "slides": [
     {
       "n": 1, "type": "cover", "image": "s1a",
-      "headline": ["[WEAK SOCIAL TIES] CARRY", "THE [MORTALITY RISK] OF", "[15 CIGARETTES] A DAY"],
-      "sub": "A 2010 META-ANALYSIS OF 308,849 PEOPLE",
+      "headline": ["[15 CIGARETTES] A DAY", "AND YOU NEVER [SMOKED]", "A SINGLE ONE"],
+      "sub": "308,849 PEOPLE. ONE VERY UNCOMFORTABLE FINDING.",
       "micro": "SWIPE FOR MORE"
     },
     {
@@ -27,7 +27,7 @@
     {
       "n": 3, "type": "stat", "image": "s3a", "kicker": "",
       "headline": ["[50%] BETTER ODDS", "OF [STAYING ALIVE]"],
-      "body": "That is the whole intervention. Having people. [Odds ratio 1.50], across all 148 studies."
+      "body": "That is the whole intervention. Having people. [Odds ratio 1.50] across all 148 studies."
     },
     {
       "n": 4, "type": "evidence", "image": "s4a", "kicker": "",

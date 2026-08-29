@@ -7,6 +7,31 @@ Regeln für die Bilder: `wsd-social-images` Skill (Format, Schichtaufbau, Archet
 
 ---
 
+## Redaktionelle Haltung
+
+Dieser Kanal ist **Unterhaltung, kein Journal Club**. Die Prioritäten stehen fest und
+gelten für jeden Post:
+
+1. **Der Hook gewinnt.** Slide 1 hat genau eine Aufgabe: den Daumen anhalten. Eine
+   Formulierung, die zwei Sekunden Nachdenken braucht, hat verloren — auch wenn sie
+   die präzisere ist. Im Zweifel wird zugunsten des Hooks entschieden, nicht zugunsten
+   des Studienwortlauts.
+2. **Zuspitzen ist erlaubt.** Zahlen dürfen gerundet werden, Effekte scharf formuliert,
+   Einschränkungen weggelassen. Es muss **nicht 1 zu 1** dem Abstract entsprechen.
+3. **Die Quelle bleibt trotzdem Pflicht.** Jeder Post hat eine `evidence`-Slide mit
+   Journal, Jahr und Autoren. Das ist nicht verhandelbar.
+
+Die Grenze zwischen 2 und 3: **zuspitzen ja, erfinden nein.** Eine Zahl darf lauter
+klingen, als sie im Abstract steht. Sie darf nicht dastehen, wenn es sie nicht gibt.
+Wer die Studie nachschlägt, muss den Kern wiederfinden — sonst kostet ein einziger
+Kommentar mehr Glaubwürdigkeit, als der Hook an Reichweite gebracht hat.
+
+Deshalb ist die `evidence`-Slide kein Pflichtteil, den man abarbeitet, sondern der
+Grund, warum der zugespitzte Hook überhaupt getragen wird. Ohne Beleg ist der Post
+ein Meme.
+
+---
+
 ## Einmalig einrichten
 
 1. **API-Key als Secret ablegen.** Zwei Wege, beide funktionieren:

@@ -33,6 +33,9 @@ on:
       freitext_name:
         description: "Kurzname für das Freitext-Bild"
         default: "adhoc"
+  # Kein Blindlauf mehr: der Push-Trigger baut nur den Post, dessen Datei sich
+  # geaendert hat (siehe Schritt "Parameter aufloesen"). Frueher lief bei JEDEM
+  # Push der Default 01-just-think durch — 11 bezahlte Calls fuer den falschen Post.
   push:
     paths:
       - "prompts/**.json"
@@ -87,7 +90,22 @@ jobs:
           IN_TEXT: ${{ inputs.freitext_prompt }}
           IN_NAME: ${{ inputs.freitext_name }}
         run: |
-          POST="${IN_POST:-01-just-think}"
+          if [ -n "$IN_POST" ]; then
+            POST="$IN_POST"
+          elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            # aus den geaenderten Dateien ableiten, statt blind auf den Default zu fallen
+            POST="$(git diff --name-only "${{ github.event.before }}" "$GITHUB_SHA" 2>/dev/null \
+                    | sed -n -e 's#^posts/\(.*\)\.json$#\1#p' -e 's#^prompts/post-\(.*\)\.json$#\1#p' \
+                    | sort -u | head -1)"
+            if [ -z "$POST" ]; then
+              echo "Kein Post aus dem Diff ableitbar — nichts zu tun."
+              echo "skip=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            echo "Aus dem Diff abgeleitet: $POST"
+          else
+            POST="01-just-think"
+          fi
           WAS="${IN_WAS:-beides}"
           if [ -n "$IN_TEXT" ]; then
             node scripts/adhoc.mjs \
@@ -105,7 +123,7 @@ jobs:
           fi
 
       - name: Bilder generieren
-        if: steps.p.outputs.was != 'nur-slides'
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-slides'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PROMPT_FILE: ${{ steps.p.outputs.file }}
@@ -120,7 +138,7 @@ jobs:
             --only "$IN_ONLY" $ARGS
 
       - name: Bilder gegen die Convention prüfen
-        if: steps.p.outputs.was != 'nur-slides'
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-slides'
         env:
           PROMPT_FILE: ${{ steps.p.outputs.file }}
         run: |
@@ -130,11 +148,11 @@ jobs:
             --branch "$ASSET_BRANCH"
 
       - name: Chromium für das Slide-Rendering
-        if: steps.p.outputs.was != 'nur-bilder'
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
         run: npx playwright install --with-deps chromium
 
       - name: Slides rendern
-        if: steps.p.outputs.was != 'nur-bilder'
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
         env:
           POST: ${{ steps.p.outputs.post }}
           IN_VARIANT: ${{ inputs.bild_variante }}
@@ -145,7 +163,7 @@ jobs:
             --image-variant "$IN_VARIANT"
 
       - name: Slides in die Summary
-        if: steps.p.outputs.was != 'nur-bilder'
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
         env:
           POST: ${{ steps.p.outputs.post }}
         run: |
@@ -161,6 +179,7 @@ jobs:
           fi
 
       - name: Ergebnis pushen
+        if: steps.p.outputs.skip != 'true'
         run: |
           cd assets
           git add -A out
@@ -173,6 +192,7 @@ jobs:
           fi
 
       - name: Download-Paket an den Run hängen
+        if: steps.p.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.p.outputs.post }}-run${{ github.run_number }}
@@ -181,6 +201,7 @@ jobs:
           retention-days: 30
 
       - name: Wo liegt was
+        if: steps.p.outputs.skip != 'true'
         env:
           POST: ${{ steps.p.outputs.post }}
         run: |

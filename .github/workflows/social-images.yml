@@ -93,8 +93,13 @@ jobs:
           if [ -n "$IN_POST" ]; then
             POST="$IN_POST"
           elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            # aus den geaenderten Dateien ableiten, statt blind auf den Default zu fallen
-            POST="$(git diff --name-only "${{ github.event.before }}" "$GITHUB_SHA" 2>/dev/null \
+            # Aus den geaenderten Dateien ableiten, statt blind auf einen Default zu fallen.
+            # Quelle ist der Event-Payload und NICHT git diff: actions/checkout holt per
+            # Default nur einen Commit, damit laesst sich github.event.before nicht
+            # aufloesen und die Ableitung liefe immer ins Leere.
+            CHANGED="$(jq -r '[.commits[]?.added[]?, .commits[]?.modified[]?, .head_commit?.added[]?, .head_commit?.modified[]?] | .[]' \
+                       "$GITHUB_EVENT_PATH" 2>/dev/null | sort -u)"
+            POST="$(printf '%s\n' "$CHANGED" \
                     | sed -n -e 's#^posts/\(.*\)\.json$#\1#p' -e 's#^prompts/post-\(.*\)\.json$#\1#p' \
                     | sort -u | head -1)"
             if [ -z "$POST" ]; then

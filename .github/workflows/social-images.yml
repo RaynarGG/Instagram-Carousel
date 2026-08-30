@@ -85,6 +85,7 @@ jobs:
       - name: Parameter auflösen
         id: p
         env:
+          GH_TOKEN: ${{ github.token }}
           IN_POST: ${{ inputs.post }}
           IN_WAS: ${{ inputs.was }}
           IN_TEXT: ${{ inputs.freitext_prompt }}
@@ -93,21 +94,29 @@ jobs:
           if [ -n "$IN_POST" ]; then
             POST="$IN_POST"
           elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            # Aus den geaenderten Dateien ableiten, statt blind auf einen Default zu fallen.
-            # Quelle ist der Event-Payload und NICHT git diff: actions/checkout holt per
-            # Default nur einen Commit, damit laesst sich github.event.before nicht
-            # aufloesen und die Ableitung liefe immer ins Leere.
-            CHANGED="$(jq -r '[.commits[]?.added[]?, .commits[]?.modified[]?, .head_commit?.added[]?, .head_commit?.modified[]?] | .[]' \
-                       "$GITHUB_EVENT_PATH" 2>/dev/null | sort -u)"
+            # Geaenderte Dateien ueber die API holen, nicht ueber git diff und nicht
+            # ueber den Event-Payload. git diff scheitert, weil actions/checkout nur
+            # einen Commit holt; der Payload hat sich als unzuverlaessig erwiesen
+            # (lieferte leer, obwohl die Datei nachweislich im Commit lag).
+            # Die compare-API deckt den ganzen Push ab, die commits-API den Sonderfall
+            # "neuer Branch", wo es keinen Vorgaenger gibt.
+            BEFORE="${{ github.event.before }}"
+            if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+              API="repos/$GITHUB_REPOSITORY/compare/$BEFORE...$GITHUB_SHA"
+            else
+              API="repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA"
+            fi
+            CHANGED="$(gh api "$API" --jq '.files[].filename' || true)"
+            echo "Geaenderte Dateien:"; printf '  %s\n' $CHANGED
             POST="$(printf '%s\n' "$CHANGED" \
                     | sed -n -e 's#^posts/\(.*\)\.json$#\1#p' -e 's#^prompts/post-\(.*\)\.json$#\1#p' \
                     | sort -u | head -1)"
             if [ -z "$POST" ]; then
-              echo "Kein Post aus dem Diff ableitbar — nichts zu tun."
+              echo "Keine Post- oder Prompt-Datei geaendert — nichts zu tun."
               echo "skip=true" >> $GITHUB_OUTPUT
               exit 0
             fi
-            echo "Aus dem Diff abgeleitet: $POST"
+            echo "Abgeleiteter Post: $POST"
           else
             POST="01-just-think"
           fi

@@ -135,6 +135,12 @@ Default-Werte pro Slide-Typ:
   "headline": ["[50%] BETTER ODDS", "OF [STAYING ALIVE]"] }
 ```
 
+### Das Seitenverhältnis ist nicht verhandelbar
+
+`posts/*.json` steht auf **1080 × 1350 (4:5)**. Nicht auf 3:4 ändern — die
+Instagram-API lehnt 0,75 beim automatischen Veröffentlichen ab. Details im README,
+Abschnitt „Seitenverhältnis". Die Bildprompts bleiben davon unberührt bei `3:4`.
+
 ### Worauf zu achten ist
 
 - **Unterlängen.** `Q`, `(`, `)` stossen in die Zeile darunter. Der Renderer

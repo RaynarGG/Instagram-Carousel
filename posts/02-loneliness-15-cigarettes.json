@@ -5,7 +5,7 @@
   "brand": "PSYCHOLOGY.",
   "kicker": "PSYCHOLOGY",
   "width": 1080,
-  "height": 1440,
+  "height": 1350,
   "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer.",
   "_caption_syntax": "Caption-Formel aus dem Playbook, 6 Bloecke: kern (1-2 Saetze + 2 Emojis) · detail (Zahlen, Namen, Daten) · kontext (was es bedeutet) · frage (an die Leser) · sources (PFLICHT) · hashtags (genau 5). Bloecke mit Leerzeile getrennt posten.",
   "caption": {
@@ -42,7 +42,10 @@
         "Published in **PLOS Medicine**, 2010, pooling **148 studies**",
         "**308,849 people**, each followed until the study ended",
         "One question: does who is around you change **when** you die"
-      ]
+      ],
+      "layout": {
+        "photo": 0.62
+      }
     },
     {
       "n": 3,
@@ -89,5 +92,6 @@
       ],
       "tag": "308,849 PEOPLE SAID SO"
     }
-  ]
+  ],
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-Graph-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 (0.80) bis 1.91:1; 3:4 (0.75) wird abgelehnt. Die generierten Bilder bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab, deshalb wird kein Text beschnitten."
 }

@@ -31,6 +31,9 @@ Kostet nichts und findet kaputtes JSON sowie fehlende Bild-IDs. Jede `image`-Ref
 in `posts/<x>.json` muss eine `id` in der Prompt-Datei treffen.
 
 ## Nicht tun
+- **Das Seitenverhältnis nicht auf 3:4 zurückdrehen.** Slides sind 1080 × 1350 (4:5),
+  weil die Instagram-API nichts Schmaleres als 0,80 automatisch veröffentlicht.
+  Bildprompts bleiben 3:4. Begründung im README.
 - Keine API-Keys in Dateien, Commits oder Prompts. `GEMINI_API_KEY` lebt ausschliesslich
   als GitHub-Secret.
 - Bilder nicht ohne Rückfrage neu generieren — jeder Call kostet Geld.

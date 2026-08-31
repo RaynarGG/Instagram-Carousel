@@ -7,7 +7,7 @@ Regeln für die Bilder: `wsd-social-images` Skill (Format, Schichtaufbau, Archet
 
 ---
 
-## Seitenverhältnis — 4:5, nicht 3:4
+## Seitenverhältnis — 4:5, 
 
 **Die Slides sind 1080 × 1350 (4:5).** Das ist keine Geschmacksfrage, sondern eine
 harte Grenze: die Instagram-Graph-API, über die Buffer automatisch veröffentlicht,
@@ -37,8 +37,7 @@ Deshalb steht in `prompts/*.json` weiter `"aspect_ratio": "3:4"` und in
 
 ## Redaktionelle Haltung
 
-Dieser Kanal ist **Unterhaltung, kein Journal Club**. Die Prioritäten stehen fest und
-gelten für jeden Post:
+Dieser Kanal ist **Unterhaltung, kein Journal Club**. Die Prioritäten sind:
 
 1. **Der Hook gewinnt.** Slide 1 hat genau eine Aufgabe: den Daumen anhalten. Eine
    Formulierung, die zwei Sekunden Nachdenken braucht, hat verloren — auch wenn sie
@@ -46,41 +45,12 @@ gelten für jeden Post:
    des Studienwortlauts.
 2. **Zuspitzen ist erlaubt.** Zahlen dürfen gerundet werden, Effekte scharf formuliert,
    Einschränkungen weggelassen. Es muss **nicht 1 zu 1** dem Abstract entsprechen.
-3. **Die Quelle bleibt trotzdem Pflicht.** Jeder Post hat eine `evidence`-Slide mit
-   Journal, Jahr und Autoren. Das ist nicht verhandelbar.
-
-Die Grenze zwischen 2 und 3: **zuspitzen ja, erfinden nein.** Eine Zahl darf lauter
-klingen, als sie im Abstract steht. Sie darf nicht dastehen, wenn es sie nicht gibt.
-Wer die Studie nachschlägt, muss den Kern wiederfinden — sonst kostet ein einziger
-Kommentar mehr Glaubwürdigkeit, als der Hook an Reichweite gebracht hat.
-
-Deshalb ist die `evidence`-Slide kein Pflichtteil, den man abarbeitet, sondern der
-Grund, warum der zugespitzte Hook überhaupt getragen wird. Ohne Beleg ist der Post
-ein Meme.
+3. **Die Quelle .** Jeder Post hat eine Quelle mit
+   Journal, Jahr und Autoren in der beschreibung
 
 ---
 
-## Einmalig einrichten
-
-1. **API-Key als Secret ablegen.** Zwei Wege, beide funktionieren:
-   - **Environment-Secret** (so ist es aktuell eingerichtet): Settings → Environments →
-     Umgebung `GEMINI_API_KEY` → *Add environment secret*, Name `GEMINI_API_KEY`.
-     Damit der Job das Secret sieht, muss im Workflow `environment: GEMINI_API_KEY` am Job
-     stehen — steht dort. **Environment-Secrets sind für einen Job unsichtbar, der keine
-     `environment:`-Zeile hat.** Das ist der häufigste Grund für „Key ist nicht gesetzt".
-   - **Repository-Secret** (einfacher, ein Konzept weniger): Settings → Secrets and
-     variables → Actions → *New repository secret*, Name `GEMINI_API_KEY`. Dann kann die
-     `environment:`-Zeile im Workflow weg.
-
-   Der Key gehört nirgendwo sonst hin: nicht in eine Datei, nicht in einen Commit, nicht in einen Chat.
-2. Fertig. Der Rest läuft über *Actions*.
-
-> **Öffentlich oder privat?** Bei einem **privaten** Repo funktionieren die
-> `raw.githubusercontent.com`-Links nur, solange du im Browser eingeloggt bist — zum Einbetten
-> irgendwo anders taugen sie dann nicht. Wenn du echte, überall funktionierende Bild-Links
-> willst, muss das Repo **public** sein. Für „am Handy anschauen und speichern" reicht privat.
-
----
+#
 
 ## Vom Handy benutzen
 
@@ -114,7 +84,6 @@ Bild aufs Handy holen: Link aus `LINKS.md` antippen → lange drücken → speic
 
 ---
 
-## Die zwei Dateien, die du bearbeitest
 
 ### `prompts/post-<x>.json` — die Bildprompts
 ```json
@@ -171,21 +140,7 @@ Mit `--strict` (lokal) bricht der Lauf ab.
 
 ---
 
-## Lokal, falls doch mal am Rechner
 
-```bash
-npm install
-setx GEMINI_API_KEY "..."        # Windows, einmalig, danach neue Shell
-
-node scripts/gen-images.mjs --file prompts/post-01-just-think.json --dry-run
-node scripts/gen-images.mjs --only cover
-node scripts/check-images.mjs
-node scripts/render-slides.mjs --post 01-just-think
-```
-
-`--dry-run` zeigt nur, was generiert würde, und kostet nichts.
-
----
 
 ## Kosten im Blick
 

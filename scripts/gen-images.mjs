@@ -78,18 +78,50 @@ async function viaGenerateContent(img) {
   return findB64(await r.json());
 }
 
-// Beide Antwortformen tragen die Bildbytes irgendwo als base64 -> rekursiv suchen.
+// Die ersten Bytes echter Bilddaten. Alles andere ist nicht das Bild, egal wie
+// ueberzeugend es nach base64 aussieht.
+const MAGIC = [
+  ['png',  '89504e47'],
+  ['jpeg', 'ffd8ff'],
+  ['webp', '52494646'],   // RIFF, danach WEBP
+  ['gif',  '47494638'],
+];
+function isImageB64(str) {
+  if (typeof str !== 'string' || str.length < 512) return false;
+  const head = Buffer.from(str.replace(/\s/g, '').slice(0, 32), 'base64').toString('hex');
+  return MAGIC.some(([, sig]) => head.startsWith(sig));
+}
+
+// Beide Antwortformen tragen die Bildbytes als base64, aber an unterschiedlicher
+// Stelle -> erst gezielt an den bekannten Feldern nachsehen, dann als Rueckfall
+// rekursiv suchen. Gegriffen wird nur, was auch wirklich mit einer Bildsignatur
+// beginnt: Gemini-3-Antworten enthalten mit `thoughtSignature` einen langen
+// base64-Token VOR den Bilddaten, und der landete frueher in sharp.
 function findB64(obj) {
   let hit = null;
-  (function walk(o) {
+
+  // 1) die dokumentierten Felder, in der Reihenfolge ihrer Verlaesslichkeit
+  (function targeted(o) {
+    if (hit || !o || typeof o !== 'object') return;
+    for (const [k, v] of Object.entries(o)) {
+      if (hit) return;
+      if ((k === 'inlineData' || k === 'inline_data') && v && isImageB64(v.data)) { hit = v.data; return; }
+      if ((k === 'b64_json' || k === 'imageBytes' || k === 'image_bytes') && isImageB64(v)) { hit = v; return; }
+      if (v && typeof v === 'object') targeted(v);
+    }
+  })(obj);
+
+  // 2) Rueckfall: irgendein Feld, das mit einer echten Bildsignatur beginnt
+  if (!hit) (function walk(o) {
     if (hit || !o || typeof o !== 'object') return;
     for (const v of Object.values(o)) {
       if (hit) return;
-      if (typeof v === 'string' && v.length > 5000 && /^[A-Za-z0-9+/=\s]+$/.test(v.slice(0, 200))) { hit = v; return; }
+      if (isImageB64(v)) { hit = v; return; }
       if (v && typeof v === 'object') walk(v);
     }
   })(obj);
-  if (!hit) throw new Error('Keine Bilddaten in der Antwort gefunden.');
+
+  if (!hit) throw new Error('Keine Bilddaten in der Antwort gefunden. (Antwort enthielt keinen base64-Block mit PNG/JPEG/WebP-Signatur.)');
   return hit.replace(/\s/g, '');
 }
 

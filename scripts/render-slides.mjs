@@ -108,19 +108,26 @@ const LAYOUT = {
   cta:      { photo: 1.00, headMax: 0.28 },
 };
 
+// gen-images.mjs schreibt .jpeg, frueher war es .png — beides akzeptieren,
+// sonst rendert die Slide "BILD FEHLT", obwohl das Bild danebenliegt.
+const IMG_EXT = /\.(jpe?g|png|webp)$/i;
+
 async function findImage(id) {
   if (!id) return null;
   const wanted = VARIANT ? id.replace(/[ab]$/, VARIANT) : id;
   for (const dir of [path.join(imgDir, '1080'), imgDir]) {
     if (!await exists(dir)) continue;
     for (const f of await fs.readdir(dir)) {
-      if (f.startsWith(`${wanted}-`) && f.endsWith('.png')) return path.join(dir, f);
+      if (f.startsWith(`${wanted}-`) && IMG_EXT.test(f)) return path.join(dir, f);
     }
   }
   return null;
 }
 async function dataUri(file) {
-  return `data:image/png;base64,${(await fs.readFile(file)).toString('base64')}`;
+  const mime = /\.png$/i.test(file) ? 'image/png'
+             : /\.webp$/i.test(file) ? 'image/webp'
+             : 'image/jpeg';
+  return `data:${mime};base64,${(await fs.readFile(file)).toString('base64')}`;
 }
 
 const CSS = `

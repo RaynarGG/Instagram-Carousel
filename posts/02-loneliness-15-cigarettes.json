@@ -6,7 +6,7 @@
   "kicker": "PSYCHOLOGY",
   "width": 1080,
   "height": 1350,
-  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag; du bestimmst den Umbruch, nicht der Renderer. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
   "_caption_syntax": "Caption-Formel aus dem Playbook, 6 Bloecke: kern (1-2 Saetze + 2 Emojis) · detail (Zahlen, Namen, Daten) · kontext (was es bedeutet) · frage (an die Leser) · sources (PFLICHT) · hashtags (genau 5). Bloecke mit Leerzeile getrennt posten.",
   "caption": {
     "kern": "Loneliness doesn't just feel bad. It shows up in mortality data — at roughly the scale of smoking 15 cigarettes a day. 🚬💔",
@@ -26,7 +26,8 @@
         "[15 CIGARETTES] A DAY"
       ],
       "sub": "308,849 PEOPLE. ONE VERY UNCOMFORTABLE FINDING.",
-      "micro": "SWIPE FOR MORE"
+      "micro": "SWIPE FOR MORE",
+      "alt": "Dark apartment at night. A lone figure stands at a window smoking, seen from behind, with a city of lit windows outside. Headline: Loneliness = 15 cigarettes a day."
     },
     {
       "n": 2,
@@ -45,7 +46,8 @@
       ],
       "layout": {
         "photo": 0.62
-      }
+      },
+      "alt": "A dark archive hall of filing cabinets with one drawer lit. Headline: The largest study on being alone, with bullet points on the 2010 PLOS Medicine meta-analysis."
     },
     {
       "n": 3,
@@ -56,7 +58,8 @@
         "[50%] BETTER ODDS",
         "OF [STAYING ALIVE]"
       ],
-      "body": "That is the whole intervention. Having people. [Odds ratio 1.50] across all 148 studies."
+      "body": "That is the whole intervention. Having people. [Odds ratio 1.50] across all 148 studies.",
+      "alt": "A long dining table under a warm lamp, one half used and one half with stacked chairs. Headline: 50% better odds of staying alive."
     },
     {
       "n": 4,
@@ -68,7 +71,8 @@
         "title": "Social relationships and mortality risk",
         "authors": "A meta-analytic review · Holt-Lunstad, Smith & Layton · e1000316"
       },
-      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT"
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: PLOS Medicine, volume 7, issue 7, July 2010, Social relationships and mortality risk by Holt-Lunstad, Smith and Layton."
     },
     {
       "n": 5,
@@ -79,7 +83,8 @@
         "IT OUTRANKED [MOVING]",
         "IT OUTRANKED [BEING THIN]"
       ],
-      "body": "The effect was larger than physical inactivity and obesity. [Nobody sells that as a health tip.]"
+      "body": "The effect was larger than physical inactivity and obesity. [Nobody sells that as a health tip.]",
+      "alt": "One room split in two: a treadmill and scale in cold light on the left, two people at a table under a warm lamp on the right. Headline: It outranked moving, it outranked being thin."
     },
     {
       "n": 6,
@@ -90,7 +95,8 @@
         "[FINDINGS] FROM THE",
         "[WORLD OF PSYCHOLOGY]"
       ],
-      "tag": "308,849 PEOPLE SAID SO"
+      "tag": "308,849 PEOPLE SAID SO",
+      "alt": "A wooden table in warm morning light with two steaming cups and two chairs pulled out. Headline: We share daily findings from the world of psychology."
     }
   ],
   "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-Graph-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 (0.80) bis 1.91:1; 3:4 (0.75) wird abgelehnt. Die generierten Bilder bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab, deshalb wird kein Text beschnitten."

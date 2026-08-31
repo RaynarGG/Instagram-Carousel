@@ -144,6 +144,10 @@ Bild aufs Handy holen: Link aus `LINKS.md` antippen → lange drücken → speic
 - `**Doppelsternchen**` = fett (nur in Bullets)
 - `type`: `cover` · `facts` (Headline + Bullets) · `stat` (Headline + eine Zeile) ·
   `evidence` (Quellenblock) · `cta`
+- **Anzahl: drei bis sieben Slides.** Pflicht sind `cover`, `evidence` und `cta`;
+  `facts` und `stat` so oft dazwischen, wie das Thema trägt. Eine Zahl trägt drei
+  bis vier Slides, eine Geschichte sechs bis sieben.
+- `alt` pro Slide: ein Satz, Motiv plus Headline — Buffer verlangt ihn beim Upload
 - `image` zeigt auf eine `id` aus der Prompt-Datei
 
 Beides ist am Handy im GitHub-Web-Editor bearbeitbar — bei JSON aufpassen, dass Kommas

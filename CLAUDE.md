@@ -2,13 +2,14 @@
 
 ## Was hier gebaut wird
 Instagram-Karussells für den Psychology-Account. Pro Post zwei Dateien:
-`posts/<x>.json` (die sechs Slides) und `prompts/post-<x>.json` (die Bildprompts).
+`posts/<x>.json` (die Slides, drei bis sieben) und `prompts/post-<x>.json`
+(die Bildprompts, eines pro Slide).
 Aufbau, Felder und Syntax stehen im README.
 
 ## Täglicher Ablauf
 Wenn ein neuer Post gebaut werden soll: **`docs/TAGESABLAUF.md`** ist die
 Arbeitsanweisung. Vier Schritte, nach jedem wird gestoppt und gefragt —
-Thema · Hook · restliche Slides und Caption · Bildideen. Nicht weiterbauen,
+Thema · Texte · Rendering · Bildideen. Nicht weiterbauen,
 bevor der Schritt freigegeben ist.
 
 ## Vor jedem Post lesen

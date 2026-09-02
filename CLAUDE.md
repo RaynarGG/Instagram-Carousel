@@ -15,7 +15,8 @@ bevor der Schritt freigegeben ist.
 ## Vor jedem Post lesen
 - **`README.md` → „Redaktionelle Haltung"** — die Tonalität. Kurzfassung: Unterhaltung
   vor Präzision, der Hook gewinnt im Zweifel, zuspitzen ist erlaubt, **erfinden nicht**,
-  und die `evidence`-Slide mit Journal, Jahr und Autoren ist in jedem Post Pflicht.
+  und die Quelle steht in der **Caption**: die `Sources:`-Zeile mit Journal, Jahr
+  und Autoren ist in jedem Post Pflicht. Eine `evidence`-Slide ist optional.
 - **Skill `wsd-social-images`** — Bildformat, Schichtaufbau, die vier Archetypen,
   die Sieben-Block-Prompt-Formel. Kein Prompt ohne warme Amber-Lichtquelle und
   ohne schwarze Fusszone.

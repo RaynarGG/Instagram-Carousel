@@ -104,12 +104,18 @@ Aussage**, noch nicht darum, wie sie sitzt.
 
 Pflicht in jedem Post:
 - **`cover`** — der Hook
-- **`evidence`** — Journal, Jahr, Autoren. Der Glaubwürdigkeitsanker.
 - **`cta`** — Positionierungs-Aussage, keine Aufforderung
+
+Die **Quelle steht in der Caption**, nicht auf einer Slide. Die `Sources:`-Zeile
+mit Journal, Jahr und Autoren ist in jedem Post Pflicht — sie ist der Beleg.
+Eine `evidence`-Slide ist **optional**: nimm sie, wenn der Beleg selbst
+sehenswert ist (ein markiertes Paper, ein Screenshot), sonst spar dir die Slide
+und nutz den Platz für Inhalt.
 
 Dazwischen, so viele wie das Thema trägt:
 - **`facts`** — Headline plus Bullets, der Informationsträger
 - **`stat`** — Headline plus eine Zeile, für die grosse Zahl
+- **`evidence`** — der Quellenblock, wenn er als Slide etwas beiträgt
 
 Faustregel: **eine Zahl trägt drei bis vier Slides, eine Geschichte trägt sechs
 bis sieben.** Lieber vier starke als sieben mit Füllmaterial. Wenn eine Slide nur
@@ -124,7 +130,8 @@ wiederholt, was die vorige schon gesagt hat, gehört sie raus.
 - Slide 2 ist ein **neuer, engerer Hook** — nie eine Wiederholung des Covers
 - `cta`: **App-Hinweis nur bei etwa jedem dritten Post**, sonst kippt es ins Werbliche
 - `caption` nach der 6-Block-Formel: kern · detail · kontext · frage ·
-  **sources** · genau 5 Hashtags
+  **sources** · genau 5 Hashtags. Die `Sources:`-Zeile ist der Beleg des Posts
+  und damit **nicht verhandelbar** — sie trägt Journal, Jahr und Autoren.
 - **`alt` pro Slide** — ein Satz, Motiv plus Headline. Buffer verlangt ihn später;
   wer ihn hier nicht schreibt, erfindet ihn am Ende neu.
 

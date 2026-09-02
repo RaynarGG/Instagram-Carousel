@@ -2,8 +2,9 @@
 
 ## Was hier gebaut wird
 Instagram-Karussells für den Psychology-Account. Pro Post zwei Dateien:
-`posts/<x>.json` (die Slides, drei bis sieben) und `prompts/post-<x>.json`
-(die Bildprompts, eines pro Slide).
+`posts/<x>.json` (die Slides) und `prompts/post-<x>.json` (die Bildprompts,
+eines pro Slide). Keine feste Slide-Anzahl und keine vorgeschriebene Abfolge —
+der Post soll verständlich sein und unterhalten, alles andere folgt daraus.
 Aufbau, Felder und Syntax stehen im README.
 
 ## Täglicher Ablauf

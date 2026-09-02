@@ -113,9 +113,11 @@ Bild aufs Handy holen: Link aus `LINKS.md` antippen → lange drücken → speic
 - `**Doppelsternchen**` = fett (nur in Bullets)
 - `type`: `cover` · `facts` (Headline + Bullets) · `stat` (Headline + eine Zeile) ·
   `evidence` (Quellenblock) · `cta`
-- **Anzahl: drei bis sieben Slides.** Pflicht sind `cover`, `evidence` und `cta`;
-  `facts` und `stat` so oft dazwischen, wie das Thema trägt. Eine Zahl trägt drei
-  bis vier Slides, eine Geschichte sechs bis sieben.
+- **Die `type`-Werte sind Layouts, keine Dramaturgie-Vorschrift.** Sie sagen, wie
+  eine Slide gesetzt wird, nicht welche vorkommen muss. Es gibt keine Pflichtabfolge
+  und keine feste Anzahl — nimm so viele Slides, wie der Post braucht, um
+  verständlich zu sein und zu unterhalten. Drei können reichen, sieben sind das
+  sinnvolle Maximum, bevor der Swipe abbricht.
 - `alt` pro Slide: ein Satz, Motiv plus Headline — Buffer verlangt ihn beim Upload
 - `image` zeigt auf eine `id` aus der Prompt-Datei
 

@@ -98,28 +98,35 @@ Vier Kandidaten. Jeder braucht:
 Erst der Hook, dann die übrigen Slides und die Caption. Hier geht es **nur um die
 Aussage**, noch nicht darum, wie sie sitzt.
 
-### Wie viele Slides
+### Aufbau und Länge
 
-**Drei bis sieben.** Die Länge folgt dem Thema, nicht einem Schema.
+**Es gibt keine vorgeschriebene Abfolge und keine feste Slide-Anzahl.** Der Post
+hat zwei Aufgaben: verständlich sein und unterhalten. Alles andere folgt daraus.
 
-Pflicht in jedem Post:
-- **`cover`** — der Hook
-- **`cta`** — Positionierungs-Aussage, keine Aufforderung
+Die `type`-Werte sind **Layouts**, keine Dramaturgie:
 
-Die **Quelle steht in der Caption**, nicht auf einer Slide. Die `Sources:`-Zeile
-mit Journal, Jahr und Autoren ist in jedem Post Pflicht — sie ist der Beleg.
-Eine `evidence`-Slide ist **optional**: nimm sie, wenn der Beleg selbst
-sehenswert ist (ein markiertes Paper, ein Screenshot), sonst spar dir die Slide
-und nutz den Platz für Inhalt.
+| Typ | Was er kann |
+|---|---|
+| `cover` | grosse Headline, Subline, Micro-Zeile |
+| `facts` | Headline plus Bullets — für mehrere Punkte |
+| `stat` | Headline plus eine Zeile — für die eine grosse Zahl |
+| `evidence` | Quellenblock mit Eyebrow, Titel, Autoren |
+| `cta` | Headline plus Tag-Zeile |
 
-Dazwischen, so viele wie das Thema trägt:
-- **`facts`** — Headline plus Bullets, der Informationsträger
-- **`stat`** — Headline plus eine Zeile, für die grosse Zahl
-- **`evidence`** — der Quellenblock, wenn er als Slide etwas beiträgt
+Mehr kann der Renderer nicht, weniger braucht er nicht. Welche davon in welcher
+Reihenfolge vorkommen, entscheidet das Thema.
 
-Faustregel: **eine Zahl trägt drei bis vier Slides, eine Geschichte trägt sechs
-bis sieben.** Lieber vier starke als sieben mit Füllmaterial. Wenn eine Slide nur
-wiederholt, was die vorige schon gesagt hat, gehört sie raus.
+**Woran du die Länge misst:** so viele Slides, wie der Post braucht — drei können
+reichen, sieben sind das sinnvolle Maximum, bevor der Swipe abbricht. Eine Slide,
+die nur wiederholt, was die vorige schon gesagt hat, gehört raus. Eine Slide, die
+eine offene Frage beantwortet, gehört rein.
+
+**Was trotzdem gilt:**
+- Slide 1 ist der Hook. Er hat eine Aufgabe: den Daumen anhalten.
+- Die **Quelle steht in der Caption** — die `Sources:`-Zeile mit Journal, Jahr und
+  Autoren ist nicht verhandelbar. Eine `evidence`-Slide ist optional und nur dann
+  sinnvoll, wenn der Beleg selbst sehenswert ist.
+- Am Ende eine ruhige Positionierungs-Aussage statt einer Aufforderung.
 
 ### Regeln für die Texte
 

@@ -131,6 +131,14 @@ jobs:
             echo "post=99-adhoc"            >> $GITHUB_OUTPUT
             echo "was=nur-bilder"           >> $GITHUB_OUTPUT
           else
+            # Die Texte eines Posts werden freigegeben, bevor die Bildprompts
+            # entstehen — dann gibt es posts/<x>.json schon, prompts/post-<x>.json
+            # noch nicht. Ohne diesen Fall stuerzt gen-images ab und der Lauf wird
+            # rot, obwohl nichts kaputt ist. Also: Slides rendern, Bilder auslassen.
+            if [ ! -f "prompts/post-$POST.json" ]; then
+              echo "prompts/post-$POST.json fehlt noch — nur Slides, keine Bilder."
+              WAS="nur-slides"
+            fi
             echo "file=prompts/post-$POST.json" >> $GITHUB_OUTPUT
             echo "post=$POST"                   >> $GITHUB_OUTPUT
             echo "was=$WAS"                     >> $GITHUB_OUTPUT

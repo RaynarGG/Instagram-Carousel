@@ -1,10 +1,11 @@
 # Arbeitsanweisung für dieses Repo
 
 ## Was hier gebaut wird
-Instagram-Karussells für den Psychology-Account. Pro Post zwei Dateien:
+Instagram-Karussells für den Psychology-Account. Ziel: Spannende, Unterhaltsamme und verständliche Posts. Pro Post zwei Dateien:
 `posts/<x>.json` (die Slides, drei bis sieben) und `prompts/post-<x>.json`
 (die Bildprompts, eines pro Slide).
 Aufbau, Felder und Syntax stehen im README.
+Dir renderer und die bd generation in diesem repo kann je nach post erweitert werden um z.b. texte und bilder auf heder slide wie gewünscht zu platzieren.
 
 ## Täglicher Ablauf
 Wenn ein neuer Post gebaut werden soll: **`docs/TAGESABLAUF.md`** ist die

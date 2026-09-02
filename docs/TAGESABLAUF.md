@@ -3,6 +3,46 @@
 Arbeitsanweisung für die Session, die montags und freitags läuft. So geschrieben,
 dass sie ohne Vorwissen abgearbeitet werden kann.
 
+## Wo das läuft — und warum nicht in einer frischen Session
+
+Die Routine ist an **eine bestehende Session gebunden** (`persistent_session_id`),
+nicht auf „bei jedem Feuern eine neue Session" gestellt. Das ist kein Detail,
+sondern die Voraussetzung dafür, dass der Ablauf überhaupt funktioniert.
+
+Der erste Versuch lief mit `create_new_session_on_fire`. Die so gestarteten
+Sessions kamen mit **zwei** fehlenden Dingen hoch:
+
+| | frische Session | gebundene Session |
+|---|---|---|
+| Repo (`sources`) | leer | ausgecheckt, mit Push-Recht |
+| MCP-Server | keine | github, Buffer |
+
+Ohne Repo kein Commit und kein Push. Ohne MCP kein Buffer-Entwurf. Der Lauf
+scheitert also zwangsläufig — und zwar erst am Ende, nachdem die teure Recherche
+schon gelaufen ist. Der Testlauf hat auf diese Weise 12,92 $ verbrannt, ohne ein
+einziges verwertbares Ergebnis.
+
+**Beim Anlegen eines Triggers erscheint eine Warnung**, dass keine Connectors
+mitgegeben werden. Die ist ernst zu nehmen. Bei einer gebundenen Session ist sie
+gegenstandslos, weil in eine Unterhaltung gefeuert wird, die ihre Werkzeuge schon
+hat.
+
+Zwei Folgen, die man kennen muss:
+
+- **Das Modell der Routine lässt sich nicht frei wählen.** Eine gebundene Session
+  behält ihr eigenes Modell. Der `model`-Parameter am Trigger greift nur bei
+  frischen Sessions.
+- **Die Bindung hängt an dieser einen Session.** Wird sie archiviert, feuert die
+  Routine ins Leere. Dann eine neue Session mit dem Repo öffnen und den Trigger
+  mit deren ID neu anlegen.
+
+Wer den Weg über frische Sessions doch will, muss das Repo am **Environment**
+hinterlegen — nicht am Trigger. Ein `source_url` beim Anlegen einer Session per
+`create_session` funktioniert nachweislich; ein Trigger kennt diesen Parameter
+aber nicht.
+
+---
+
 ## Grundregel
 
 **Nach jedem der vier Schritte wird gestoppt und gefragt.** Nicht weiterbauen,

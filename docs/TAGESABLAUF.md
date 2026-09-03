@@ -77,7 +77,7 @@ Letzte slide Abschluss slide mit formierungen wie "wir posten Wöchentlich psych
 ### Regeln für die Texte
 
 - **konkret = Akzent** (`[Klammern]`) — Zahlen, Namen, Substantive
-- **verbindend = weiss** — Präpositionen, Füllwörter
+- **verbindend = weiss** — Präpositionen, Füllwörter, Verben
 - **keine Zeile einfarbig**, sonst zieht das Auge nicht weiter
 - die Headline ist die ganze Nachricht, kein Teaser, keine Frage
 - Slide 2 ist ein **neuer, engerer Hook** — nie eine Wiederholung des Covers

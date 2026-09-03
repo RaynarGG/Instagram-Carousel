@@ -10,13 +10,10 @@ bevor der Schritt freigegeben ist.
 
 | | Freigabe | Was geprüft wird |
 |---|---|---|
-| 1 | Thema | die Aussage und die Quelle |
+| 1 | Thema | die Aussage und die Hook |
 | 2 | Texte | Hook, alle Slides, Caption — **was** dasteht |
 | 3 | Rendering | **wie** es auf der Fläche sitzt: Position, Verteilung, Umbruch |
-| 4 | Bildideen | ein Satz pro Bild |
-
-Die Trennung von 2 und 3 ist Absicht: erst muss die Aussage stimmen, danach sitzt
-sie richtig. Schritt 3 kostet nichts — er läuft ohne generierte Bilder.
+| 4 | Bildideen | nur Idee nicht der fertige prompt |
 
 Der Nutzer liest das **am Handy**. Jede Frage kurz halten: keine Absätze zum
 Scrollen, keine Volltext-Prompts, keine langen Tabellen. Für Fragen
@@ -57,28 +54,30 @@ Vier Kandidaten. Jeder braucht:
 
 Erst der Hook, dann die übrigen Slides und die Caption. Hier geht es **nur um die
 Aussage**, noch nicht darum, wie sie sitzt.
+Spannung aufbauen mit Rehooks, verständliche aussagen, und interessante kirze erklärungen. 
 
 ### Wie viele Slides
 
-**Drei bis sieben.** Die Länge folgt dem Thema, nicht einem Schema.
+ca. Drei bis sieben. Die Länge folgt dem Thema, nicht einem Schema.
 
 Pflicht in jedem Post:
 - **`cover`** — der Hook
-- **`evidence`** — Journal, Jahr, Autoren. Der Glaubwürdigkeitsanker.
 - **`cta`** — Positionierungs-Aussage, keine Aufforderung
 
 Dazwischen, so viele wie das Thema trägt:
-- **`facts`** — Headline plus Bullets, der Informationsträger
-- **`stat`** — Headline plus eine Zeile, für die grosse Zahl
+- **`facts`** — Headline plus Bullets oder text der näher erklärt. der Informationsträger
+- **`stat`** — Headline mit einer großen zahl und Eye catching image
 
 Faustregel: **eine Zahl trägt drei bis vier Slides, eine Geschichte trägt sechs
 bis sieben.** Lieber vier starke als sieben mit Füllmaterial. Wenn eine Slide nur
 wiederholt, was die vorige schon gesagt hat, gehört sie raus.
 
+Letzte slide Abschluss slide mit formierungen wie "wir posten Wöchentlich psychology facts" - irgendwas um die leute zum folgen zu bewegen.  
+
 ### Regeln für die Texte
 
 - **konkret = Akzent** (`[Klammern]`) — Zahlen, Namen, Substantive
-- **verbindend = weiss** — Verben, Präpositionen, Füllwörter
+- **verbindend = weiss** — Präpositionen, Füllwörter
 - **keine Zeile einfarbig**, sonst zieht das Auge nicht weiter
 - die Headline ist die ganze Nachricht, kein Teaser, keine Frage
 - Slide 2 ist ein **neuer, engerer Hook** — nie eine Wiederholung des Covers
@@ -88,7 +87,7 @@ wiederholt, was die vorige schon gesagt hat, gehört sie raus.
 - **`alt` pro Slide** — ein Satz, Motiv plus Headline. Buffer verlangt ihn später;
   wer ihn hier nicht schreibt, erfindet ihn am Ende neu.
 
-**→ FRAGEN: Texte so?** Hook mit drei bis vier Varianten zur Auswahl, der Rest
+**→ FRAGEN: Texte so?** starke hook fals unsicher 1-3 varianten vorschlagen, der Rest
 als kurze Liste. Noch nichts rendern.
 
 ---
@@ -144,7 +143,7 @@ leeres Band zwischen Bild und Headline stehen.
 - **Zu volle oder zu leere Textzone.** Zeilen anders umbrechen.
 
 **→ FRAGEN: sitzt der Text so?** Bei Beanstandungen nachjustieren und erneut zeigen.
-
+Die text rendering pipline darf bei neuen Ideen und anordnungen auch umgeschrieben/ erweitert werden.
 ---
 
 ## Schritt 4 · Bildideen
@@ -153,16 +152,9 @@ leeres Band zwischen Bild und Headline stehen.
 b-Varianten sind Alternativen und werden nur nachgelegt, wenn ein Bild danebengeht
 — sie kosten sonst nur Geld.
 
-Jeder Prompt nach der Sieben-Block-Formel, **immer** mit warmer Amber-Lichtquelle
-und schwarzer Fusszone in den unteren 40 %.
+Jeder Prompt nach der Sieben-Block-Formel, **
+und schwarzer Fusszone in den unteren 
 
-Das Bild darf die Headline **nicht bebildern**. Es zeigt den Ort, an dem es
-passiert ist — leerer, grösser oder unheimlicher als erwartet.
-
-**Keine benannte reale Person generieren.** Wird eine konkrete Person behauptet,
-braucht es ein echtes Foto; ein generiertes Porträt behauptet etwas über einen
-echten Menschen. Gesichter abwenden, Negativliste um `no recognisable face,
-not a celebrity, no identifiable person` ergänzen.
 
 **→ FRAGEN: Bildideen so?** Ein Satz pro Bild, nicht der Volltext-Prompt.
 

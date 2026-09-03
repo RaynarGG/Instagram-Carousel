@@ -18,41 +18,73 @@
   },
   "slides": [
     {
-      "n": 1, "type": "cover", "image": "s1a",
-      "headline": ["[PLACEBO] WORKS EVEN", "WHEN YOU [KNOW]", "IT IS [ONE]"],
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[PLACEBO] WORKS EVEN",
+        "WHEN YOU [KNOW]",
+        "IT IS [ONE]"
+      ],
       "sub": "80 PATIENTS. NOBODY WAS DECEIVED.",
       "micro": "SWIPE FOR MORE",
-      "alt": "A prescription bottle on a clinic desk, its label clearly reading placebo, lit by a warm desk lamp. Headline: Placebo works even when you know it is one."
+      "alt": "A single large capsule pill floats in dark void, cracked open at the seam with only fine dust drifting out instead of medicine, thin arcs of light circling it. Headline: Placebo works even when you know it is one."
     },
     {
-      "n": 2, "type": "facts", "image": "s2a", "kicker": "",
-      "layout": { "photo": 0.62 },
-      "headline": ["INSIDE THE [HONEST]", "[PLACEBO] TRIAL"],
+      "n": 2,
+      "type": "facts",
+      "image": "s2a",
+      "kicker": "",
+      "layout": {
+        "photo": 0.62
+      },
+      "headline": [
+        "INSIDE THE [HONEST]",
+        "[PLACEBO] TRIAL"
+      ],
       "bullets": [
         "Ted Kaptchuk's team at **Harvard Medical School**",
         "**80 people** with irritable bowel syndrome, 2010",
         "The bottle was labelled **placebo pills**",
         "They were told plainly: **no active ingredient**"
       ],
-      "alt": "An empty clinical consulting room with two chairs and a desk under cold light, one warm lamp in the corner. Headline: Inside the honest placebo trial."
+      "alt": "An empty clinical consulting room with two worn chairs facing each other and a small side table between them, lit by one warm desk lamp against cold overhead light. Headline: Inside the honest placebo trial."
     },
     {
-      "n": 3, "type": "stat", "image": "s3a", "kicker": "",
-      "headline": ["THE [SUGAR PILLS] BEAT", "GETTING [NO TREATMENT]"],
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "THE [SUGAR PILLS] BEAT",
+        "GETTING [NO TREATMENT]"
+      ],
       "body": "IBS Global Improvement Scale at day 21: [5.0 against 3.9]. Same doctors, same attention, one bottle of nothing.",
-      "alt": "Two identical pill bottles side by side on a dark surface, one open and half empty, one sealed and full. Headline: The sugar pills beat getting no treatment."
+      "alt": "Two prescription bottles side by side on a wooden desk, one sealed and full in shadow, one open and half empty catching warm lamplight, loose capsules scattered nearby. Headline: The sugar pills beat getting no treatment."
     },
     {
-      "n": 4, "type": "stat", "image": "s4a", "kicker": "",
-      "headline": ["IT WAS NEVER [THE LIE]", "IT WAS THE [RITUAL]"],
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "IT WAS NEVER [THE LIE]",
+        "IT WAS THE [RITUAL]"
+      ],
       "body": "A diagnosis, a bottle, a routine, and someone who [takes you seriously].",
-      "alt": "A pair of hands on a consulting room table, one holding a pill bottle, warm lamplight across the wood. Headline: It was never the lie, it was the ritual."
+      "alt": "A close view of a hand bringing a capsule pill to the mouth with a glass of water in the foreground, warm morning light, head cropped by the frame. Headline: It was never the lie, it was the ritual."
     },
     {
-      "n": 5, "type": "cta", "image": "s5a",
-      "headline": ["WE SHARE [DAILY]", "[FINDINGS] FROM THE", "[WORLD OF PSYCHOLOGY]"],
+      "n": 5,
+      "type": "cta",
+      "image": "s5a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
       "tag": "THE PILL WAS EMPTY. THE EFFECT WAS NOT.",
-      "alt": "A kitchen table in warm morning light with a glass of water and an open notebook. Headline: We share daily findings from the world of psychology."
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
     }
   ]
 }

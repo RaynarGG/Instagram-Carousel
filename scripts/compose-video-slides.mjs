@@ -58,9 +58,15 @@ async function probeDuration(file) {
 
 for (const s of manifest.slides) {
   const out = path.join(slidesDir, `slide-${String(s.n).padStart(2, '0')}.mp4`);
+  // crop OHNE x:y schneidet ffmpeg-seitig zentriert — das kappt bei einem
+  // 9:16-Clip in einer flachen Foto-Box genau die Bildspitze (hier: die
+  // Flammenspitze), weil das Hauptmotiv bei diesem Bildstil laut
+  // wsd-social-images "die oberen zwei Drittel" fuellt. Explizit oben
+  // ansetzen (x:0 y:0), wie normalise() in gen-images.mjs es fuer Standbilder
+  // schon macht — verifiziert per echtem Frame-Vergleich (Post 04 / s4a).
   const filter =
     `[1:v]scale=w=${W}:h=${s.photoPx}:force_original_aspect_ratio=increase,` +
-    `crop=${W}:${s.photoPx},pad=${W}:${H}:0:0:black[bg];[bg][0:v]overlay=0:0:format=auto[out]`;
+    `crop=${W}:${s.photoPx}:0:0,pad=${W}:${H}:0:0:black[bg];[bg][0:v]overlay=0:0:format=auto[out]`;
   const duration = DRY ? null : await probeDuration(s.video);
   const cmd = ['-y', '-loop', '1', '-i', s.overlay, '-i', s.video,
     '-filter_complex', filter, '-map', '[out]',

@@ -206,6 +206,17 @@ jobs:
             --out assets/out \
             --image-variant "$IN_VARIANT"
 
+      # No-op fuer jeden Post ohne Video (die weit ueberwiegende Mehrheit) —
+      # das Skript prueft selbst, ob es fuer diesen Post etwas zu tun gibt.
+      - name: Video-Slides komponieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
+        env:
+          POST: ${{ steps.p.outputs.post }}
+        run: |
+          node scripts/compose-video-slides.mjs \
+            --post "$POST" \
+            --out assets/out
+
       - name: Slides in die Summary
         if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
         env:

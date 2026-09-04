@@ -29,9 +29,12 @@ const DRY     = flag('dry-run');
 const outDir = path.join(OUTROOT, POST);
 const manifestFile = path.join(outDir, 'video-manifest.json');
 
+// Fehlt fuer die meisten Posts (keine ohne Video) — kein Fehler, sondern der
+// Normalfall. Die Datei existiert nur, wenn render-slides.mjs mindestens ein
+// Slide mit generiertem Video gefunden hat.
 if (!await exists(manifestFile)) {
-  console.error(`${manifestFile} fehlt — erst render-slides.mjs laufen lassen (das schreibt die Manifest-Datei nur, wenn mindestens ein Slide ein Video hat).`);
-  process.exit(1);
+  console.log(`${manifestFile} nicht vorhanden — kein Slide mit Video in diesem Post, nichts zu tun.`);
+  process.exit(0);
 }
 const manifest = JSON.parse(await fs.readFile(manifestFile, 'utf8'));
 if (!manifest.slides.length) {

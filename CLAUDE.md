@@ -33,6 +33,15 @@ node scripts/gen-images.mjs --file prompts/post-<x>.json --dry-run
 Kostet nichts und findet kaputtes JSON sowie fehlende Bild-IDs. Jede `image`-Referenz
 in `posts/<x>.json` muss eine `id` in der Prompt-Datei treffen.
 
+## Video-Clips (optional, pro Bild)
+Ein `images[]`-Eintrag kann einen `video`-Block bekommen (Feld `motion_prompt`
+Pflicht, Rest hat Defaults — siehe `scripts/gen-video.mjs`). Erzeugt per
+Image-to-Video (Veo) einen ~8s-Clip aus dem bereits generierten Standbild.
+Läuft nur im Workflow mit explizit gesetztem `mit_video`-Haken, nie automatisch.
+**Ungetestet gegen die echte API** — vor dem ersten Einsatz einen einzelnen
+`--only`-Testlauf machen und das Ergebnis prüfen. Text wird nicht automatisch
+überlagert, das bleibt manuell (siehe `wsd-social-images/SKILL.md` §5).
+
 ## Nicht tun
 - **Das Seitenverhältnis nicht auf 3:4 zurückdrehen.** Slides sind 1080 × 1350 (4:5),
   weil die Instagram-API nichts Schmaleres als 0,80 automatisch veröffentlicht.
@@ -40,3 +49,4 @@ in `posts/<x>.json` muss eine `id` in der Prompt-Datei treffen.
 - Keine API-Keys in Dateien, Commits oder Prompts. `GEMINI_API_KEY` lebt ausschliesslich
   als GitHub-Secret.
 - Bilder nicht ohne Rückfrage neu generieren — jeder Call kostet Geld.
+  Videos erst recht nicht — ein Clip kostet ein Vielfaches eines Bildes.

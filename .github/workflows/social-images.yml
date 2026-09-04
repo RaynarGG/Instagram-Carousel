@@ -27,6 +27,10 @@ on:
         description: "Vorhandene Bilder überschreiben"
         type: boolean
         default: false
+      mit_video:
+        description: "Auch Video-Clips generieren (Veo, kostet deutlich mehr als ein Bild — nur mit Rückfrage anhaken)"
+        type: boolean
+        default: false
       freitext_prompt:
         description: "Nur ein Bild aus Freitext (überschreibt post/only). Motiv beschreiben, Rest wird ergänzt."
         default: ""
@@ -168,6 +172,24 @@ jobs:
             --file "$PROMPT_FILE" \
             --out assets/out \
             --branch "$ASSET_BRANCH"
+
+      # Braucht die Standbilder aus dem vorherigen Schritt (Image-to-Video) —
+      # nur mit explizitem Haken "mit_video", weil ein Clip deutlich mehr
+      # kostet als ein einzelnes Bild.
+      - name: Video-Clips generieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-slides' && inputs.mit_video == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PROMPT_FILE: ${{ steps.p.outputs.file }}
+          IN_ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.neu_generieren }}
+        run: |
+          ARGS=""
+          [ "$FORCE" = "true" ] && ARGS="--force"
+          node scripts/gen-video.mjs \
+            --file "$PROMPT_FILE" \
+            --out assets/out \
+            --only "$IN_ONLY" $ARGS
 
       - name: Chromium für das Slide-Rendering
         if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'

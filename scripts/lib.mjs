@@ -9,6 +9,7 @@ export async function readPromptFile(file) {
   if (!raw.post) throw new Error(`${file}: Feld "post" fehlt`);
   if (!Array.isArray(raw.images)) throw new Error(`${file}: Feld "images" fehlt oder ist kein Array`);
   const d = raw.defaults ?? {};
+  const vd = raw.video_defaults ?? {};
   const seen = new Set();
   const images = raw.images.map((img, i) => {
     const id = img.id ?? `i${i + 1}`;
@@ -16,6 +17,20 @@ export async function readPromptFile(file) {
     if (seen.has(id)) throw new Error(`${file}: doppelte id "${id}"`);
     seen.add(id);
     const slug = img.slug ?? id;
+    let video = null;
+    if (img.video) {
+      if (!img.video.motion_prompt) throw new Error(`${file}: Bild "${id}" hat einen "video"-Block ohne "motion_prompt"`);
+      video = {
+        enabled: img.video.enabled ?? true,
+        model: img.video.model ?? vd.model ?? 'veo-3.1-generate-preview',
+        motion_prompt: img.video.motion_prompt,
+        duration_seconds: img.video.duration_seconds ?? vd.duration_seconds ?? 8,
+        aspect_ratio: img.video.aspect_ratio ?? vd.aspect_ratio ?? '9:16',
+        resolution: img.video.resolution ?? vd.resolution ?? '720p',
+        generate_audio: img.video.generate_audio ?? vd.generate_audio ?? true,
+        person_generation: img.video.person_generation ?? vd.person_generation ?? 'allow_all',
+      };
+    }
     return {
       ...img,
       id,
@@ -26,9 +41,10 @@ export async function readPromptFile(file) {
       aspect_ratio: img.aspect_ratio ?? d.aspect_ratio ?? '3:4',
       image_size: img.image_size ?? d.image_size ?? '2K',
       mime_type: img.mime_type ?? d.mime_type ?? 'image/png',
+      video,
     };
   });
-  return { ...raw, defaults: d, images };
+  return { ...raw, defaults: d, video_defaults: vd, images };
 }
 
 // --only akzeptiert: id, slug, keyword, "slide:2" — mehrere per Komma, ODER-verknüpft.

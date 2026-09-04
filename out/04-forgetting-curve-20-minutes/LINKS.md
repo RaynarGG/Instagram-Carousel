@@ -1,6 +1,6 @@
 # 04-forgetting-curve-20-minutes — Bild-Links
 
-Branch `social-assets` · erzeugt 2026-09-04T13:17:59.294Z
+Branch `social-assets` · erzeugt 2026-09-04T13:31:06.855Z
 
 | | id | Stichworte | Prüfung | Link |
 |---|---|---|---|---|

@@ -25,11 +25,6 @@ const DRY     = flag('dry-run');
 const RETRIES = Number(opt('retries', '3'));
 
 const KEY = process.env.GEMINI_API_KEY;
-if (!KEY && !DRY) {
-  console.error('GEMINI_API_KEY ist nicht gesetzt.');
-  console.error('Lokal: setx GEMINI_API_KEY "..." — in CI: Repository Secret anlegen.');
-  process.exit(1);
-}
 
 const cfg = await readPromptFile(FILE);
 const outDir = path.join(OUTROOT, cfg.post);
@@ -38,6 +33,14 @@ await fs.mkdir(outDir, { recursive: true });
 const jobs = cfg.images.filter(i => matches(i, ONLY));
 if (!jobs.length) {
   console.error(`Kein Bild passt auf --only "${ONLY}". Vorhandene ids: ${cfg.images.map(i => i.id).join(', ')}`);
+  process.exit(1);
+}
+
+// Nur ein echter API-Call braucht den Key — reine Wiederverwendung (reuse) ist ein
+// lokaler Dateikopiervorgang und kostet nichts.
+if (!KEY && !DRY && jobs.some(i => !i.reuse)) {
+  console.error('GEMINI_API_KEY ist nicht gesetzt.');
+  console.error('Lokal: setx GEMINI_API_KEY "..." — in CI: Repository Secret anlegen.');
   process.exit(1);
 }
 
@@ -182,9 +185,45 @@ console.log(`${jobs.length} von ${cfg.images.length} Bildern ausgewählt${ONLY ?
 await fs.mkdir(path.join(outDir, '1080'), { recursive: true });
 const done = [], failed = [], skipped = [];
 
+// Bild aus einem frueheren Post uebernehmen statt neu zu generieren — fuer
+// wiederkehrende Motive wie den ruhigen Schluss-Tisch, den es schon in
+// mehreren Posts gibt. Sucht die Quelldatei per Praefix, wie findImage in
+// render-slides.mjs.
+async function copyReused(img) {
+  const srcDir = path.join(OUTROOT, img.reuse.post);
+  for (const sub of ['', '1080']) {
+    const dir = path.join(srcDir, sub);
+    if (!await exists(dir)) continue;
+    for (const f of await fs.readdir(dir)) {
+      if (f.startsWith(`${img.reuse.id}-`) && /\.jpe?g$/i.test(f)) {
+        const dest = sub ? path.join(outDir, '1080', `${img.file}.jpeg`) : path.join(outDir, `${img.file}.jpeg`);
+        await fs.copyFile(path.join(dir, f), dest);
+      }
+    }
+  }
+  if (!await exists(path.join(outDir, `${img.file}.jpeg`))) {
+    throw new Error(`Quellbild "${img.reuse.id}" aus "${img.reuse.post}" nicht gefunden unter ${srcDir} — erst den Quell-Post generieren.`);
+  }
+}
+
 for (const img of jobs) {
   const target = path.join(outDir, `${img.file}.jpeg`);
   if (!FORCE && await exists(target)) { skipped.push(img.id); console.log(`· ${img.id.padEnd(5)} ${img.file}  — existiert, übersprungen`); continue; }
+
+  if (img.reuse) {
+    if (DRY) { console.log(`· ${img.id.padEnd(5)} ${img.file}  — würde aus ${img.reuse.post}/${img.reuse.id} übernommen (kein Call, kostet nichts)`); continue; }
+    process.stdout.write(`· ${img.id.padEnd(5)} ${img.file}  — übernehme aus ${img.reuse.post}/${img.reuse.id} … `);
+    try {
+      await copyReused(img);
+      console.log('ok');
+      done.push(img.id);
+    } catch (e) {
+      console.log(`FEHLER: ${e.message}`);
+      failed.push({ id: img.id, error: e.message });
+    }
+    continue;
+  }
+
   if (DRY) { console.log(`· ${img.id.padEnd(5)} ${img.file}  — würde generiert (${img.model}, ${img.aspect_ratio}, ${img.image_size})`); continue; }
 
   process.stdout.write(`· ${img.id.padEnd(5)} ${img.file}  … `);

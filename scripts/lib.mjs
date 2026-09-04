@@ -17,6 +17,11 @@ export async function readPromptFile(file) {
     if (seen.has(id)) throw new Error(`${file}: doppelte id "${id}"`);
     seen.add(id);
     const slug = img.slug ?? id;
+    let reuse = null;
+    if (img.reuse) {
+      if (!img.reuse.post || !img.reuse.id) throw new Error(`${file}: Bild "${id}" hat einen "reuse"-Block ohne "post" oder "id"`);
+      reuse = { post: img.reuse.post, id: img.reuse.id };
+    }
     let video = null;
     if (img.video) {
       if (!img.video.motion_prompt) throw new Error(`${file}: Bild "${id}" hat einen "video"-Block ohne "motion_prompt"`);
@@ -42,6 +47,7 @@ export async function readPromptFile(file) {
       image_size: img.image_size ?? d.image_size ?? '2K',
       mime_type: img.mime_type ?? d.mime_type ?? 'image/png',
       video,
+      reuse,
     };
   });
   return { ...raw, defaults: d, video_defaults: vd, images };

@@ -1,0 +1,68 @@
+{
+  "post": "04-forgetting-curve-20-minutes",
+  "title": "40% of what you learned is gone in 20 minutes",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "video_defaults": {
+    "model": "veo-3.1-generate-preview",
+    "aspect_ratio": "9:16",
+    "resolution": "720p",
+    "generate_audio": true
+  },
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "hourglass-of-light",
+      "slide": 1,
+      "variant": "a",
+      "keywords": ["cover", "archetype-c", "object-hero"],
+      "headline": "40% of what you learned is gone in 20 minutes",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A large antique hourglass floats dead centre in absolute black void, filling the upper two thirds of the frame, tilted slightly. Instead of sand, fine glowing amber light-dust drains from the top chamber to the bottom, already more than half emptied, drifting motes scattering into the dark below the narrow neck. In the upper right, a circular inset cut-out shows an extreme macro close-up of the narrow glass neck with light-dust mid-fall, rendered sharper and brighter than the main scene. One hard directional key light from the upper left, plus a warm amber practical glow radiating from within the falling light-dust itself, the only warm light source in the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: cold blue-black void plus one warm amber accent. High contrast, deep blacks, fine film grain, hyper-detailed macro photography look. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no people, no hands"
+    },
+    {
+      "id": "s2a",
+      "slug": "the-man-who-tried-to-remember",
+      "slide": 2,
+      "variant": "a",
+      "keywords": ["facts", "ebbinghaus", "human-moment"],
+      "headline": "The man who timed his own forgetting",
+      "prompt": "Photojournalistic composite, 3:4 vertical, shot from a slightly low angle across a wooden desk. An elderly man in a plain 19th-century shirt and waistcoat sits at the desk, filling the upper two thirds of the frame, leaning forward with eyes closed and lips slightly parted mid-recitation, one hand pressed to his temple in effortful concentration, the other resting flat on a handwritten list of nonsense syllables — actively trying to hold the list in memory, not merely looking at it. An antique stopwatch lies open beside the list, its hands mid-tick. Utterly focused, alone, faintly obsessive. A single warm amber desk lamp is the only lit object, throwing a small pool of light across the desk while the room around him falls into cold shadow. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. High contrast, deep blacks, fine film grain, documentary and unpolished, imperfect surfaces, dust in the light. The bottom 42 percent of the frame fades to pure solid black with no detail. no text, no lettering, no legible words on the list, no captions, no watermark, no logos, nothing readable, no borders, no frame, no visible face, no recognisable face, not a celebrity, no identifiable person"
+    },
+    {
+      "id": "s3a",
+      "slug": "the-falling-curve",
+      "slide": 3,
+      "variant": "a",
+      "keywords": ["stat", "archetype-d", "curve"],
+      "headline": "Most of it is gone before lunch",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. A single glowing curve made of warm amber light hangs suspended in absolute black void, filling the upper two thirds of the frame: it begins near the top-left at full brightness and plunges steeply downward across the frame, fading rapidly until only a faint ember-like glow remains near the bottom, like a falling star losing its light. Fine particles of light drift off the curve's downward slope like sparks. In the upper right, a circular inset cut-out shows an extreme macro close-up of the curve's brightest starting point, rendered sharper and brighter than the main scene. One hard directional key light from the upper left, plus the curve itself as the warm amber practical light source, the only warm light in the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: cold blue-black void plus one warm amber accent. High contrast, deep blacks, fine film grain, hyper-detailed macro photography look. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no numbers, no axis labels, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines, no people, no hands, no graph paper, no chart lines other than the one curve"
+    },
+    {
+      "id": "s4a",
+      "slug": "the-ember-that-flares-back",
+      "slide": 4,
+      "variant": "a",
+      "keywords": ["stat", "reset", "video-cover"],
+      "headline": "One look resets the curve",
+      "prompt": "Ultra-detailed cinematic photograph, 3:4 vertical, shallow depth of field. A single candle wick with a nearly extinguished ember at its tip sits centred in absolute black void, filling the upper two thirds of the frame, a thin curl of smoke rising from it, the flame reduced to a faint orange glow about to die out. In the upper right, a circular inset cut-out shows an extreme macro close-up of the glowing wick tip, rendered sharper and brighter than the main scene. One warm amber practical light source: the ember glow itself, the only light in the frame, casting a small warm pool on the surface just below it. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: near-total black plus one warm amber ember glow. High contrast, deep blacks, fine film grain, hyper-detailed macro photography look. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no people, no hands",
+      "video": {
+        "motion_prompt": "The nearly extinguished ember at the wick's tip suddenly flares back to a small bright flame in a single quick pulse, throwing a brief burst of warm amber light outward before settling into a steady small flame. Camera holds completely still. Nothing else in the frame moves.",
+        "duration_seconds": 3
+      }
+    },
+    {
+      "id": "s5a",
+      "slug": "morning-table-water-notebook",
+      "slide": 5,
+      "variant": "a",
+      "keywords": ["cta", "positioning", "warm", "reused"],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": { "post": "03-honest-placebo", "id": "s5a" }
+    }
+  ]
+}

@@ -42,13 +42,26 @@ if (!manifest.slides.length) {
 const { width: W, height: H } = manifest;
 const slidesDir = path.join(outDir, 'slides');
 
+// -shortest hat sich als NICHT zuverlaessig erwiesen, wenn einer der beiden
+// Inputs eine geloopte Stand-Bild-"Videospur" ist: ein echter Testlauf
+// produzierte statt 4s ein ueber drei Stunden langes File. Die echte
+// Videolaenge deshalb per ffprobe auslesen und hart mit -t begrenzen.
+async function probeDuration(file) {
+  const { stdout } = await run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', file]);
+  const secs = Number(stdout.trim());
+  if (!Number.isFinite(secs) || secs <= 0) throw new Error(`ffprobe lieferte keine brauchbare Dauer fuer ${file}: "${stdout.trim()}"`);
+  return secs;
+}
+
 for (const s of manifest.slides) {
   const out = path.join(slidesDir, `slide-${String(s.n).padStart(2, '0')}.mp4`);
   const filter =
     `[1:v]scale=w=${W}:h=${s.photoPx}:force_original_aspect_ratio=increase,` +
     `crop=${W}:${s.photoPx},pad=${W}:${H}:0:0:black[bg];[bg][0:v]overlay=0:0:format=auto[out]`;
+  const duration = DRY ? null : await probeDuration(s.video);
   const cmd = ['-y', '-loop', '1', '-i', s.overlay, '-i', s.video,
-    '-filter_complex', filter, '-map', '[out]', '-shortest',
+    '-filter_complex', filter, '-map', '[out]',
+    '-t', String(duration ?? 'DAUER-VON-FFPROBE'), '-shortest',
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out];
 
   if (DRY) { console.log(`· Slide ${s.n}  ffmpeg ${cmd.join(' ')}`); continue; }

@@ -123,6 +123,18 @@ async function findImage(id) {
   }
   return null;
 }
+
+// Fuer die Video-Komposition (compose-video-slides.mjs): hat dieses Bild
+// bereits einen generierten Clip aus gen-video.mjs?
+async function findVideo(id) {
+  if (!id) return null;
+  const dir = path.join(imgDir, 'videos');
+  if (!await exists(dir)) return null;
+  for (const f of await fs.readdir(dir)) {
+    if (f.startsWith(`${id}-`) && /\.mp4$/i.test(f)) return path.join(dir, f);
+  }
+  return null;
+}
 async function dataUri(file) {
   const mime = /\.png$/i.test(file) ? 'image/png'
              : /\.webp$/i.test(file) ? 'image/webp'
@@ -223,6 +235,8 @@ async function slideHtml(s, idx) {
   const L = { ...LAYOUT[s.type], ...(s.layout ?? {}) };
   const file = await findImage(s.image);
   const photoPx = Math.round(H * L.photo);
+  s._photoPx = photoPx;   // fuer compose-video-slides.mjs — Hoehe der Foto-/Video-Zone
+  s._video = await findVideo(s.image);
   const g0 = Math.min(88, Math.round(100 * (H * 0.42) / photoPx));
   const g1 = Math.min(97, Math.round(100 * (H * 0.70) / photoPx));
   const photoStyle = `height:${photoPx}px;--g0:${g0}%;--g1:${g1}%;` +
@@ -281,6 +295,28 @@ for (const s of cfg.slides) {
   await (await page.$(`#s${s.n}`)).screenshot({ path: out });
   console.log(`· Slide ${s.n}  ${s.type.padEnd(9)} ${s._size ? s._size + 'px' : '—'}  -> ${out}`);
 }
+
+// Zweiter Durchgang nur fuer Slides mit einem generierten Video: dieselbe
+// Slide, aber ohne das Foto — transparent statt Bild, damit compose-video-
+// slides.mjs die Textebene per ffmpeg-overlay ueber den Clip legen kann.
+// Das Bild lebt (Video), der Text steht still (siehe wsd-social-images §5).
+const withVideo = cfg.slides.filter(s => s._video);
+const overlays = [];
+if (withVideo.length) {
+  // body braucht die Ueberschreibung explizit mit, sonst scheint sein
+  // opakes Schwarz (siehe CSS oben) durch die transparent gemachte .slide.
+  await page.addStyleTag({ content: 'body,.slide{background:transparent!important} .photo{background-image:none!important}' });
+  const overlayDir = path.join(imgDir, 'overlays');
+  await fs.mkdir(overlayDir, { recursive: true });
+  for (const s of withVideo) {
+    const out = path.join(overlayDir, `overlay-${String(s.n).padStart(2, '0')}.png`);
+    await (await page.$(`#s${s.n}`)).screenshot({ path: out, omitBackground: true });
+    overlays.push({ n: s.n, photoPx: s._photoPx, overlay: out, video: s._video });
+    console.log(`· Slide ${s.n}  Overlay (fuer Video) -> ${out}`);
+  }
+  await fs.writeFile(path.join(imgDir, 'video-manifest.json'), JSON.stringify({ width: W, height: H, slides: overlays }, null, 2));
+}
+
 await browser.close();
 await fs.unlink(tmp);
 console.log(`\n${cfg.slides.length} Slides · ${W}x${H} · Preset ${PRESET_CLI || cfg.preset || 'wsd-orange'}`);

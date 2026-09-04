@@ -1,0 +1,12 @@
+{
+  "width": 1080,
+  "height": 1350,
+  "slides": [
+    {
+      "n": 4,
+      "photoPx": 972,
+      "overlay": "assets/out/04-forgetting-curve-20-minutes/overlays/overlay-04.png",
+      "video": "assets/out/04-forgetting-curve-20-minutes/videos/s4a-the-ember-that-flares-back.mp4"
+    }
+  ]
+}

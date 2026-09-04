@@ -25,6 +25,8 @@ export async function readPromptFile(file) {
     let video = null;
     if (img.video) {
       if (!img.video.motion_prompt) throw new Error(`${file}: Bild "${id}" hat einen "video"-Block ohne "motion_prompt"`);
+      const secs = img.video.duration_seconds ?? vd.duration_seconds ?? 8;
+      if (secs < 4 || secs > 8) throw new Error(`${file}: Bild "${id}" hat duration_seconds ${secs} — Veo erlaubt nur 4 bis 8 (per echtem API-Fehler bestaetigt, Sept 2026)`);
       video = {
         enabled: img.video.enabled ?? true,
         model: img.video.model ?? vd.model ?? 'veo-3.1-generate-preview',

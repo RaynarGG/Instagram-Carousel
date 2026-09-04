@@ -6,16 +6,19 @@
 // (siehe wsd-social-images/SKILL.md §5 "Video-Cover"), das ist hier noch
 // nicht automatisiert.
 //
-// UNGETESTET GEGEN DIE ECHTE API. gen-images.mjs wurde erst nach echten
-// Fehlschlägen stabil (siehe git log) — dieses Skript ist bisher nur gegen
-// die öffentliche REST-Dokumentation und Community-Beispiele gebaut, nie
-// gegen den echten Endpunkt gelaufen. Vor dem ersten Einsatz in der
-// Tagesroutine: ein einzelner --only Testlauf mit einem Clip, Ergebnis
-// prüfen, `findVideoRef` ggf. an die tatsächliche Antwortform anpassen.
+// Request-Endpoint und -Form sind live gegen die echte API verifiziert
+// (Stand 4. Sept 2026: predictLongRunning erreicht, Auth funktioniert,
+// ein Validierungsfehler kam als sauberes JSON zurück). NICHT verifiziert:
+// der Erfolgsfall — done:true, Video-URI/Bytes, Download. `findVideoRef`
+// bleibt deshalb defensiv, bis ein Lauf tatsächlich durchlief.
+//
+// duration_seconds MUSS zwischen 4 und 8 liegen (Veo lehnt alles ausserhalb
+// mit HTTP 400 ab — nicht nur dokumentiert, sondern echt getestet).
+// lib.mjs validiert das beim Einlesen.
 //
 // Kosten (Stand Sept 2026, siehe Google-Blog "Veo 3 now available in the
-// Gemini API"): Veo 3 mit Ton ~$0.40/s, ohne Ton ~$0.20/s. Ein 8s-Clip damit
-// grob $1.60–$3.20. Nie ohne ausdrückliche Rückfrage aufrufen — teurer als
+// Gemini API"): Veo 3 mit Ton ~$0.40/s, ohne Ton ~$0.20/s. Ein 4s-Clip damit
+// grob $0.80–$1.60. Nie ohne ausdrückliche Rückfrage aufrufen — teurer als
 // ein einzelnes Bild.
 //
 // Der API-Key kommt aus GEMINI_API_KEY, wie bei gen-images.mjs.

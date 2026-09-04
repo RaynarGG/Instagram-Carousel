@@ -11,7 +11,7 @@
     "model": "veo-3.1-generate-preview",
     "aspect_ratio": "9:16",
     "resolution": "720p",
-    "generate_audio": true
+    "generate_audio": false
   },
   "images": [
     {

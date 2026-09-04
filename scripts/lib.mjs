@@ -34,7 +34,9 @@ export async function readPromptFile(file) {
         duration_seconds: img.video.duration_seconds ?? vd.duration_seconds ?? 8,
         aspect_ratio: img.video.aspect_ratio ?? vd.aspect_ratio ?? '9:16',
         resolution: img.video.resolution ?? vd.resolution ?? '720p',
-        generate_audio: img.video.generate_audio ?? vd.generate_audio ?? true,
+        // Default false: dieses Modell lehnt generateAudio:true mit HTTP 400 ab
+        // ("isn't supported by this model") — per echtem Fehler bestaetigt.
+        generate_audio: img.video.generate_audio ?? vd.generate_audio ?? false,
         person_generation: img.video.person_generation ?? vd.person_generation ?? 'allow_all',
       };
     }

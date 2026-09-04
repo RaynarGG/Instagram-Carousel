@@ -72,6 +72,17 @@ async function stillImageBase64(img) {
 
 async function startOperation(img, imageB64) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${img.video.model}:predictLongRunning`;
+  const parameters = {
+    aspectRatio: img.video.aspect_ratio,
+    durationSeconds: img.video.duration_seconds,
+    resolution: img.video.resolution,
+    personGeneration: img.video.person_generation,
+    sampleCount: 1,
+  };
+  // generateAudio wird von diesem Modell (Image-to-Video, veo-3.1-generate-preview)
+  // nicht unterstuetzt — per echtem 400 bestaetigt ("isn't supported by this model").
+  // Das Feld deshalb nur mitschicken, wenn es explizit angefordert wurde.
+  if (img.video.generate_audio) parameters.generateAudio = true;
   const r = await fetch(url, {
     method: 'POST',
     headers: { 'x-goog-api-key': KEY, 'Content-Type': 'application/json' },
@@ -80,14 +91,7 @@ async function startOperation(img, imageB64) {
         prompt: img.video.motion_prompt,
         image: { bytesBase64Encoded: imageB64, mimeType: 'image/jpeg' },
       }],
-      parameters: {
-        aspectRatio: img.video.aspect_ratio,
-        durationSeconds: img.video.duration_seconds,
-        resolution: img.video.resolution,
-        generateAudio: img.video.generate_audio,
-        personGeneration: img.video.person_generation,
-        sampleCount: 1,
-      },
+      parameters,
     }),
   });
   if (!r.ok) throw Object.assign(new Error(`predictLongRunning ${r.status}: ${(await r.text()).slice(0, 300)}`), { status: r.status });

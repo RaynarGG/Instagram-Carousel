@@ -39,6 +39,9 @@ Pflicht, Rest hat Defaults — siehe `scripts/gen-video.mjs`). Erzeugt per
 Image-to-Video (Veo) einen Clip aus dem bereits generierten Standbild.
 **`duration_seconds` muss zwischen 4 und 8 liegen** — per echtem API-Fehler
 bestätigt (Sept 2026), kürzere oder längere Clips lehnt Veo mit 400 ab.
+**`generate_audio` steht standardmäßig auf `false`** — dieses Modell
+(Image-to-Video, `veo-3.1-generate-preview`) lehnt `true` ebenfalls mit 400 ab
+("isn't supported by this model"), ebenfalls per echtem Fehler bestätigt.
 Läuft nur im Workflow mit explizit gesetztem `mit_video`-Haken, nie automatisch.
 Text wird nicht automatisch überlagert, das bleibt manuell
 (siehe `wsd-social-images/SKILL.md` §5).

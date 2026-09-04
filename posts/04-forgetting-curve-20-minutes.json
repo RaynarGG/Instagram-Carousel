@@ -1,0 +1,88 @@
+{
+  "post": "04-forgetting-curve-20-minutes",
+  "title": "40% of what you learned is gone in 20 minutes",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "A German psychologist memorized nonsense syllables by the thousand, alone in his study, just to time how fast his own memory failed him. Turns out most of it was gone before the day was over. 🧠⏳",
+    "detail": "Hermann Ebbinghaus ran the experiment on himself in 1885, using the \"savings method\" — relearning lists and measuring how much faster it went the second time. His curve showed roughly 40% forgotten after 20 minutes, 56% after an hour, and up to 70% within 24 hours without review. A 2015 replication using modern methods found the same shape.",
+    "kontext": "The forgetting isn't the interesting part — the reset is. One review, even a short one, doesn't just buy you a few more hours. It flattens the whole curve. That's the entire case against cramming.",
+    "frage": "When did you last look at something you \"already know\" — on purpose?",
+    "sources": "Sources: Ebbinghaus, H. — Über das Gedächtnis, 1885 • Murre, J.M.J. & Dros, J. — Replication and Analysis of Ebbinghaus' Forgetting Curve • PLoS ONE 10(7): e0120644, July 2015 • doi.org/10.1371/journal.pone.0120644",
+    "hashtags": "#psychology #memory #learning #science #productivity"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[40%] OF WHAT YOU LEARNED",
+        "IS GONE IN [20 MINUTES]"
+      ],
+      "sub": "ONE MAN TIMED IT ON HIMSELF. 1885.",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A candle or hourglass motif suggesting time and memory fading. Headline: 40 percent of what you learned is gone in 20 minutes."
+    },
+    {
+      "n": 2,
+      "type": "facts",
+      "image": "s2a",
+      "kicker": "",
+      "layout": {
+        "photo": 0.62
+      },
+      "headline": [
+        "THE MAN WHO [TIMED]",
+        "HIS OWN [FORGETTING]"
+      ],
+      "bullets": [
+        "Hermann **Ebbinghaus**, Berlin, 1885",
+        "Memorized **thousands** of meaningless syllables — alone",
+        "Tested his own recall, over and over, no other subjects",
+        "No computer, no calculator — a stopwatch and lists"
+      ],
+      "alt": "A study desk with handwritten lists of nonsense syllables and an old stopwatch, evoking a 19th-century self-experiment. Headline: The man who timed his own forgetting."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "MOST OF IT IS GONE",
+        "[BEFORE LUNCH]"
+      ],
+      "body": "[40%] gone in 20 minutes. [56%] gone in 1 hour. By tomorrow, up to [70%] is gone — unless you look at it again.",
+      "alt": "A visual representing a steep downward curve, like fading light or draining sand. Headline: Most of it is gone before lunch."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "ONE LOOK [RESETS]",
+        "THE CURVE"
+      ],
+      "body": "A single review doesn't just delay the forgetting — it flattens the whole curve. [Repetition beats intensity].",
+      "alt": "A single warm light re-igniting or a hand touching a page again, suggesting review and reinforcement. Headline: One look resets the curve."
+    },
+    {
+      "n": 5,
+      "type": "cta",
+      "image": "s5a",
+      "headline": [
+        "THE CURVE IS PREDICTABLE.",
+        "[WHAT YOU DO NEXT] ISN'T."
+      ],
+      "tag": "ONE REVIEW CAN UNDO A DAY OF FORGETTING.",
+      "alt": "A calm closing scene, notebook and warm morning light. Headline: The curve is predictable, what you do next isn't."
+    }
+  ]
+}

@@ -206,6 +206,12 @@ jobs:
             --out assets/out \
             --image-variant "$IN_VARIANT"
 
+      # ffmpeg/ffprobe sind auf ubuntu-latest NICHT vorinstalliert (per echtem
+      # "spawn ffprobe ENOENT" bestaetigt) — anders als z.B. Chromium-Codecs.
+      - name: ffmpeg installieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+
       # No-op fuer jeden Post ohne Video (die weit ueberwiegende Mehrheit) —
       # das Skript prueft selbst, ob es fuer diesen Post etwas zu tun gibt.
       - name: Video-Slides komponieren

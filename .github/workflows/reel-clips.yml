@@ -1,0 +1,119 @@
+name: Reel-Clips
+
+# Vom Handy aus: Actions -> "Reel-Clips" -> Run workflow.
+# Text-zu-Video mit Ton (Veo) + automatisch erkannte, eingebrannte Untertitel.
+# Kein Push-Trigger — Video-mit-Ton kostet deutlich mehr als ein Bild, das
+# soll nie ungefragt laufen. Immer nur workflow_dispatch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      reel:
+        description: "Ordner unter reels/ (z.B. 05-choice-overload-jam)"
+        required: true
+      only:
+        description: "Clip-id(s), Komma-getrennt (z.B. clip1). Leer = alle"
+        default: ""
+      untertitel:
+        description: "Untertitel automatisch erkennen und einbrennen"
+        type: boolean
+        default: true
+      neu_generieren:
+        description: "Vorhandene Clips überschreiben"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reel-clips
+  cancel-in-progress: false
+
+env:
+  ASSET_BRANCH: social-assets
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Abhängigkeiten
+        run: npm install --no-audit --no-fund
+
+      - name: ffmpeg installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+
+      - name: Asset-Branch holen (oder anlegen)
+        run: |
+          set -e
+          mkdir -p assets && cd assets
+          git init -q
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch --depth=1 origin "$ASSET_BRANCH" 2>/dev/null; then
+            git checkout -q -b "$ASSET_BRANCH" FETCH_HEAD
+          else
+            git checkout -q -b "$ASSET_BRANCH"
+          fi
+
+      - name: Clips generieren (Text-zu-Video mit Ton)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REEL: ${{ inputs.reel }}
+          IN_ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.neu_generieren }}
+        run: |
+          ARGS=""
+          [ "$FORCE" = "true" ] && ARGS="--force"
+          node scripts/gen-reel-clip.mjs \
+            --file "reels/$REEL/clips.json" \
+            --out "assets/reels/$REEL/out" \
+            --only "$IN_ONLY" $ARGS
+
+      - name: Untertitel erkennen und einbrennen
+        if: inputs.untertitel == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REEL: ${{ inputs.reel }}
+          IN_ONLY: ${{ inputs.only }}
+        run: |
+          DIR="assets/reels/$REEL/out"
+          for f in "$DIR"/*.mp4; do
+            [ -e "$f" ] || continue
+            base=$(basename "$f" .mp4)
+            [[ "$base" == *-captioned ]] && continue
+            if [ -n "$IN_ONLY" ]; then
+              case ",$IN_ONLY," in *",$base,"*) ;; *) continue ;; esac
+            fi
+            echo "::group::Untertitel für $base"
+            node scripts/caption-reel-clip.mjs --in "$f" --out "$DIR/$base-captioned.mp4" || echo "::warning::Untertitel für $base fehlgeschlagen"
+            echo "::endgroup::"
+          done
+
+      - name: Ergebnis pushen
+        run: |
+          cd assets
+          git add -A reels
+          if git diff --cached --quiet; then
+            echo "Nichts Neues zu pushen."
+          else
+            git commit -q -m "reel-clips: ${{ inputs.reel }} (run ${{ github.run_number }})"
+            git push -q origin "$ASSET_BRANCH"
+          fi
+
+      - name: Download-Paket an den Run hängen
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ inputs.reel }}-run${{ github.run_number }}
+          path: assets/reels/${{ inputs.reel }}
+          if-no-files-found: warn
+          retention-days: 30

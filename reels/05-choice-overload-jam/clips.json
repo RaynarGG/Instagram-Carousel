@@ -1,0 +1,29 @@
+{
+  "reel": "05-choice-overload-jam",
+  "defaults": {
+    "model": "veo-3.1-generate-preview",
+    "aspect_ratio": "9:16",
+    "resolution": "720p",
+    "generate_audio": true
+  },
+  "clips": [
+    {
+      "id": "clip1",
+      "duration_seconds": 7,
+      "spoken": "Did you know that people buy less often when they have more choices?",
+      "prompt": "Ultra-detailed cinematic video, 9:16 vertical. A single jam jar floats in absolute black void, warm amber light glowing from within it, fine dust particles drifting in the light, slow push-in. A calm, warm voice-over narrates: \"Did you know that people buy less often when they have more choices?\" As the voice speaks, a second jar fades into view beside the first, then a third, then more — appearing faster and faster, the warm light fracturing into dozens of small reflections, until two dozen jars crowd the frame in a moment of visual overwhelm. High contrast, deep blacks, fine film grain, hyper-detailed macro photography look. no on-screen text, no captions, no watermark, no logos, no visible faces, no people, no hands"
+    },
+    {
+      "id": "clip2",
+      "duration_seconds": 7,
+      "spoken": "So they cut it down to six. Fewer people stopped — but of the ones who did, ten times as many walked out with a jar.",
+      "prompt": "TODO — erst schreiben, wenn Clip 1 den Piloten bestanden hat."
+    },
+    {
+      "id": "clip3",
+      "duration_seconds": 7,
+      "spoken": "Three percent versus forty. The extra options didn't help anyone choose. They just made walking away the easier answer.",
+      "prompt": "TODO — erst schreiben, wenn Clip 1 den Piloten bestanden hat."
+    }
+  ]
+}

@@ -48,8 +48,11 @@ await fs.mkdir(outDir, { recursive: true });
 const clips = raw.clips.map(c => {
   if (!c.id) throw new Error(`${FILE}: Clip ohne "id"`);
   if (!c.prompt) throw new Error(`${FILE}: Clip "${c.id}" hat kein "prompt"`);
-  const secs = c.duration_seconds ?? d.duration_seconds ?? 8;
-  if (secs < 4 || secs > 8) throw new Error(`${FILE}: Clip "${c.id}" hat duration_seconds ${secs} — Veo erlaubt nur 4 bis 8`);
+  // Kein erzwungener Default mehr: wenn weder der Clip noch die Defaults eine
+  // Laenge angeben, wird durationSeconds im Request komplett weggelassen und
+  // Veo bestimmt selbst (Testfrage: laesst sich das ueberhaupt weglassen?).
+  const secs = c.duration_seconds ?? d.duration_seconds ?? null;
+  if (secs !== null && (secs < 4 || secs > 8)) throw new Error(`${FILE}: Clip "${c.id}" hat duration_seconds ${secs} — Veo erlaubt nur 4 bis 8`);
   return {
     id: c.id,
     spoken: c.spoken ?? null,
@@ -78,11 +81,11 @@ async function startOperation(clip) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${clip.model}:predictLongRunning`;
   const parameters = {
     aspectRatio: clip.aspect_ratio,
-    durationSeconds: clip.duration_seconds,
     resolution: clip.resolution,
     personGeneration: clip.person_generation,
     sampleCount: 1,
   };
+  if (clip.duration_seconds !== null) parameters.durationSeconds = clip.duration_seconds;
   if (clip.generate_audio) parameters.generateAudio = true;
   const r = await fetch(url, {
     method: 'POST',
@@ -147,10 +150,12 @@ const done = [], failed = [], skipped = [];
 for (const clip of jobs) {
   const target = path.join(outDir, `${clip.id}.mp4`);
   const rate = clip.generate_audio ? 0.40 : 0.20;
+  const secsLabel = clip.duration_seconds !== null ? `${clip.duration_seconds}s` : 'Laenge von Veo bestimmt (nicht angegeben)';
+  const costLabel = clip.duration_seconds !== null ? `$${(rate * clip.duration_seconds).toFixed(2)}` : `$${(rate * 4).toFixed(2)}–$${(rate * 8).toFixed(2)} (4–8s moeglich)`;
   if (!FORCE && await exists(target)) { skipped.push(clip.id); console.log(`· ${clip.id.padEnd(6)} — existiert, übersprungen`); continue; }
-  if (DRY) { console.log(`· ${clip.id.padEnd(6)} — würde generiert (${clip.model}, ${clip.duration_seconds}s, ${clip.aspect_ratio}, Ton: ${clip.generate_audio}, geschätzt $${(rate * clip.duration_seconds).toFixed(2)})`); continue; }
+  if (DRY) { console.log(`· ${clip.id.padEnd(6)} — würde generiert (${clip.model}, ${secsLabel}, ${clip.aspect_ratio}, Ton: ${clip.generate_audio}, geschätzt ${costLabel})`); continue; }
 
-  process.stdout.write(`· ${clip.id.padEnd(6)} (${clip.duration_seconds}s, geschätzt $${(rate * clip.duration_seconds).toFixed(2)}) … `);
+  process.stdout.write(`· ${clip.id.padEnd(6)} (${secsLabel}, geschätzt ${costLabel}) … `);
   try {
     const opName = await startOperation(clip);
     const finished = await pollOperation(opName);

@@ -9,16 +9,8 @@ Regeln für die Bilder: `wsd-social-images` Skill (Format, Schichtaufbau, Archet
 
 ## Seitenverhältnis — 4:5, 
 
-**Die Slides sind 1080 × 1350 (4:5).** Das ist keine Geschmacksfrage, sondern eine
-harte Grenze: die Instagram-Graph-API, über die Buffer automatisch veröffentlicht,
-akzeptiert nur **4:5 (0,80) bis 1,91:1**. Ein 3:4-Slide (0,75) wird abgelehnt mit
-*„Image doesn't match Instagram's expected aspect ratios"*.
-
-Buffer bietet dann zwei Auswege, beide schlecht:
-- **Auto-Crop** schneidet 90 px weg. Weil unsere Typo unten sitzt, trifft es die
-  Headline oder die schwarze Fusszone. Nicht benutzen.
-- **Notify Me** heisst: Buffer schickt eine Erinnerung, gepostet wird von Hand.
-  Kostet die Automatisierung.
+**Die Slides sind 1080 × 1350 (4:5).**  benötigt die Instagram-Graph-API, über die Buffer automatisch veröffentlicht,
+akzeptiert nur **4:5 (0,80) bis 1,91:
 
 **Die Lösung, die beides erhält:** die generierten Bilder bleiben **3:4**, nur die
 Slide-Fläche ist **4:5**. Der Renderer beschneidet das Bild oben-anliegend, und
@@ -28,11 +20,6 @@ die Differenz ab.
 
 Deshalb steht in `prompts/*.json` weiter `"aspect_ratio": "3:4"` und in
 `posts/*.json` `1080 × 1350`. Das ist Absicht, kein Widerspruch.
-
-> Die Skill `wsd-social-images` §1 sagt 3:4 und begründet das mit mehr Bildschirmhöhe.
-> Das galt für manuelles Posten aus der App. Für den automatisierten Weg gewinnt
-> die API-Grenze.
-
 ---
 
 ## Redaktionelle Haltung

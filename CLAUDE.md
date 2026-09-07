@@ -1,11 +1,11 @@
 # Arbeitsanweisung für dieses Repo
 
 ## Was hier gebaut wird
-Instagram-Karussells für den Psychology-Account. Pro Post zwei Dateien:
-`posts/<x>.json` (die Slides) und `prompts/post-<x>.json` (die Bildprompts,
-eines pro Slide). Keine feste Slide-Anzahl und keine vorgeschriebene Abfolge —
-der Post soll verständlich sein und unterhalten, alles andere folgt daraus.
+Instagram-Karussells für den Psychology-Account. Ziel: Spannende, Unterhaltsamme und verständliche Posts. Pro Post zwei Dateien:
+`posts/<x>.json` (die Slides, drei bis sieben) und `prompts/post-<x>.json`
+(die Bildprompts, eines pro Slide).
 Aufbau, Felder und Syntax stehen im README.
+Dir renderer und die bd generation in diesem repo kann je nach post erweitert werden um z.b. texte und bilder auf heder slide wie gewünscht zu platzieren.
 
 ## Täglicher Ablauf
 Wenn ein neuer Post gebaut werden soll: **`docs/TAGESABLAUF.md`** ist die
@@ -16,8 +16,7 @@ bevor der Schritt freigegeben ist.
 ## Vor jedem Post lesen
 - **`README.md` → „Redaktionelle Haltung"** — die Tonalität. Kurzfassung: Unterhaltung
   vor Präzision, der Hook gewinnt im Zweifel, zuspitzen ist erlaubt, **erfinden nicht**,
-  und die Quelle steht in der **Caption**: die `Sources:`-Zeile mit Journal, Jahr
-  und Autoren ist in jedem Post Pflicht. Eine `evidence`-Slide ist optional.
+  und die `evidence`-Slide mit Journal, Jahr und Autoren ist in jedem Post Pflicht.
 - **Skill `wsd-social-images`** — Bildformat, Schichtaufbau, die vier Archetypen,
   die Sieben-Block-Prompt-Formel. Kein Prompt ohne warme Amber-Lichtquelle und
   ohne schwarze Fusszone.
@@ -33,19 +32,6 @@ node scripts/gen-images.mjs --file prompts/post-<x>.json --dry-run
 Kostet nichts und findet kaputtes JSON sowie fehlende Bild-IDs. Jede `image`-Referenz
 in `posts/<x>.json` muss eine `id` in der Prompt-Datei treffen.
 
-## Video-Clips (optional, pro Bild)
-Ein `images[]`-Eintrag kann einen `video`-Block bekommen (Feld `motion_prompt`
-Pflicht, Rest hat Defaults — siehe `scripts/gen-video.mjs`). Erzeugt per
-Image-to-Video (Veo) einen Clip aus dem bereits generierten Standbild.
-**`duration_seconds` muss zwischen 4 und 8 liegen** — per echtem API-Fehler
-bestätigt (Sept 2026), kürzere oder längere Clips lehnt Veo mit 400 ab.
-**`generate_audio` steht standardmäßig auf `false`** — dieses Modell
-(Image-to-Video, `veo-3.1-generate-preview`) lehnt `true` ebenfalls mit 400 ab
-("isn't supported by this model"), ebenfalls per echtem Fehler bestätigt.
-Läuft nur im Workflow mit explizit gesetztem `mit_video`-Haken, nie automatisch.
-Text wird nicht automatisch überlagert, das bleibt manuell
-(siehe `wsd-social-images/SKILL.md` §5).
-
 ## Nicht tun
 - **Das Seitenverhältnis nicht auf 3:4 zurückdrehen.** Slides sind 1080 × 1350 (4:5),
   weil die Instagram-API nichts Schmaleres als 0,80 automatisch veröffentlicht.
@@ -53,4 +39,3 @@ Text wird nicht automatisch überlagert, das bleibt manuell
 - Keine API-Keys in Dateien, Commits oder Prompts. `GEMINI_API_KEY` lebt ausschliesslich
   als GitHub-Secret.
 - Bilder nicht ohne Rückfrage neu generieren — jeder Call kostet Geld.
-  Videos erst recht nicht — ein Clip kostet ein Vielfaches eines Bildes.

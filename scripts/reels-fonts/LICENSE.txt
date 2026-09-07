@@ -1,0 +1,6 @@
+subtitle-bold.ttf = DejaVu Sans Bold, from the DejaVu Fonts project
+(https://dejavu-fonts.github.io/). Bitstream Vera derivative, permissively
+licensed for embedding/redistribution — see the project's license page.
+Used here only for burned-in reel-clip subtitles; the account's brand font
+(Anton) is not used because it exists only as .woff2, which libass/ffmpeg
+cannot load directly.

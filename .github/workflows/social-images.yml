@@ -27,6 +27,10 @@ on:
         description: "Vorhandene Bilder überschreiben"
         type: boolean
         default: false
+      mit_video:
+        description: "Auch Video-Clips generieren (Veo, kostet deutlich mehr als ein Bild — nur mit Rückfrage anhaken)"
+        type: boolean
+        default: false
       freitext_prompt:
         description: "Nur ein Bild aus Freitext (überschreibt post/only). Motiv beschreiben, Rest wird ergänzt."
         default: ""
@@ -131,6 +135,14 @@ jobs:
             echo "post=99-adhoc"            >> $GITHUB_OUTPUT
             echo "was=nur-bilder"           >> $GITHUB_OUTPUT
           else
+            # Die Texte eines Posts werden freigegeben, bevor die Bildprompts
+            # entstehen — dann gibt es posts/<x>.json schon, prompts/post-<x>.json
+            # noch nicht. Ohne diesen Fall stuerzt gen-images ab und der Lauf wird
+            # rot, obwohl nichts kaputt ist. Also: Slides rendern, Bilder auslassen.
+            if [ ! -f "prompts/post-$POST.json" ]; then
+              echo "prompts/post-$POST.json fehlt noch — nur Slides, keine Bilder."
+              WAS="nur-slides"
+            fi
             echo "file=prompts/post-$POST.json" >> $GITHUB_OUTPUT
             echo "post=$POST"                   >> $GITHUB_OUTPUT
             echo "was=$WAS"                     >> $GITHUB_OUTPUT
@@ -161,6 +173,24 @@ jobs:
             --out assets/out \
             --branch "$ASSET_BRANCH"
 
+      # Braucht die Standbilder aus dem vorherigen Schritt (Image-to-Video) —
+      # nur mit explizitem Haken "mit_video", weil ein Clip deutlich mehr
+      # kostet als ein einzelnes Bild.
+      - name: Video-Clips generieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-slides' && inputs.mit_video == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PROMPT_FILE: ${{ steps.p.outputs.file }}
+          IN_ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.neu_generieren }}
+        run: |
+          ARGS=""
+          [ "$FORCE" = "true" ] && ARGS="--force"
+          node scripts/gen-video.mjs \
+            --file "$PROMPT_FILE" \
+            --out assets/out \
+            --only "$IN_ONLY" $ARGS
+
       - name: Chromium für das Slide-Rendering
         if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
         run: npx playwright install --with-deps chromium
@@ -175,6 +205,23 @@ jobs:
             --post "$POST" \
             --out assets/out \
             --image-variant "$IN_VARIANT"
+
+      # ffmpeg/ffprobe sind auf ubuntu-latest NICHT vorinstalliert (per echtem
+      # "spawn ffprobe ENOENT" bestaetigt) — anders als z.B. Chromium-Codecs.
+      - name: ffmpeg installieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+
+      # No-op fuer jeden Post ohne Video (die weit ueberwiegende Mehrheit) —
+      # das Skript prueft selbst, ob es fuer diesen Post etwas zu tun gibt.
+      - name: Video-Slides komponieren
+        if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'
+        env:
+          POST: ${{ steps.p.outputs.post }}
+        run: |
+          node scripts/compose-video-slides.mjs \
+            --post "$POST" \
+            --out assets/out
 
       - name: Slides in die Summary
         if: steps.p.outputs.skip != 'true' && steps.p.outputs.was != 'nur-bilder'

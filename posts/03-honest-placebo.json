@@ -1,0 +1,90 @@
+{
+  "post": "03-honest-placebo",
+  "title": "Placebo works even when you know it is one",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Patients were handed a bottle labelled placebo pills and told plainly there was no active ingredient in it. They got better anyway. 💊🤯",
+    "detail": "Ted Kaptchuk's team at Harvard Medical School randomised 80 people with irritable bowel syndrome. One group got open-label placebos plus the usual care. The other got the usual care and the same amount of attention from the same clinicians. On the IBS Global Improvement Scale at day 21, the placebo group scored 5.0 against 3.9.",
+    "kontext": "Nobody was deceived. That is the part that broke the textbook: the placebo effect was supposed to need a lie to work. It doesn't. What it seems to need is the ritual — a diagnosis, a bottle, a routine, and someone who takes you seriously.",
+    "frage": "Would you take a pill you know is empty, if it worked?",
+    "sources": "Sources: Kaptchuk, Friedlander, Kelley, Sanchez, Kokkotou, Singer, Kowalczykowski, Miller, Kirsch & Lembo — Placebos without deception: a randomized controlled trial in irritable bowel syndrome • PLoS ONE 5(12): e15591, December 2010 • doi.org/10.1371/journal.pone.0015591",
+    "hashtags": "#psychology #placebo #mindbody #science #health"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[PLACEBO] WORKS EVEN",
+        "WHEN YOU [KNOW]",
+        "IT IS [ONE]"
+      ],
+      "sub": "80 PATIENTS. NOBODY WAS DECEIVED.",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A single large capsule pill floats in dark void, cracked open at the seam with only fine dust drifting out instead of medicine, thin arcs of light circling it. Headline: Placebo works even when you know it is one."
+    },
+    {
+      "n": 2,
+      "type": "facts",
+      "image": "s2a",
+      "kicker": "",
+      "layout": {
+        "photo": 0.62
+      },
+      "headline": [
+        "INSIDE THE [HONEST]",
+        "[PLACEBO] TRIAL"
+      ],
+      "bullets": [
+        "Ted Kaptchuk's team at **Harvard Medical School**",
+        "**80 people** with irritable bowel syndrome, 2010",
+        "The bottle was labelled **placebo pills**",
+        "They were told plainly: **no active ingredient**"
+      ],
+      "alt": "An empty clinical consulting room with two worn chairs facing each other and a small side table between them, lit by one warm desk lamp against cold overhead light. Headline: Inside the honest placebo trial."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "THE [SUGAR PILLS] BEAT",
+        "GETTING [NO TREATMENT]"
+      ],
+      "body": "IBS Global Improvement Scale at day 21: [5.0 against 3.9]. Same doctors, same attention, one bottle of nothing.",
+      "alt": "Two prescription bottles side by side on a wooden desk, one sealed and full in shadow, one open and half empty catching warm lamplight, loose capsules scattered nearby. Headline: The sugar pills beat getting no treatment."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "IT WAS NEVER [THE LIE]",
+        "IT WAS THE [RITUAL]"
+      ],
+      "body": "A diagnosis, a bottle, a routine, and someone who [takes you seriously].",
+      "alt": "A close view of a hand bringing a capsule pill to the mouth with a glass of water in the foreground, warm morning light, head cropped by the frame. Headline: It was never the lie, it was the ritual."
+    },
+    {
+      "n": 5,
+      "type": "cta",
+      "image": "s5a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "THE PILL WAS EMPTY. THE EFFECT WAS NOT.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "post": "05-choice-overload-jam",
+  "title": "The more options you give, the less people buy",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "A fancy grocery store set up a tasting table. One day: 24 jam flavors. The next: just 6. The big table drew a crowd — and almost nobody bought anything. 🍯",
+    "detail": "Psychologists Sheena Iyengar and Mark Lepper ran the tasting booths on separate days in 2000. About 60% of shoppers stopped at the 24-flavor table versus 40% at the 6-flavor one. But only 3% of the big-table tasters bought a jar — versus 40% at the small table. Ten times the conversion, with a quarter of the flavors.",
+    "kontext": "This is why bigger menus, longer feeds, and endless product pages don't feel like abundance after a while — they feel like a low hum of dread. Every extra option is one more way to have chosen wrong.",
+    "frage": "When did more choices last make a decision harder, not easier?",
+    "sources": "Sources: Iyengar, S.S. & Lepper, M.R. — When Choice is Demotivating: Can One Desire Too Much of a Good Thing? • Journal of Personality and Social Psychology 79(6): 995-1006, 2000",
+    "hashtags": "#psychology #choice #decisionmaking #behavioralscience #consumerpsychology"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "THE MORE OPTIONS YOU GIVE,",
+        "THE [LESS PEOPLE BUY]"
+      ],
+      "sub": "A GROCERY STORE PROVED IT BY ACCIDENT. 2000.",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A single jam jar glowing warmly in dark void, TBD final concept. Headline: The more options you give, the less people buy."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "[24] FLAVORS DREW",
+        "[MORE] LOOKS"
+      ],
+      "body": "Iyengar and Lepper put 24 jams on a tasting table in an upscale grocery store. [60%] of passing shoppers stopped, against [40%] at a table with only six. By every measure of attention, the big display won.",
+      "alt": "A wide tasting table crowded with two dozen jam jars, TBD final concept. Headline: 24 flavors drew more looks."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "BUT [FEWER]",
+        "OF THEM BOUGHT"
+      ],
+      "body": "Only [3%] of the 24-flavor tasters actually bought a jar. At the six-flavor table it was [40%] — more than [ten times as many], from a quarter of the options.",
+      "alt": "A single hand confidently picking one jar from a small row, TBD final concept. Headline: But fewer of them bought."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "layout": {
+        "headMax": 0.3
+      },
+      "headline": [
+        "MORE OPTIONS ISN'T",
+        "THE SAME AS",
+        "[MORE FREEDOM]"
+      ],
+      "body": "More choice looks like more freedom. In practice it is more work — comparing, second-guessing, imagining the jar you didn't pick. Past a certain point options don't help you decide. [They give you permission not to].",
+      "alt": "An empty tasting table at closing, unsold jars, TBD final concept. Headline: More options isn't the same as more freedom."
+    },
+    {
+      "n": 5,
+      "type": "cta",
+      "image": "s5a",
+      "headline": [
+        "PICKING FROM [6] FELT LIKE",
+        "A DECISION. PICKING FROM [24]",
+        "FELT LIKE [WORK]."
+      ],
+      "tag": "WE SHARE DAILY FINDINGS FROM THE WORLD OF PSYCHOLOGY.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: Picking from six felt like a decision, picking from 24 felt like work."
+    }
+  ]
+}

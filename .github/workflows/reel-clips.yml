@@ -22,6 +22,10 @@ on:
         description: "Vorhandene Clips überschreiben"
         type: boolean
         default: false
+      nur_modelle_auflisten:
+        description: "Diagnose: nur verfuegbare Veo-Modelle auflisten, nichts generieren (kostenlos)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -65,7 +69,14 @@ jobs:
             git checkout -q -b "$ASSET_BRANCH"
           fi
 
+      - name: Veo-Modelle auflisten (Diagnose, kostenlos)
+        if: inputs.nur_modelle_auflisten == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/list-veo-models.mjs
+
       - name: Clips generieren (Text-zu-Video mit Ton)
+        if: inputs.nur_modelle_auflisten != true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           REEL: ${{ inputs.reel }}

@@ -14,8 +14,8 @@ on:
       only:
         description: "Clip-id(s), Komma-getrennt (z.B. clip1). Leer = alle"
         default: ""
-      untertitel:
-        description: "Untertitel automatisch erkennen und einbrennen"
+      reel_bauen:
+        description: "Sprachspur (TTS) erzeugen, Untertitel einbrennen, Reel zusammenschneiden"
         type: boolean
         default: true
       neu_generieren:
@@ -112,25 +112,31 @@ jobs:
             --images-root "assets/out" \
             --only "$IN_ONLY" $ARGS
 
-      - name: Untertitel erkennen und einbrennen
-        if: inputs.untertitel == true
+      - name: Sprachspur erzeugen (TTS)
+        if: inputs.reel_bauen == true && inputs.nur_modelle_auflisten != true && inputs.nur_tts_testen != true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           REEL: ${{ inputs.reel }}
           IN_ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.neu_generieren }}
         run: |
-          DIR="assets/reels/$REEL/out"
-          for f in "$DIR"/*.mp4; do
-            [ -e "$f" ] || continue
-            base=$(basename "$f" .mp4)
-            [[ "$base" == *-captioned ]] && continue
-            if [ -n "$IN_ONLY" ]; then
-              case ",$IN_ONLY," in *",$base,"*) ;; *) continue ;; esac
-            fi
-            echo "::group::Untertitel für $base"
-            node scripts/caption-reel-clip.mjs --in "$f" --out "$DIR/$base-captioned.mp4" || echo "::warning::Untertitel für $base fehlgeschlagen"
-            echo "::endgroup::"
-          done
+          ARGS=""
+          [ "$FORCE" = "true" ] && ARGS="--force"
+          node scripts/gen-tts.mjs \
+            --file "reels/$REEL/clips.json" \
+            --out-dir "assets/reels/$REEL/out" \
+            --only "$IN_ONLY" $ARGS
+
+      - name: Reel zusammenbauen (Ton tauschen, Untertitel einbrennen, schneiden)
+        if: inputs.reel_bauen == true && inputs.nur_modelle_auflisten != true && inputs.nur_tts_testen != true
+        env:
+          REEL: ${{ inputs.reel }}
+          IN_ONLY: ${{ inputs.only }}
+        run: |
+          node scripts/assemble-reel.mjs \
+            --file "reels/$REEL/clips.json" \
+            --out-dir "assets/reels/$REEL/out" \
+            --only "$IN_ONLY"
 
       - name: Ergebnis pushen
         run: |

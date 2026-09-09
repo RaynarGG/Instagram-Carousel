@@ -1,10 +1,14 @@
 // Einmaliges Diagnose-Skript: listet die Modelle, die dieser API-Key sieht,
-// gefiltert auf "veo" im Namen. Kostet nichts (reiner GET, keine Generierung)
-// — Ziel ist herauszufinden, welches Modell tatsaechlich generateAudio
-// unterstuetzt, statt weiter Modellnamen zu raten (veo-3.1-generate-preview
-// lehnt es nachweislich ab, sowohl bei Bild- als auch bei Text-zu-Video).
+// optional gefiltert auf einen Namensteil. Kostet nichts (reiner GET, keine
+// Generierung) — Ziel ist, echte Modellnamen zu verifizieren statt zu raten.
 //
-//   node scripts/list-veo-models.mjs
+//   node scripts/list-veo-models.mjs           (Default-Filter: "veo")
+//   node scripts/list-veo-models.mjs --filter flash
+//   node scripts/list-veo-models.mjs --filter ""   (alle Modelle)
+
+const args = process.argv.slice(2);
+const fi = args.indexOf('--filter');
+const FILTER = fi >= 0 ? args[fi + 1] : 'veo';
 
 const KEY = process.env.GEMINI_API_KEY;
 if (!KEY) { console.error('GEMINI_API_KEY ist nicht gesetzt.'); process.exit(1); }
@@ -14,8 +18,8 @@ const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?p
 });
 if (!r.ok) { console.error(`models.list ${r.status}: ${(await r.text()).slice(0, 500)}`); process.exit(1); }
 const json = await r.json();
-const veo = (json.models ?? []).filter(m => /veo/i.test(m.name));
-if (!veo.length) { console.log('Keine Modelle mit "veo" im Namen gefunden.'); process.exit(0); }
+const veo = FILTER ? (json.models ?? []).filter(m => new RegExp(FILTER, 'i').test(m.name)) : (json.models ?? []);
+if (!veo.length) { console.log(`Keine Modelle mit "${FILTER}" im Namen gefunden.`); process.exit(0); }
 for (const m of veo) {
   console.log(`\n${m.name}`);
   console.log(`  displayName: ${m.displayName ?? '—'}`);

@@ -180,18 +180,25 @@ for (const id of order) {
   const ttsDur = await probeDuration(wav);
   const vidDur = await probeDuration(video);
   const span = await speechSpan(wav, ttsDur);
-  const want = Math.min(vidDur, span.end + TAIL_PAD);
+  // Der Schnitt richtet sich nach der Sprache, nicht nach dem Video. Ist die
+  // TTS-Spur laenger als Veos feste 8s, wird das letzte Bild eingefroren statt
+  // den Satz abzuschneiden — ein stehender Schluss faellt weniger auf als ein
+  // abgehacktes Wort.
+  const want = span.end + TAIL_PAD;
+  const freeze = Math.max(0, want - vidDur);
   const cues = cuesFor(clip.spoken, span);
   const srtPath = path.join(outDir, `${id}.srt`);
   const outPath = path.join(outDir, `${id}-final.mp4`);
 
-  console.log(`· ${id.padEnd(16)} TTS ${ttsDur.toFixed(2)}s (Sprache ${span.start.toFixed(2)}–${span.end.toFixed(2)}s), Video ${vidDur.toFixed(2)}s -> Schnitt bei ${want.toFixed(2)}s, ${cues.length} Untertitel`);
+  console.log(`· ${id.padEnd(16)} TTS ${ttsDur.toFixed(2)}s (Sprache ${span.start.toFixed(2)}–${span.end.toFixed(2)}s), Video ${vidDur.toFixed(2)}s -> Schnitt bei ${want.toFixed(2)}s`
+    + `${freeze > 0.01 ? `, ${freeze.toFixed(2)}s Standbild angehaengt` : ''}, ${cues.length} Untertitel`);
   if (DRY) { pieces.push(outPath); continue; }
 
   await fs.writeFile(srtPath, buildSrt(cues));
   const { width, height } = await probeSize(video);
   const reframe = reframeFilter(width, height, clip.fit ?? 'cover', clip.source_aspect ?? '3:4', Number(clip.inset ?? 16));
-  const vf = `${reframe},subtitles=filename='${escFilterPath(srtPath)}':fontsdir='${escFilterPath(FONT_DIR)}':force_style='${SUB_STYLE}'`;
+  const hold = freeze > 0.01 ? `tpad=stop_mode=clone:stop_duration=${(freeze + 0.1).toFixed(3)},` : '';
+  const vf = `${hold}${reframe},subtitles=filename='${escFilterPath(srtPath)}':fontsdir='${escFilterPath(FONT_DIR)}':force_style='${SUB_STYLE}'`;
   await run('ffmpeg', ['-y', '-i', video, '-i', wav,
     '-map', '0:v:0', '-map', '1:a:0',
     '-vf', vf, '-t', String(want.toFixed(3)),

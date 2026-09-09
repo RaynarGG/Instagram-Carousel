@@ -75,7 +75,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/list-veo-models.mjs
 
-      - name: Clips generieren (Text-zu-Video mit Ton)
+      - name: Clips generieren (Text- oder Bild-zu-Video, mit Ton)
         if: inputs.nur_modelle_auflisten != true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -88,6 +88,7 @@ jobs:
           node scripts/gen-reel-clip.mjs \
             --file "reels/$REEL/clips.json" \
             --out "assets/reels/$REEL/out" \
+            --images-root "assets/out" \
             --only "$IN_ONLY" $ARGS
 
       - name: Untertitel erkennen und einbrennen

@@ -1,0 +1,15 @@
+1
+00:00:00,285 --> 00:00:02,569
+A store put twenty-four jams
+
+2
+00:00:02,569 --> 00:00:04,119
+on a tasting table.
+
+3
+00:00:04,119 --> 00:00:06,077
+Crowds stopped to taste.
+
+4
+00:00:06,077 --> 00:00:08,116
+Almost nobody bought one.

@@ -1,0 +1,4 @@
+file '/home/runner/work/Instagram-Carousel/Instagram-Carousel/assets/reels/05-choice-overload-jam/out/clip1-stand-final.mp4'
+file '/home/runner/work/Instagram-Carousel/Instagram-Carousel/assets/reels/05-choice-overload-jam/out/clip2-abandoned-final.mp4'
+file '/home/runner/work/Instagram-Carousel/Instagram-Carousel/assets/reels/05-choice-overload-jam/out/clip3-pick-final.mp4'
+file '/home/runner/work/Instagram-Carousel/Instagram-Carousel/assets/reels/05-choice-overload-jam/out/clip1-graph-final.mp4'

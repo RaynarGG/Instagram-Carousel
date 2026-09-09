@@ -1,0 +1,11 @@
+1
+00:00:00,270 --> 00:00:01,611
+Did you know that people
+
+2
+00:00:01,611 --> 00:00:02,951
+buy less often when they
+
+3
+00:00:02,951 --> 00:00:03,956
+have more choices?

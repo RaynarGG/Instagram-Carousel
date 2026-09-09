@@ -61,8 +61,7 @@ const clips = raw.clips.map(c => {
     model: c.model ?? d.model ?? 'veo-3.1-generate-preview',
     aspect_ratio: c.aspect_ratio ?? d.aspect_ratio ?? '9:16',
     resolution: c.resolution ?? d.resolution ?? '720p',
-    generate_audio: c.generate_audio ?? d.generate_audio ?? true,
-    person_generation: c.person_generation ?? d.person_generation ?? 'allow_all',
+    person_generation: c.person_generation ?? d.person_generation ?? 'dont_allow',
   };
 });
 
@@ -86,7 +85,13 @@ async function startOperation(clip) {
     sampleCount: 1,
   };
   if (clip.duration_seconds !== null) parameters.durationSeconds = clip.duration_seconds;
-  if (clip.generate_audio) parameters.generateAudio = true;
+  // KEIN generateAudio: das Feld existiert im dokumentierten Veo-3.1-Request-
+  // Body nicht (prompt/image/lastFrame/referenceImages/video/aspectRatio/
+  // durationSeconds/personGeneration/resolution — sonst nichts). Veo 3.1 und
+  // Veo 3.1 Lite generieren Ton nativ und immer, per echtem 400 bestaetigt
+  // ("isn't supported by this model" bei jedem der drei verfuegbaren
+  // Modelle) — das war ein falscher Parameter meinerseits, kein
+  // Account-Limit.
   const r = await fetch(url, {
     method: 'POST',
     headers: { 'x-goog-api-key': KEY, 'Content-Type': 'application/json' },
@@ -149,11 +154,11 @@ const done = [], failed = [], skipped = [];
 
 for (const clip of jobs) {
   const target = path.join(outDir, `${clip.id}.mp4`);
-  const rate = clip.generate_audio ? 0.40 : 0.20;
+  const rate = 0.40; // Veo 3.1 generiert Ton immer, kein Silent-Modus wählbar
   const secsLabel = clip.duration_seconds !== null ? `${clip.duration_seconds}s` : 'Laenge von Veo bestimmt (nicht angegeben)';
   const costLabel = clip.duration_seconds !== null ? `$${(rate * clip.duration_seconds).toFixed(2)}` : `$${(rate * 4).toFixed(2)}–$${(rate * 8).toFixed(2)} (4–8s moeglich)`;
   if (!FORCE && await exists(target)) { skipped.push(clip.id); console.log(`· ${clip.id.padEnd(6)} — existiert, übersprungen`); continue; }
-  if (DRY) { console.log(`· ${clip.id.padEnd(6)} — würde generiert (${clip.model}, ${secsLabel}, ${clip.aspect_ratio}, Ton: ${clip.generate_audio}, geschätzt ${costLabel})`); continue; }
+  if (DRY) { console.log(`· ${clip.id.padEnd(6)} — würde generiert (${clip.model}, ${secsLabel}, ${clip.aspect_ratio}, Ton: immer an, geschätzt ${costLabel})`); continue; }
 
   process.stdout.write(`· ${clip.id.padEnd(6)} (${secsLabel}, geschätzt ${costLabel}) … `);
   try {

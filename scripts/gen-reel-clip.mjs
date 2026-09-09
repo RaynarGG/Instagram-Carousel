@@ -69,7 +69,9 @@ const clips = raw.clips.map(c => {
     model: c.model ?? d.model ?? 'veo-3.1-generate-preview',
     aspect_ratio: c.aspect_ratio ?? d.aspect_ratio ?? '9:16',
     resolution: c.resolution ?? d.resolution ?? '720p',
-    person_generation: c.person_generation ?? d.person_generation ?? 'dont_allow',
+    // "dont_allow" wird bei Bild-zu-Video abgelehnt ("currently not
+    // supported"), per echtem 400 bestaetigt — "allow_adult" als Default.
+    person_generation: c.person_generation ?? d.person_generation ?? 'allow_adult',
     image_from: c.image_from ?? null,
   };
 });

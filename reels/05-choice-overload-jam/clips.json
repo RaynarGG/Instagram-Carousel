@@ -5,7 +5,7 @@
     "aspect_ratio": "9:16",
     "resolution": "720p",
     "duration_seconds": 8,
-    "person_generation": "dont_allow"
+    "person_generation": "allow_adult"
   },
   "clips": [
     {

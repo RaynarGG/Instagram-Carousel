@@ -29,6 +29,13 @@ on:
       modell_filter:
         description: "Namensfilter fuer die Modell-Liste (nur mit nur_modelle_auflisten). Leer = alle"
         default: "veo"
+      nur_tts_testen:
+        description: "Diagnose: nur Text-zu-Sprache testen (gen-tts.mjs), kein Video"
+        type: boolean
+        default: false
+      tts_text:
+        description: "Text fuer den TTS-Test (nur mit nur_tts_testen)"
+        default: "Did you know that people buy less often when they have more choices?"
 
 permissions:
   contents: write
@@ -79,8 +86,18 @@ jobs:
           FILTER: ${{ inputs.modell_filter }}
         run: node scripts/list-veo-models.mjs --filter "$FILTER"
 
+      - name: TTS testen (Diagnose)
+        if: inputs.nur_tts_testen == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REEL: ${{ inputs.reel }}
+          TEXT: ${{ inputs.tts_text }}
+        run: |
+          mkdir -p "assets/reels/$REEL/out"
+          node scripts/gen-tts.mjs --text "$TEXT" --out "assets/reels/$REEL/out/tts-test.wav"
+
       - name: Clips generieren (Text- oder Bild-zu-Video, mit Ton)
-        if: inputs.nur_modelle_auflisten != true
+        if: inputs.nur_modelle_auflisten != true && inputs.nur_tts_testen != true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           REEL: ${{ inputs.reel }}

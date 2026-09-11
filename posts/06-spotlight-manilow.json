@@ -1,0 +1,108 @@
+{
+  "post": "06-spotlight-manilow",
+  "title": "Three psychologists measured who actually notices you",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Three psychologists put a student in a Barry Manilow t-shirt, walked him into a room full of strangers, then counted who actually noticed. He guessed exactly twice the real number. 👕😬",
+    "detail": "Thomas Gilovich, Victoria Husted Medvec and Kenneth Savitsky ran it at Cornell as Study 1 of the paper that named the spotlight effect. The wearers estimated 46% of the room could say who was on the shirt. Then the observers were asked. 23% could. Per session, each wearer overshot their own room by 23 percentage points.",
+    "kontext": "The mechanism is anchoring and adjustment: you start from how loud the shirt is in your own head, then adjust down for other people — never far enough. They proved it by making students sit in the shirt for 15 minutes before entering. Same shirt, same room. Sent in immediately, they guessed 51%. After getting used to it, 37%. And when students wore a shirt they were proud of — Marley, Seinfeld, Martin Luther King Jr. — they guessed 48% while only 8% could name the face. Being pleased with it made the gap six times wider, not smaller.",
+    "frage": "What is the moment you still cringe about that nobody else remembers?",
+    "sources": "Sources: Gilovich, Medvec & Savitsky — The spotlight effect in social judgment: an egocentric bias in estimates of the salience of one's own actions and appearance • Journal of Personality and Social Psychology 78(2): 211–222, February 2000 • doi.org/10.1037/0022-3514.78.2.211",
+    "hashtags": "#psychology #socialanxiety #selfconscious #science #mindset"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[THREE PSYCHOLOGISTS] SENT",
+        "[A STUDENT] INTO A ROOM IN AN",
+        "[EMBARRASSING SHIRT] TO COUNT",
+        "WHO [ACTUALLY NOTICED]"
+      ],
+      "sub": "HE GUESSED 46%. THE ROOM SAID 23%.",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A folded t-shirt lying alone under a single hard overhead light on a dark table, the print on it turned away from the camera. Headline: Three psychologists sent a student into a room in an embarrassing shirt to count who actually noticed."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "AT [CORNELL], THEY HANDED HIM",
+        "A SHIRT WITH [BARRY MANILOW] ON IT"
+      ],
+      "body": "Then they walked him into a room where [five strangers] sat filling out forms — and pulled him back out seconds later.",
+      "alt": "A young man standing in a doorway of a bright university seminar room, seen from behind, several students at a table ahead of him with their heads down over paperwork. Headline: At Cornell, they handed him a shirt with Barry Manilow on it."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "HE GUESSED [46%].",
+        "THE ROOM SAID [23%]."
+      ],
+      "body": "You start from how loud it is [inside your own head], then adjust down for other people — [never far enough]. Psychologists call it [anchoring and adjustment].",
+      "alt": "A hallway outside a closed door, one figure waiting alone against the wall under a warm wall lamp, the corridor falling away into darkness. Headline: He guessed 46 percent. The room said 23 percent."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "SO THEY MADE [STUDENTS]",
+        "WAIT [15 MINUTES] IN THE SHIRT"
+      ],
+      "body": "Same shirt, same room, same strangers. Sent in immediately they guessed [51%]. After getting used to it, [37%]. Nothing changed but [how loudly they felt it].",
+      "alt": "A person sitting alone at a long empty computer lab desk under fluorescent light, a clock on the wall behind them, an unfinished survey in front of them. Headline: So they made students wait 15 minutes in the shirt."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "THEN THEY TRIED [A SHIRT]",
+        "THE STUDENTS [LIKED]"
+      ],
+      "body": "Marley. Seinfeld. [Martin Luther King]. The wearers guessed [48%] — [8%] could name the face. [Six times] off.",
+      "alt": "Three folded t-shirts stacked on a wooden bench in warm light, their prints creased and unreadable. Headline: Then they tried a shirt the students liked."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF PERSONALITY AND SOCIAL PSYCHOLOGY · VOL 78 · NO 2 · FEBRUARY 2000",
+        "title": "The spotlight effect in social judgment",
+        "authors": "An egocentric bias in estimates of the salience of one's own actions and appearance · Gilovich, Medvec & Savitsky · pp. 211–222"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Personality and Social Psychology, volume 78, number 2, February 2000, The spotlight effect in social judgment by Gilovich, Medvec and Savitsky."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "YOU ARE THE ONLY ONE WATCHING YOU THAT CLOSELY.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

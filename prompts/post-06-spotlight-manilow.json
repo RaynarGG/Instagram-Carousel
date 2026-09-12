@@ -1,0 +1,80 @@
+{
+  "post": "06-spotlight-manilow",
+  "title": "Three psychologists measured who actually notices you",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Keine benannten realen Personen in den Prompts. Die Forscher sind frei erfundene Wissenschaftler, die Shirt-Aufdrucke sind generische Konzert-Porträtdrucke ihrer Epoche. Grund ist praktisch, nicht moralisch: Bildmodelle verweigern oder verzerren benannte Prominente, und der Post braucht das Shirt, nicht das Gesicht.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "three-researchers-holding-the-shirt",
+      "slide": 1,
+      "variant": "a",
+      "keywords": ["cover", "archetype-b", "researchers", "evidence-object"],
+      "headline": "Three psychologists sent a student into a room in an embarrassing shirt to count who actually noticed",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dim university psychology lab of the late 1990s, scuffed concrete and institutional green walls receding into darkness, a wall of grey filing drawers and a reel-to-reel data recorder half-swallowed by shadow. Burned faintly into that wall, enormous and semi-transparent, the silhouette of a theatre spotlight cone, roughly half the frame width, partly hidden behind the main subjects. Hero: three researchers stand shoulder to shoulder filling the upper two thirds of the frame, cropped at the thighs by the frame edge, dressed in muted 1990s academic clothing — one of them holds up a plain white cotton T-shirt by its shoulders, stretched open toward the camera like a piece of evidence, the shirt large and crisp and central. Printed across the shirt is a glossy concert-style portrait of a smiling male soft-rock singer of the 1970s, feathered blond hair, open-collared white shirt, airbrushed studio glamour — a completely fictional performer, not a real or recognisable person. The three researchers are entirely fictional faces, neutral and observant, one faintly amused. In the upper right, a circular inset cut-out shows an extreme macro close-up of the printed portrait on the shirt fabric, the halftone dots and cotton weave visible, rendered sharper and brighter than the main scene. Lighting: one hard cold overhead fluorescent from above, plus a warm amber practical desk lamp burning in the lower left of the frame, throwing orange rim light along the shirt and the researchers' arms. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: institutional grey-green plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "doorway-nobody-looks-up",
+      "slide": 2,
+      "variant": "a",
+      "keywords": ["scene", "archetype-a", "ghost-mark", "pov"],
+      "headline": "At Cornell, they handed him a shirt with Barry Manilow on it",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a bright university seminar room seen from just inside the doorway, long table, stacked chairs, tall windows blown out to white, the doorframe dark and heavy in the immediate foreground. Burned into the far wall above the table, enormous and semi-transparent, the same glossy concert portrait of a fictional 1970s soft-rock singer that is printed on the shirt, roughly sixty percent of the frame width, ghosted like a projection nobody in the room can see. Hero: five students sit around the table filling the middle band of the frame, every single head bowed over paperwork, pens moving, not one face lifted toward the door — in the extreme foreground, out of focus and cropped by the frame edge, the shoulder and upper back of a sixth person standing in the doorway in a white T-shirt. In the upper right, a circular inset cut-out shows one of the seated students' faces in sharp detail, eyes down on the page, completely unaware, rendered sharper and brighter than the main scene. Lighting: flat cold daylight flooding from the windows, plus a warm amber practical desk lamp glowing on the table's near corner. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: cold daylight blue-grey plus warm amber. High contrast, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "imagined-room-versus-real-room",
+      "slide": 3,
+      "variant": "a",
+      "keywords": ["stat", "archetype-d", "comparison", "spotlight"],
+      "headline": "He guessed 46 percent. The room said 23 percent.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: absolute black void with a faint haze of dust, a single enormous theatre spotlight cone stabbing down from the top of the frame, its edges hard and volumetric. Hero: a lone young man stands inside that cone of light in a white T-shirt, filling the upper two thirds of the frame, shoulders tight, arms at his sides, seen from slightly below — on the shirt, a glossy concert-style portrait of a fictional 1970s soft-rock singer. Two rounded rectangular inset cards float to his left and right, connected to him by thin, almost hand-drawn pointer lines: the left card shows a room of people all turned toward the viewer, every face lifted and staring, lit hot and theatrical; the right card shows the identical room from the identical angle with every head bowed over paperwork, lit flat and ordinary. Both cards rendered sharper and brighter than the main scene. Lighting: the cold white spotlight from above, plus a warm amber practical stage lamp burning low in the left foreground, throwing orange edge light along one side of the figure. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: cold white-blue plus warm amber against black. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "fifteen-minutes-spotlight-fading",
+      "slide": 4,
+      "variant": "a",
+      "keywords": ["stat", "archetype-a", "mechanism", "before-after"],
+      "headline": "So they made students wait 15 minutes in the shirt",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a long empty university computer lab at dusk, rows of beige monitors receding into darkness, a large round institutional wall clock mounted high and blank-faced with no numerals, everything still. Hero: a single seated figure in a white T-shirt fills the middle of the frame, slumped comfortably sideways in a swivel chair, one arm hooked over the backrest, a half-finished paper survey abandoned on the desk — above them a theatre spotlight cone comes down from the ceiling, but it is guttering and weak, thinned almost to nothing, barely separating the figure from the room. In the upper right, a circular inset cut-out shows the exact same figure in the exact same chair fifteen minutes earlier, bolt upright and rigid, with the spotlight cone above them blazing at full intensity, rendered sharper and brighter than the main scene. Lighting: dying blue dusk from a high window, plus a warm amber practical desk lamp burning on the near desk, the only warm thing in the room. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: cold dusk blue plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "three-shirts-they-were-proud-of",
+      "slide": 5,
+      "variant": "a",
+      "keywords": ["stat", "archetype-c", "evidence-object", "twist"],
+      "headline": "Then they tried a shirt the students liked",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark evidence room, a scratched steel table and a wall of dim lockers falling away into blackness, dust hanging in the air. Burned faintly into the back wall, enormous and semi-transparent, the silhouette of a theatre spotlight cone, partly hidden behind the shirts. Hero: three cotton T-shirts lie fanned out across the steel table filling the upper two thirds of the frame, shot from a steep angle, each one pinned flat and lit like a museum specimen — the first bears a concert-style portrait print of a fictional reggae musician with long locks against a sunburst graphic, the second a fictional stand-up comedian in a 1990s suit caught mid-gesture, the third a fictional civil-rights-era orator at a bank of microphones in black and white. All three faces are invented and not recognisable as any real person. The printed fabric is creased, faded and slightly cracked from washing. In the upper right, a circular inset cut-out shows an extreme macro of one print's cracked halftone surface, the cotton fibres lifting through the ink, rendered sharper and brighter than the main scene. Lighting: one hard directional key light raking across the table from the left, plus a warm amber practical work lamp clamped at the table edge inside the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: cold steel grey plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": ["evidence", "source", "warm"],
+      "headline": "Journal of Personality and Social Psychology, February 2000",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark wooden desk in a windowless office at night, the room falling away into blackness behind. Hero: a thick stack of loose printed journal pages fills the upper two thirds of the frame, seen from a steep overhead angle, the top page dense with unreadable two-column body copy and a small bar chart, the margins covered in handwritten pencil annotation and underlining, corners dog-eared, a paper clip biting into one edge. In the upper right, a circular inset cut-out shows an extreme macro of the pencil annotation crossing the printed column, graphite grain and paper fibre visible, rendered sharper and brighter than the main scene. Lighting: a single warm amber desk lamp low and close in frame at the upper left, its bulb visible, throwing a hard pool of orange light across the paper and leaving the rest of the desk black. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: warm amber and paper white against black. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no legible text of any kind, all printed and handwritten text must be an unreadable blur of marks, no captions, no watermark, no logos, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": ["cta", "positioning", "warm", "reused"],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

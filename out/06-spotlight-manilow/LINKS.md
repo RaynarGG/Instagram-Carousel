@@ -1,6 +1,6 @@
 # 06-spotlight-manilow — Bild-Links
 
-Branch `social-assets` · erzeugt 2026-09-12T15:44:07.368Z
+Branch `social-assets` · erzeugt 2026-09-16T02:45:08.365Z
 
 | | id | Stichworte | Prüfung | Link |
 |---|---|---|---|---|

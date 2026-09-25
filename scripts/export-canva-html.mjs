@@ -51,6 +51,11 @@ function page(s) {
   const img = s.image && IMAGE_BASE && images[s.image]
     ? `<img src="${esc(`${IMAGE_BASE}/${images[s.image]}`)}" alt="${esc(s.alt || '')}" style="position:absolute;left:0;top:0;width:${W}px;height:${Math.round(W * 4 / 3)}px;object-fit:cover">`
     : '';
+  // Wie im Renderer: das Bild faellt unten ins Schwarze, damit die Headline
+  // nicht auf Bilddetail sitzt. Nur wenn ein Bild da ist.
+  const fade = img
+    ? `<div style="position:absolute;left:0;right:0;bottom:0;height:${Math.round(H * 0.5)}px;background:linear-gradient(to bottom, rgba(31,29,27,0) 0%, ${P.bg} 55%, ${P.bg} 100%)"></div>`
+    : '';
   const brand = `<p style="position:absolute;top:${PAD}px;right:${PAD}px;margin:0;font-family:Anton;font-size:30px;letter-spacing:1px;color:${P.plain}">${esc(cfg.brand || '')}</p>`;
 
   let block = '';
@@ -80,6 +85,7 @@ function page(s) {
   <section data-document-role="page" data-label="Slide ${s.n} · ${esc(s.type)}" data-speaker-notes="${esc(s.alt || '')}"
            style="position:relative;width:${W}px;height:${H}px;overflow:hidden;background:${P.bg}">
     ${img}
+    ${fade}
     ${brand}
     <div style="position:absolute;left:${PAD}px;right:${PAD}px;bottom:${Math.round(PAD * 1.3)}px">
       ${block}

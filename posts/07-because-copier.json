@@ -22,13 +22,13 @@
       "type": "cover",
       "image": "s1a",
       "headline": [
-        "THEY ASKED TO [CUT THE LINE]",
-        "WITH A [REASON] THAT WAS",
-        "COMPLETELY [EMPTY].",
-        "[93%] SAID YES."
+        "[3 RESEARCHERS] FOUND OUT THAT",
+        "PEOPLE [STOP LISTENING] WHEN",
+        "THEY HEAR THE [WORD]",
+        "[“BECAUSE”]"
       ],
       "micro": "SWIPE FOR MORE",
-      "alt": "A queue of people waiting at an office copier under hard fluorescent light, one figure stepping out of line toward the machine. Headline: They asked to cut the line with a reason that was completely empty. 93 percent said yes."
+      "alt": "Three psychologists in 1970s clothes stand beside a large beige office copier in a university library, one holding a clipboard, watching a queue of students. Headline: 3 researchers found out that people stop listening when they hear the word because."
     },
     {
       "n": 2,
@@ -40,7 +40,7 @@
         "WE ARE [MATCHING PATTERNS]."
       ],
       "body": "Ellen Langer wanted to know how much of an ordinary exchange runs on [autopilot]. So she built a request whose reason contained [no reason at all] — and waited to see whether anyone would notice.",
-      "alt": "A blurred office corridor where several people walk past each other without looking up, one face in sharp focus staring blankly ahead. Headline: We are not listening. We are matching patterns."
+      "alt": "A 1970s library reading room where a queue of people stands in identical postures, eyes unfocused, under a faint glowing grid of puzzle-piece outlines. Headline: We are not listening. We are matching patterns."
     },
     {
       "n": 3,
@@ -52,7 +52,7 @@
         "THREE [ALMOST IDENTICAL] SENTENCES"
       ],
       "body": "\"May I use the machine?\" · \"…[because I'm in a rush]?\" · \"…[because I have to make copies]?\" The last one says nothing. [Everyone] at a copier has to make copies.",
-      "alt": "A close view of a worn office copier with its lid open and a stack of paper beside it, warm lamplight raking across the glass. Headline: At the library copier, three almost identical sentences."
+      "alt": "A young woman with a short stack of pages politely asks a student at a large beige photocopier to let her go first, the copier light spilling across their hands. Headline: At the library copier, three almost identical sentences."
     },
     {
       "n": 4,
@@ -64,7 +64,7 @@
         "AS WELL AS THE [REAL] ONE"
       ],
       "body": "No reason at all: [60%] stepped aside. A real reason: [94%]. A reason that meant nothing: [93%]. It didn't have to be a reason — it only had to have the [shape] of one.",
-      "alt": "Three identical paper slips pinned side by side under a lamp, two of them marked with a handwritten tick and one left blank. Headline: The empty reason worked as well as the real one."
+      "alt": "Three columns of warm amber light rise out of an open photocopier into darkness, the left one noticeably shorter, the other two almost equally tall. Headline: The empty reason worked as well as the real one."
     },
     {
       "n": 5,
@@ -76,8 +76,10 @@
         "INSTEAD OF [FIVE]"
       ],
       "body": "No reason: [24%]. Empty reason: [24%] — not one person more. Only a real reason still moved anyone, and only to [42%]. The trick dies the moment [something is at stake].",
-      "alt": "A tall stack of paper waiting on the feeder of a copier while a line of people stands behind it, arms folded. Headline: Then they asked for 20 pages instead of five.",
-      "layout": { "headMax": 0.3 }
+      "alt": "A tall stack of paper towers on a photocopier while the student at the machine turns around with arms folded, unconvinced, a queue watching behind. Headline: Then they asked for 20 pages instead of five.",
+      "layout": {
+        "headMax": 0.3
+      }
     },
     {
       "n": 6,

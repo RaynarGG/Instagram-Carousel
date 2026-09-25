@@ -1,0 +1,108 @@
+{
+  "post": "07-because-copier",
+  "title": "The word because, and what it is actually worth",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Researchers walked up to people waiting at a copier and asked to cut in line — using a reason that contained no reason at all. 93% stepped aside. 🖨️🤯",
+    "detail": "Ellen Langer, Arthur Blank and Benzion Chanowitz ran it on a college campus in 1978. Three versions of the same request. \"Excuse me, I have 5 pages. May I use the xerox machine?\" got 60% compliance. Adding a real reason — \"because I'm in a rush\" — got 94%. And adding a reason that says nothing at all — \"because I have to make copies\" — got 93%. Everyone at a copier has to make copies. It carried no information whatsoever.",
+    "kontext": "Here is the part that almost never gets quoted. They ran the same three sentences asking for 20 pages instead of 5. Without a reason: 24%. With the empty reason: 24% — not one person more. Only the real reason still moved anyone, and only to 42%. So \"just say because\" is not a persuasion hack. It is what happens when the stakes are too low for anyone to bother listening. Raise them and people start checking what is actually inside the sentence.",
+    "frage": "When did you last say yes to something without really hearing the reason?",
+    "sources": "Sources: Langer, Blank & Chanowitz — The mindlessness of ostensibly thoughtful action: the role of \"placebic\" information in interpersonal interaction • Journal of Personality and Social Psychology 36(6): 635–642, 1978",
+    "hashtags": "#psychology #persuasion #influence #science #communication"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "THEY ASKED TO [CUT THE LINE]",
+        "WITH A [REASON] THAT WAS",
+        "COMPLETELY [EMPTY].",
+        "[93%] SAID YES."
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A queue of people waiting at an office copier under hard fluorescent light, one figure stepping out of line toward the machine. Headline: They asked to cut the line with a reason that was completely empty. 93 percent said yes."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "WE ARE NOT [LISTENING].",
+        "WE ARE [MATCHING PATTERNS]."
+      ],
+      "body": "Ellen Langer wanted to know how much of an ordinary exchange runs on [autopilot]. So she built a request whose reason contained [no reason at all] — and waited to see whether anyone would notice.",
+      "alt": "A blurred office corridor where several people walk past each other without looking up, one face in sharp focus staring blankly ahead. Headline: We are not listening. We are matching patterns."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "AT THE [LIBRARY COPIER],",
+        "THREE [ALMOST IDENTICAL] SENTENCES"
+      ],
+      "body": "\"May I use the machine?\" · \"…[because I'm in a rush]?\" · \"…[because I have to make copies]?\" The last one says nothing. [Everyone] at a copier has to make copies.",
+      "alt": "A close view of a worn office copier with its lid open and a stack of paper beside it, warm lamplight raking across the glass. Headline: At the library copier, three almost identical sentences."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "THE [EMPTY] REASON WORKED",
+        "AS WELL AS THE [REAL] ONE"
+      ],
+      "body": "No reason at all: [60%] stepped aside. A real reason: [94%]. A reason that meant nothing: [93%]. It didn't have to be a reason — it only had to have the [shape] of one.",
+      "alt": "Three identical paper slips pinned side by side under a lamp, two of them marked with a handwritten tick and one left blank. Headline: The empty reason worked as well as the real one."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "THEN THEY ASKED FOR [20 PAGES]",
+        "INSTEAD OF [FIVE]"
+      ],
+      "body": "No reason: [24%]. Empty reason: [24%] — not one person more. Only a real reason still moved anyone, and only to [42%]. The trick dies the moment [something is at stake].",
+      "alt": "A tall stack of paper waiting on the feeder of a copier while a line of people stands behind it, arms folded. Headline: Then they asked for 20 pages instead of five.",
+      "layout": { "headMax": 0.3 }
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF PERSONALITY AND SOCIAL PSYCHOLOGY · VOL 36 · NO 6 · 1978",
+        "title": "The mindlessness of ostensibly thoughtful action",
+        "authors": "The role of \"placebic\" information in interpersonal interaction · Langer, Blank & Chanowitz · pp. 635–642"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Personality and Social Psychology, volume 36, number 6, 1978, The mindlessness of ostensibly thoughtful action by Langer, Blank and Chanowitz."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "\"BECAUSE\" ONLY WORKS WHEN NOTHING IS AT STAKE.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

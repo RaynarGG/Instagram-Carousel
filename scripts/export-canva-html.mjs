@@ -38,11 +38,11 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 // [Klammern] -> Akzent-Span. Gleiche Syntax wie im Renderer.
 const accent = s => esc(s).replace(/\[([^\]]+)\]/g, `<span style="color:${P.accent}">$1</span>`);
 
-// Anton ist schmal: rund 0,42 em pro Versal. Die laengste Zeile bestimmt die
+// Anton ist schmal: rund 0,42 em pro Versal — Canva setzt es etwas breiter, deshalb mit Reserve (0,44 em, 86 % Breite). Die laengste Zeile bestimmt die
 // Groesse, damit keine Zeile in Canva umbricht.
 function headSize(lines, max = 120) {
   const longest = Math.max(...lines.map(l => l.replace(/[\[\]]/g, '').length));
-  return Math.min(max, Math.floor((W * 0.9) / (longest * 0.42)));
+  return Math.min(max, Math.floor((W * 0.86) / (longest * 0.44)));
 }
 
 const PAD = Math.round(W * 0.045);
@@ -87,7 +87,7 @@ function page(s) {
     ${img}
     ${fade}
     ${brand}
-    <div style="position:absolute;left:${PAD}px;right:${PAD}px;bottom:${Math.round(PAD * 1.3)}px">
+    <div style="position:absolute;left:${PAD + 20}px;right:${PAD + 20}px;bottom:${Math.round(PAD * 1.3)}px">
       ${block}
       ${micro}
     </div>

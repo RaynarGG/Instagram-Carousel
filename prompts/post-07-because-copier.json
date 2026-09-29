@@ -1,0 +1,78 @@
+{
+  "post": "07-because-copier",
+  "title": "3 researchers found out that people stop listening when they hear the word because",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Die drei Forscher sind erfundene Gesichter im Stil der 1970er, keine Nachbildung von Langer, Blank und Chanowitz. Der Hook sagt '3 researchers', nicht deren Namen.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "three-researchers-at-the-copier",
+      "slide": 1,
+      "variant": "a",
+      "keywords": ["cover", "archetype-b", "researchers", "1970s"],
+      "headline": "3 researchers found out that people stop listening when they hear the word because",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a university library corridor in 1978, dark wood shelving and brown carpet receding into shadow, fluorescent tubes buzzing overhead, a queue of four students with folders waiting along the wall. Burned faintly into the far wall, enormous and semi-transparent, the silhouette of a human ear seen in profile, roughly half the frame width, partly hidden behind the main subjects. Hero: three psychologists in 1970s clothing stand together beside a huge beige office photocopier, filling the upper two thirds of the frame, cropped at the thighs by the frame edge — a woman in the centre with a clipboard and pen, watching the queue with quiet concentration, a man to her left holding a stopwatch at chest height, a man to her right leaning on the copier with arms folded, all three fictional faces, observant, faintly amused. In the upper right, a circular inset cut-out shows an extreme close-up of the copier's glowing green start button under a fingertip, rendered sharper and brighter than the main scene. Lighting: cold overhead fluorescent from above, plus a warm amber practical desk lamp on a library cart in the lower left of the frame throwing orange rim light across the copier and the woman's clipboard. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: 1970s brown and beige plus warm amber. High contrast, deep blacks, fine film grain, period photography look. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "queue-on-autopilot",
+      "slide": 2,
+      "variant": "a",
+      "keywords": ["context", "archetype-a", "autopilot", "pattern"],
+      "headline": "We are not listening. We are matching patterns.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a long 1970s library reading room in dim evening light, rows of identical wooden desks and green-shaded lamps repeating into the distance until they blur. Burned into the air above the room, enormous and semi-transparent, a repeating grid of identical interlocking puzzle-piece outlines glowing faintly amber, like a pattern the whole room is running on, covering most of the frame width. Hero: a line of five people stands in a queue filling the middle band of the frame, every one of them in the exact same posture — head slightly tilted, eyes unfocused, papers held against the chest — as if moving on autopilot, seen from a low three-quarter angle, the nearest figure cropped by the frame edge. In the upper right, a circular inset cut-out shows an extreme macro of one person's eye, the pupil reflecting the repeating puzzle-piece grid, rendered sharper and brighter than the main scene. Lighting: soft cold dusk from high windows, plus warm amber practical light from the green-shaded desk lamps inside the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: cold dusk blue-grey plus warm amber. High contrast, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "asking-to-cut-the-line",
+      "slide": 3,
+      "variant": "a",
+      "keywords": ["scene", "archetype-b", "copier", "request"],
+      "headline": "At the library copier, three almost identical sentences",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a cramped university library copy room in 1978, pegboard walls, a paper cutter, stacks of reams, the far wall disappearing into shadow. Hero: a young woman with a short stack of pages steps politely up to a student standing at a large beige photocopier, one hand open in a small asking gesture, the student half-turning toward her with the lid of the machine raised, both filling the upper two thirds of the frame, the copier's scanning light spilling across their hands, shot at eye level, the woman cropped at the shoulder by the frame edge. In the upper right, a circular inset cut-out shows an extreme macro of the thin stack of five pages in her hand, the paper edges crisp, rendered sharper and brighter than the main scene. Lighting: the cold blue-white bar of light from the copier glass, plus a warm amber practical desk lamp clamped to a shelf inside the frame. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: beige and cold copier-light blue plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "three-columns-of-light",
+      "slide": 4,
+      "variant": "a",
+      "keywords": ["stat", "archetype-a", "abstract", "comparison"],
+      "headline": "The empty reason worked as well as the real one",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: absolute black void with a faint haze of paper dust hanging in the air. Hero: a huge beige 1970s photocopier seen from slightly above, lid open, filling the lower-middle of the frame, and rising straight up out of its glass three vertical columns of warm amber light side by side, volumetric and soft-edged like searchlights — the left column noticeably shorter, reaching only about sixty percent of the way up, the middle and right columns almost exactly the same towering height, nearly touching the top of the frame. In the upper right, a circular inset cut-out shows an extreme macro of a single blank sheet of paper sliding out of the copier tray, rendered sharper and brighter than the main scene. Lighting: the three amber light columns themselves are the practical light source, raking warm light across the copier's surfaces, everything else black. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks along the right edge. Restricted palette: black plus warm amber plus the pale beige of the machine. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no numbers, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "twenty-pages-arms-folded",
+      "slide": 5,
+      "variant": "a",
+      "keywords": ["stat", "archetype-c", "twist", "refusal"],
+      "headline": "Then they asked for 20 pages instead of five",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: the same 1970s university library copy room, pegboard walls and reams of paper falling away into darkness. Hero: a thick, tall stack of paper towers on the lid of a large beige photocopier in the foreground, teetering slightly, filling the upper two thirds of the frame, and behind it a student at the machine has turned fully around, arms folded, eyebrows raised, clearly unconvinced, while a queue of three people behind them watches with folded arms too — shot from a low angle so the paper stack looms, the student cropped at the waist by the frame edge. In the upper right, a circular inset cut-out shows an extreme macro of the thick edge of the paper stack, dozens of sheets visible, rendered sharper and brighter than the main scene. Lighting: one hard directional key light from the left, plus a warm amber practical desk lamp on a shelf inside the frame throwing orange light across the paper stack. Tiny illegible technical annotation text in the top-left corner, like a lab dossier. Restricted palette: beige and cold grey plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": ["evidence", "source", "warm", "reused"],
+      "headline": "Journal of Personality and Social Psychology, 1978",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": { "post": "06-spotlight-manilow", "id": "s6a" }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": ["cta", "positioning", "warm", "reused"],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": { "post": "03-honest-placebo", "id": "s5a" }
+    }
+  ]
+}

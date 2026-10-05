@@ -1,0 +1,107 @@
+{
+  "post": "09-ikea-effect",
+  "title": "The IKEA effect: why you overvalue what you build",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Same black storage box, same price tag. People who assembled it themselves bid 63% more than people who were handed it already built. 📦🤯",
+    "detail": "Norton, Mochon and Ariely gave 52 students a plain IKEA box. Half had to build it from the flat pack, half got it assembled. Then everyone bid on it: builders $0.78, non-builders $0.48. Builders also liked the box more (3.81 vs 2.50 on a 7-point scale). In a second test, 106 people folded an origami crane or frog: builders valued their own paper at $0.23, strangers offered $0.05. Builders priced their amateur folds almost like the work of experts ($0.27).",
+    "kontext": "It only works if you finish. A third group got the same box but stopped two steps early, with every piece in hand and little effort left: they bid $0.59. Those who finished it bid $1.46, more than twice as much. In a Lego version, people who built a set and then took it apart lost the bonus. The authors' read: a finished creation is evidence of your own competence, and people pay extra for that proof, DIY fans and non-DIY people alike.",
+    "frage": "What is the one thing you built yourself that you would never sell, even though it is objectively worse than the shop version?",
+    "sources": "Sources: Norton, Mochon & Ariely — The IKEA Effect: When Labor Leads to Love • Journal of Consumer Psychology 22(3): 453–460, 2012",
+    "hashtags": "#psychology #behavioraleconomics #ikea #science #consumerpsychology"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[3 RESEARCHERS] FOUND THAT",
+        "BUILDING A [BOX] YOURSELF",
+        "MAKES IT WORTH [63% MORE]",
+        "THAN THE [SAME BOX] PRE-BUILT"
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A young person kneels on a living room floor holding a hex key beside a freshly assembled plain black storage box, flat-pack parts and an instruction sheet around them. Headline: 3 researchers found that building a box yourself makes it worth 63% more than the same box pre-built."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "[52 STUDENTS] AND",
+        "ONE PLAIN [BLACK IKEA BOX]"
+      ],
+      "body": "Half the students got the box [flat-packed] with the instructions and had to [build it]. The other half got it [already assembled]. Then everyone was asked what they would pay for it, in a way where [lowballing and overbidding both cost them].",
+      "alt": "Two identical plain black storage boxes on a university lab table, one still flat-packed with an instruction sheet, the other fully assembled, under a warm lamp. Headline: 52 students, one black IKEA box."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "BUILDERS BID [$0.78].",
+        "THE REST BID [$0.48]."
+      ],
+      "body": "Same box. Same product. Whoever assembled it paid a [63% premium], and liked it more: [3.81 vs 2.50] on a seven-point scale. They did not just value their work. They valued [the box].",
+      "alt": "Two small stacks of coins on a dark table beside a black storage box, the left stack noticeably taller, amber light from a desk lamp. Headline: Builders bid $0.78. The rest bid $0.48."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "EVEN [AMATEUR ORIGAMI]",
+        "FELT LIKE [A TREASURE]"
+      ],
+      "body": "106 people folded a [crane] or a [frog]. Builders priced their own at [$0.23]; strangers offered [$0.05], nearly [five times] less. Yet builders valued their folds almost like the [expert-made] ones: [$0.27].",
+      "alt": "A slightly crumpled origami crane rests on an open palm in warm amber light, creases visible, dark background. Headline: Even amateur origami felt like a treasure."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "IT ONLY WORKS IF YOU [FINISH]",
+        "BECAUSE IT PROVES YOU [CAN]"
+      ],
+      "body": "A third group stopped [two steps] early, every piece in hand: they bid [$0.59]. Finishers bid [$1.46], more than [double]. The authors' read: a finished creation is [proof of your competence], and that is what people pay extra for.",
+      "alt": "A half-assembled black storage box with two loose screws and a hex key beside a finished identical box on a dark table in warm lamplight. Headline: It only works if you finish, because it proves you can."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF CONSUMER PSYCHOLOGY · VOL 22 · NO 3 · 2012",
+        "title": "The IKEA Effect: When Labor Leads to Love",
+        "authors": "Norton, Mochon & Ariely · pp. 453–460"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Consumer Psychology, volume 22, number 3, 2012, The IKEA Effect: When Labor Leads to Love by Norton, Mochon and Ariely."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "WHAT WE BUILD, WE OVERVALUE. BUT ONLY IF WE FINISH IT.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

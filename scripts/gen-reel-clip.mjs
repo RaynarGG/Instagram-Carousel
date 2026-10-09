@@ -1,18 +1,22 @@
-// Generiert Reel-Clips per Text-zu-Video MIT Ton über Veo (Gemini API).
-//
-// Anders als gen-video.mjs (Bild-zu-Video, `image` im instances-Objekt,
-// generateAudio dort nachweislich abgelehnt): hier gibt es KEIN Startbild,
-// nur einen Prompt, der Szene und gesprochene Zeile kombiniert. Ob
-// generateAudio in diesem Pfad erlaubt ist, ist der zentrale Testpunkt —
-// erst live gegen die echte API verifiziert, hier noch nicht.
+// Generiert Reel-Clips ueber Veo (Gemini API) — Text-zu-Video ODER
+// Bild-zu-Video, je nachdem ob der Clip ein "image_from" angibt. Immer MIT
+// Ton (Veo 3.1 generiert Ton nativ und immer, kein Schalter noetig/moeglich —
+// siehe Kommentar bei startOperation).
 //
 // Liest reels/<post>/clips.json (Feld "reel", Array "clips" mit
-// id/duration_seconds/spoken/prompt). "spoken" ist nur Dokumentation fuer
-// die spaetere Untertitel-Erkennung, nicht Teil des API-Calls — der Prompt
-// traegt die gesprochene Zeile bereits in Anfuehrungszeichen.
+// id/duration_seconds/spoken/prompt/optional image_from). "spoken" ist nur
+// Dokumentation fuer die spaetere Untertitel-Erkennung, nicht Teil des
+// API-Calls — der Prompt traegt die gesprochene Zeile bereits in
+// Anfuehrungszeichen.
 //
-// Kosten: wie gen-video.mjs, Veo 3 mit Ton ~$0.40/s, ohne ~$0.20/s. Ein
-// 7s-Clip mit Ton damit ~$2.80. Nie ohne ausdrueckliche Rueckfrage aufrufen.
+// image_from: { post: "<slug>", id: "<bild-id>" } — nimmt ein bereits
+// generiertes Carousel-Bild als Startframe (Bild-zu-Video, wie bei Post 04s
+// Video-Cover). Sucht die Datei unter --images-root/<post>/<id>-*.jpeg
+// (Default images-root: "out", in CI "assets/out", wo die Asset-Branch-
+// Bilder schon liegen).
+//
+// Kosten: Veo 3.1 mit Ton ~$0.40/s. Ein 8s-Clip damit ~$3.20. Nie ohne
+// ausdrueckliche Rueckfrage aufrufen.
 //
 //   node scripts/gen-reel-clip.mjs --file reels/05-.../clips.json --only clip1
 //   node scripts/gen-reel-clip.mjs --file reels/05-.../clips.json --dry-run
@@ -28,6 +32,7 @@ const opt = (n, d) => { const i = args.indexOf(`--${n}`); return i >= 0 && args[
 const FILE    = opt('file');
 const ONLY    = opt('only', '');
 const OUTROOT = opt('out', '');
+const IMAGES_ROOT = opt('images-root', 'out');
 const FORCE   = flag('force');
 const DRY     = flag('dry-run');
 const POLL_MS = 10_000;
@@ -48,8 +53,14 @@ await fs.mkdir(outDir, { recursive: true });
 const clips = raw.clips.map(c => {
   if (!c.id) throw new Error(`${FILE}: Clip ohne "id"`);
   if (!c.prompt) throw new Error(`${FILE}: Clip "${c.id}" hat kein "prompt"`);
-  const secs = c.duration_seconds ?? d.duration_seconds ?? 8;
-  if (secs < 4 || secs > 8) throw new Error(`${FILE}: Clip "${c.id}" hat duration_seconds ${secs} — Veo erlaubt nur 4 bis 8`);
+  // Kein erzwungener Default mehr: wenn weder der Clip noch die Defaults eine
+  // Laenge angeben, wird durationSeconds im Request komplett weggelassen und
+  // Veo bestimmt selbst (Testfrage: laesst sich das ueberhaupt weglassen?).
+  const secs = c.duration_seconds ?? d.duration_seconds ?? null;
+  if (secs !== null && (secs < 4 || secs > 8)) throw new Error(`${FILE}: Clip "${c.id}" hat duration_seconds ${secs} — Veo erlaubt nur 4 bis 8`);
+  if (c.image_from && (!c.image_from.post || !c.image_from.id)) {
+    throw new Error(`${FILE}: Clip "${c.id}" hat ein "image_from" ohne "post" oder "id"`);
+  }
   return {
     id: c.id,
     spoken: c.spoken ?? null,
@@ -58,10 +69,25 @@ const clips = raw.clips.map(c => {
     model: c.model ?? d.model ?? 'veo-3.1-generate-preview',
     aspect_ratio: c.aspect_ratio ?? d.aspect_ratio ?? '9:16',
     resolution: c.resolution ?? d.resolution ?? '720p',
-    generate_audio: c.generate_audio ?? d.generate_audio ?? true,
-    person_generation: c.person_generation ?? d.person_generation ?? 'allow_all',
+    // "dont_allow" wird bei Bild-zu-Video abgelehnt ("currently not
+    // supported"), per echtem 400 bestaetigt — "allow_adult" als Default.
+    person_generation: c.person_generation ?? d.person_generation ?? 'allow_adult',
+    image_from: c.image_from ?? null,
   };
 });
+
+// Sucht das Startbild fuer Bild-zu-Video, gleiches Prinzip wie findImage in
+// render-slides.mjs / stillImageBase64 in gen-video.mjs.
+async function findSourceImage(imageFrom) {
+  const dir = path.join(IMAGES_ROOT, imageFrom.post);
+  const entries = await fs.readdir(dir).catch(() => []);
+  const hit = entries.find(f => f.startsWith(`${imageFrom.id}-`) && /\.(jpe?g|png|webp)$/i.test(f));
+  if (!hit) throw new Error(`Kein Bild "${imageFrom.id}" fuer Post "${imageFrom.post}" gefunden unter ${dir} (--images-root pruefen).`);
+  const file = path.join(dir, hit);
+  const mimeType = /\.png$/i.test(hit) ? 'image/png' : /\.webp$/i.test(hit) ? 'image/webp' : 'image/jpeg';
+  const bytesBase64Encoded = (await fs.readFile(file)).toString('base64');
+  return { bytesBase64Encoded, mimeType, file };
+}
 
 const matches = (c, only) => !only || only.split(',').map(s => s.trim()).includes(c.id);
 const jobs = clips.filter(c => matches(c, ONLY));
@@ -78,16 +104,28 @@ async function startOperation(clip) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${clip.model}:predictLongRunning`;
   const parameters = {
     aspectRatio: clip.aspect_ratio,
-    durationSeconds: clip.duration_seconds,
     resolution: clip.resolution,
     personGeneration: clip.person_generation,
     sampleCount: 1,
   };
-  if (clip.generate_audio) parameters.generateAudio = true;
+  if (clip.duration_seconds !== null) parameters.durationSeconds = clip.duration_seconds;
+  // KEIN generateAudio: das Feld existiert im dokumentierten Veo-3.1-Request-
+  // Body nicht (prompt/image/lastFrame/referenceImages/video/aspectRatio/
+  // durationSeconds/personGeneration/resolution — sonst nichts). Veo 3.1 und
+  // Veo 3.1 Lite generieren Ton nativ und immer, per echtem 400 bestaetigt
+  // ("isn't supported by this model" bei jedem der drei verfuegbaren
+  // Modelle) — das war ein falscher Parameter meinerseits, kein
+  // Account-Limit.
+  const instance = { prompt: clip.prompt };
+  if (clip.image_from) {
+    const img = await findSourceImage(clip.image_from);
+    instance.image = { bytesBase64Encoded: img.bytesBase64Encoded, mimeType: img.mimeType };
+    console.log(`  (Startbild: ${img.file})`);
+  }
   const r = await fetch(url, {
     method: 'POST',
     headers: { 'x-goog-api-key': KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ instances: [{ prompt: clip.prompt }], parameters }),
+    body: JSON.stringify({ instances: [instance], parameters }),
   });
   if (!r.ok) throw Object.assign(new Error(`predictLongRunning ${r.status}: ${(await r.text()).slice(0, 500)}`), { status: r.status });
   const json = await r.json();
@@ -146,11 +184,18 @@ const done = [], failed = [], skipped = [];
 
 for (const clip of jobs) {
   const target = path.join(outDir, `${clip.id}.mp4`);
-  const rate = clip.generate_audio ? 0.40 : 0.20;
+  const rate = 0.40; // Veo 3.1 generiert Ton immer, kein Silent-Modus wählbar
+  const secsLabel = clip.duration_seconds !== null ? `${clip.duration_seconds}s` : 'Laenge von Veo bestimmt (nicht angegeben)';
+  const costLabel = clip.duration_seconds !== null ? `$${(rate * clip.duration_seconds).toFixed(2)}` : `$${(rate * 4).toFixed(2)}–$${(rate * 8).toFixed(2)} (4–8s moeglich)`;
+  const modeLabel = clip.image_from ? `Bild-zu-Video: ${clip.image_from.post}/${clip.image_from.id}` : 'Text-zu-Video';
   if (!FORCE && await exists(target)) { skipped.push(clip.id); console.log(`· ${clip.id.padEnd(6)} — existiert, übersprungen`); continue; }
-  if (DRY) { console.log(`· ${clip.id.padEnd(6)} — würde generiert (${clip.model}, ${clip.duration_seconds}s, ${clip.aspect_ratio}, Ton: ${clip.generate_audio}, geschätzt $${(rate * clip.duration_seconds).toFixed(2)})`); continue; }
+  if (DRY) {
+    if (clip.image_from) { try { await findSourceImage(clip.image_from); } catch (e) { console.log(`· ${clip.id.padEnd(6)} — FEHLER: ${e.message}`); continue; } }
+    console.log(`· ${clip.id.padEnd(6)} — würde generiert (${modeLabel}, ${clip.model}, ${secsLabel}, ${clip.aspect_ratio}, Ton: immer an, geschätzt ${costLabel})`);
+    continue;
+  }
 
-  process.stdout.write(`· ${clip.id.padEnd(6)} (${clip.duration_seconds}s, geschätzt $${(rate * clip.duration_seconds).toFixed(2)}) … `);
+  process.stdout.write(`· ${clip.id.padEnd(6)} (${modeLabel}, ${secsLabel}, geschätzt ${costLabel}) … `);
   try {
     const opName = await startOperation(clip);
     const finished = await pollOperation(opName);

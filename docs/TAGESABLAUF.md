@@ -14,7 +14,7 @@ etwas Geld kosten würde, das nicht in diesem Ablauf steht.
 
 ## Vorher lesen
 
-`README.md` → „Redaktionelle Haltung" und „Seitenverhältnis" · `docs/playbook-technology.md`
+**`docs/LERNEN.md`** (was laut Zahlen funktioniert; Regeln dort gelten) · `README.md` → „Redaktionelle Haltung" und „Seitenverhältnis" · `docs/playbook-technology.md`
 · Skills `wsd-social-images` (Bild-Prompts) und `wsd-headline` (Typografie) · `posts/*.json`
 (keine Dubletten).
 
@@ -35,7 +35,10 @@ Länge folgt dem Thema. Zuspitzen ja, **erfinden nie**.
 
 - **Keine `facts`-Slides.** Die Slides erzählen die Geschichte (`cover`, `stat`, `evidence`, `cta`).
 - **Cover:** Hook, der Sub verrät die Pointe nicht.
-- **Slide 2 erklärt den Kontext** (wer, was, wie wurde gemessen). Ein neuer, engerer Hook, nie eine Wiederholung.
+- **Slide 2 ist eine Szene, kein Methodenteil** (`docs/LERNEN.md` T1): Menschen, Ort, Handlung, endet mit
+  offener Spannung, die Slide 3 auflöst. Body ≤ ~30 Wörter, ≤ 2 Zahlen. Bedingungen, Stichprobe, Jahr,
+  Ablaufdetails später, auf die `evidence`-Slide oder in die Caption. Prüffrage: Will jemand, der nur
+  Slide 2 sieht, wissen, wie es ausgeht?
 - Wo es sie gibt: eine **kurze psychologische Erklärung** (Mechanismus, nicht nur Ergebnis).
 - Körpertext **erzählend und fesselnd**, Rehooks, verständlich. Was eine Slide nur wiederholt, fliegt raus.
 - **`evidence`-Slide** mit Journal, Jahr, Autoren: Pflicht.

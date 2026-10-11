@@ -37,6 +37,9 @@ Fallen, die man kennen muss:
 - **Ansehzeit ist kein Swipe-Maß.** Eine textlastige Slide erhöht sie, obwohl dort abgebrochen wird
   (Post 08: 13 s Ø, trotzdem Abbruch auf Slide 2). Nur zusammen mit der Textdichte lesen.
 - **Instagram** hat derzeit eine Reichweite unter 25 pro Post: nicht interpretierbar. Notieren, nicht ableiten.
+- **Ein Post steht oft mehrfach in Buffer.** Gezählt wird nur die Zeile mit Metriken, meist `via: network`
+  (in der App gepostet). Steht `via: buffer` + `addToQueue` nach 48 h noch ohne Metriken da, ist die Zeile
+  nicht live gegangen: ignorieren, aber melden, wenn ein Post gar keine Zeile mit Metriken hat.
 - **0 oder 1 Aufruf** auf TikTok heißt Auslieferungsfehler (Entwurf nicht abgeschickt, privat, Sperre),
   nicht schlechter Inhalt. Dem Nutzer melden, aus der Auswertung nehmen.
 

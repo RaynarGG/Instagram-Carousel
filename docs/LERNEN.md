@@ -37,6 +37,8 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
   Reichweite. Instagram-Zahlen sind derzeit nicht auswertbar.
 - **B3 · Auslieferungsfehler.** Post 02 auf TikTok hatte 0 Aufrufe, Post 07 auf TikTok 1 Aufruf. Beide
   zählen nicht in die Auswertung. Ursache beim Nutzer klären.
+  - Vermutung (11.10.): Buffer-Sendungen per Queue kommen auf TikTok und Instagram nicht live an.
+    Live geht erst der Post, den der Nutzer in der App absetzt (`via: network`).
 
 ## Kennzahlen TikTok (Karussells)
 
@@ -45,13 +47,29 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
 | 06 | Manilow-Shirt (Spotlight) | 5.383 | 116 | 2,2 % | 0 | 4,7 s |
 | 05 | Marmelade (Choice Overload) | 3.174 | 26 | 0,8 % | 0 | 1,2 s |
 | 03 | Ehrliches Placebo | 2.899 | 82 | 2,8 % | 5 | 3,2 s |
-| 08 | Schokolade/Trinkgeld | 899 | 9 | 1,0 % | 0 | 13,1 s |
+| 08 | Schokolade/Trinkgeld | 899 | 10 | 1,1 % | 0 | 13,0 s |
 | 07 | „Because“/Kopierer | 1 | 1 | – | 0 | – (Auslieferungsfehler) |
 | 02 | Einsamkeit | 0 | 1 | – | 0 | – (Auslieferungsfehler) |
 
-Stand der Metriken: 2026-10-08. Posts 09 und 10 sind noch zu frisch.
+Stand der Metriken: 2026-10-11. Posts 09 und 10 sind erst seit 11.10. auf TikTok live, also noch zu frisch.
 
 ## Wochenlog
+
+### KW 41 · 2026-10-11 · Sonntagslauf
+- **Neue auswertbare Posts:** keine. Post 09 (IKEA) und Post 10 (Kälte) sind erst seit 11.10. auf TikTok
+  live. Erster Stand nach wenigen Stunden: Post 10 hat 40 Aufrufe, Post 09 einen.
+- **Post 08** ist bei 899 Aufrufen stehen geblieben (10 Likes, 2 Kommentare). Die Auslieferung auf TikTok
+  ist durch.
+- **Test T1:** noch nicht prüfbar. Die Vergleichsposts 09 und 10 sind zu frisch, und Post 11 (der erste
+  mit der neuen Regel) kommt am Montag.
+- **Geändert:** nichts an der Pipeline, weil kein neuer Beleg vorliegt. In `docs/WOCHENANALYSE.md` ist
+  die Zuordnungsregel ergänzt (siehe B3).
+- **B3 ergänzt:** Seit 04.10. haben alle Buffer-Sendungen mit `via: buffer` und `addToQueue` auch nach
+  über 48 h keine Metriken. Gemessen werden nur die Posts, die mit `via: network` in Buffer stehen, also
+  in der App gepostet und nachgeladen wurden, und seit 11.10. die Sendungen mit `shareNow`.
+  - Folge: Jeder Post erscheint zwei- bis dreimal in der Liste.
+  - Post 09 auf Instagram (06.10.) und Post 10 auf Instagram (09.10.) haben bisher keine Zeile mit
+    Metriken. Entweder sind sie nicht live, oder Buffer hat sie noch nicht nachgeladen.
 
 ### KW 41 · 2026-10-09 · Erstanalyse
 - **Top:** Post 06 Manilow, 5.383 Aufrufe auf TikTok. **Flop** (auswertbar): Post 08 Schokolade, 899

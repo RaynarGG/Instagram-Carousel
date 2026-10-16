@@ -1,0 +1,119 @@
+{
+  "post": "12-smashed-memory",
+  "title": "2 researchers found that one word made 32% of people remember broken glass that was never there",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Die Person im Bild ist ein erfundenes Gesicht, keine Nachbildung von Loftus oder Palmer. Der Hook sagt 2 researchers, nicht deren Namen.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "man-watching-crash-on-screen",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-b",
+        "memory",
+        "crash"
+      ],
+      "headline": "2 researchers found that one word made 32% remember broken glass",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark 1970s university lecture hall, tiered seats and a projection screen dissolving into shadow. Burned faintly into the far wall, enormous and semi-transparent, the silhouette of a car seen from the side, roughly half the frame width, partly hidden behind the main subject. Hero: a young man seated in the front row filling the upper two thirds of the frame, cropped at the chest by the frame edge, face lit by a flickering projector glow, fictional face, eyes wide and unblinking in shock, shot at eye level. In the upper right, a circular inset cut-out shows an extreme macro of a shattered windshield with a radial crack pattern, rendered sharper and brighter than the main scene. Lighting: cold blue projector light from the front, plus a warm amber desk lamp inside the frame throwing orange rim light across his face. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: charcoal and cold blue-grey plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "students-watching-projector-film",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "setup",
+        "lecture-hall"
+      ],
+      "headline": "Students watch a car crash in a lecture hall",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark lecture hall with a projector beam cutting through haze, dissolving into shadow. Hero: rows of students seen from behind filling the upper two thirds of the frame, cropped by the frame edge, their silhouettes lit by a projector beam that shows a blurry rainy road scene on the screen, a few notebooks and pens glinting, no faces visible, shot from the back of the hall. In the upper right, a circular inset cut-out shows an extreme macro of a film projector lens with glowing glass, crisp and bright. Lighting: dim cold projector light, plus a warm amber reading lamp inside the frame throwing orange rim light across the nearest heads and desks. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "single-glass-shard-on-asphalt",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "number",
+        "glass",
+        "memory"
+      ],
+      "headline": "Smashed meant 32%, hit meant 14%",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: pure dark wet asphalt with a faint warm bokeh far behind, dissolving into shadow. Hero: a single large shard of glass lying on the asphalt filling the upper two thirds of the frame, cropped by the frame edge, one clean edge catching a bright amber highlight, a few tiny fragments nearby, no vehicle in frame, shot at a low angle. In the upper right, a circular inset cut-out shows an extreme macro of the glass edge with fine conchoidal fracture lines, crisp and bright. Lighting: dim cold ambient, plus a warm amber light source inside the frame throwing orange glints along the shard. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "speedometer-needle-macro",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "number",
+        "speed",
+        "dashboard"
+      ],
+      "headline": "One verb moved the cars from 31.8 to 40.8 mph",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark vintage car dashboard with chrome trim dissolving into shadow. Hero: a large analog speedometer dial filling the upper two thirds of the frame, cropped by the frame edge, a bright needle swung to the right, tick marks around the rim but no legible numerals, glass face with a soft reflection, shot straight on. In the upper right, a circular inset cut-out shows an extreme macro of the needle tip and fine tick marks, crisp and bright. Lighting: dim ambient, plus a warm amber dashboard glow inside the frame throwing orange rim light across the chrome and the needle. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, chrome and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "pencil-redrawing-film-frame",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "mechanism",
+        "memory",
+        "film"
+      ],
+      "headline": "Memory isn't a recording, it gets rebuilt",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark desk surface with faint warm bokeh far behind, dissolving into shadow. Hero: a strip of film frames filling the upper two thirds of the frame, cropped by the frame edge, running diagonally across the desk, most frames showing a blurry road scene, one frame being redrawn by a pencil whose hand is partly visible, the new drawing slightly different from its neighbours, shot at desk height. In the upper right, a circular inset cut-out shows an extreme macro of the pencil tip over a film frame with visible grain, crisp and bright. Lighting: dim ambient, plus a warm amber desk lamp inside the frame throwing orange rim light across the film strip and the pencil. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, film-gray and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "source",
+        "warm",
+        "reused"
+      ],
+      "headline": "Journal of Verbal Learning and Verbal Behavior, 1974",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": {
+        "post": "06-spotlight-manilow",
+        "id": "s6a"
+      }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "reused"
+      ],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

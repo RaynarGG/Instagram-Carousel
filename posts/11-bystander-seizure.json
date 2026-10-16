@@ -1,0 +1,107 @@
+{
+  "post": "11-bystander-seizure",
+  "title": "When others could help, fewer did",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "A stranger has a seizure over an intercom. Alone, 85% of students got help in time. With four others listening, only 31% did. 🎧😶",
+    "detail": "Darley and Latané put 72 New York University students in separate cubicles with headphones, supposedly for a discussion about college stress. One speaker, a tape recording, mentioned he was prone to seizures and later seemed to have one. Students alone with him reported it before the seizure ended 85% of the time. With one other listener it was 62%, with four others 31%. In the end every lone student reported it, but only 62% of those in the larger groups did.",
+    "kontext": "Those who stayed were not cold. Many asked whether the victim was all right, and had trembling hands and sweating palms, if anything more aroused than the helpers. The authors read it as conflict, not indifference: people had not decided not to act, they were stuck. Personality measures such as alienation or need for approval did not predict helping, but the number of perceived bystanders did. One caveat: a 1968 lab study with students and a staged emergency, not a law of nature.",
+    "frage": "When did you last assume that somebody else would surely step in?",
+    "sources": "Sources: Darley & Latané — Bystander Intervention in Emergencies: Diffusion of Responsibility • Journal of Personality and Social Psychology 8(4): 377–383, 1968",
+    "hashtags": "#psychology #bystandereffect #socialpsychology #behavior #science"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[2 RESEARCHERS] FOUND THAT",
+        "[85%] HELPED A STRANGER ALONE.",
+        "WITH [4 OTHERS] LISTENING:",
+        "JUST [31%] DID"
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A young woman alone in a small room wearing headphones with a microphone, hand pressed to one ear, tense and listening, a warm amber lamp on the table. Headline: 2 researchers found that 85% helped a stranger alone. With 4 others listening: just 31% did."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "A [STRANGER] BEGS FOR [HELP]",
+        "OVER THE [INTERCOM]"
+      ],
+      "body": "Headphones on, a student listens to strangers talk about college stress. Then one of them has a [seizure] and begs for help. No experimenter is around. Does she [get up]?",
+      "alt": "Headphones and a small intercom box on a table in a bare cubicle, the door slightly ajar onto a dim corridor, warm amber lamp. Headline: A stranger begs for help over the intercom."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "[85%] HELPED WHEN [ALONE]",
+        "ONLY [31%] WITH [4 OTHERS]"
+      ],
+      "body": "Alone with the victim, [85%] reported the seizure before it ended. Those who believed [four others] were listening: [31%]. In the end, every lone listener reported it. Only [62%] of the crowd did.",
+      "alt": "An empty chair with headphones hanging over it in a small lit cubicle, the door open onto a dark corridor, amber light. Headline: 85% helped when alone, only 31% with 4 others."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "THE ONES WHO [STAYED]",
+        "WERE MORE [NERVOUS]"
+      ],
+      "body": "Afterwards they asked: \"He's [all right], isn't he?\" Many had [trembling hands] and [sweating palms]. If anything, they were [more aroused] than the helpers. They did not feel nothing. They were [stuck].",
+      "alt": "A close-up of a person's trembling hands gripping a pair of headphones in warm amber light, dark background. Headline: The ones who stayed were more nervous."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "THE MORE [WITNESSES]",
+        "THE LESS [RESPONSIBLE] YOU FEEL"
+      ],
+      "body": "The authors call it [diffusion of responsibility]: with others around, everyone assumes [someone else] will act. Alienation, need for approval, [personality tests] did not predict who helped. The [number of bystanders] did.",
+      "alt": "A long dim corridor of identical closed doors with warm light spilling from one door slightly open. Headline: The more witnesses, the less responsible you feel."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF PERSONALITY AND SOCIAL PSYCHOLOGY · VOL 8 · NO 4 · 1968",
+        "title": "Bystander Intervention in Emergencies: Diffusion of Responsibility",
+        "authors": "Darley & Latané · pp. 377–383"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Personality and Social Psychology, volume 8, number 4, 1968, Bystander Intervention in Emergencies: Diffusion of Responsibility by Darley and Latané."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "WHEN EVERYONE COULD HELP, FEWER DID.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

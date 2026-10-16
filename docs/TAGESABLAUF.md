@@ -1,211 +1,132 @@
-# Tagesablauf: ein Post, vier Freigaben
+# Tagesablauf: ein Post, alleine gebaut
 
-Arbeitsanweisung für die Session, die montags und freitags läuft. So geschrieben,
-dass sie ohne Vorwissen abgearbeitet werden kann.
+Arbeitsanweisung für die Session, die montags und freitags läuft. Der Post wird
+**ohne Zwischenfreigaben** fertig gebaut und in Canva abgelegt. Der Nutzer
+bekommt am Ende **eine** kurze Nachricht und entscheidet dann über Bilder-Neuwürfe,
+Änderungen und die Veröffentlichung.
 
-## Grundregel
+Der Nutzer liest am **Handy**: Nachricht kurz halten, keine Volltext-Prompts,
+keine langen Tabellen. Dateien mit `SendUserFile`.
 
-**Nach jedem der vier Schritte wird gestoppt und gefragt.** Nicht weiterbauen,
-bevor der Schritt freigegeben ist.
-
-| | Freigabe | Was geprüft wird |
-|---|---|---|
-| 1 | Thema | die Aussage und die Hook |
-| 2 | Texte | Hook, alle Slides, Caption — **was** dasteht |
-| 3 | Rendering | **wie** es auf der Fläche sitzt: Position, Verteilung, Umbruch |
-| 4 | Bildideen | nur Idee nicht der fertige prompt |
-
-Der Nutzer liest das **am Handy**. Jede Frage kurz halten: keine Absätze zum
-Scrollen, keine Volltext-Prompts, keine langen Tabellen. Für Fragen
-`AskUserQuestion` mit konkreten Optionen, für gerenderte Slides `SendUserFile`.
-
-Bleibt eine Antwort aus: **warten.** Ein unbeantwortetes Gate ist kein Grund
-weiterzubauen.
-
----
+**Nur stoppen und fragen, wenn:** ein Schritt scheitert und sich nicht selbst
+lösen lässt · zwei Themen gleich gut sind und das Thema nicht belegbar ist ·
+etwas Geld kosten würde, das nicht in diesem Ablauf steht.
 
 ## Vorher lesen
 
-| Datei | Wofür |
-|---|---|
-| `README.md` → „Redaktionelle Haltung" | Unterhaltung vor Präzision, zuspitzen ja / erfinden nein |
-| `README.md` → „Seitenverhältnis" | **4:5, nicht 3:4** — und warum |
-| `docs/playbook-technology.md` | Farbregel, Slide-Grammatik, Caption-Formel |
-| Skill `wsd-social-images` | Bildformat, Archetypen, Sieben-Block-Prompt-Formel |
-| Skill `wsd-headline` | Typografie |
-| `posts/*.json` | was schon gepostet wurde — **keine Dubletten** |
+**`docs/LERNEN.md`** (was laut Zahlen funktioniert; Regeln dort gelten) · `README.md` → „Redaktionelle Haltung" und „Seitenverhältnis" · `docs/playbook-technology.md`
+· Skills `wsd-social-images` (Bild-Prompts) und `wsd-headline` (Typografie) · `posts/*.json`
+(keine Dubletten).
 
----
+## 1 · Thema wählen
 
-## Schritt 1 · Thema
+Vier Kandidaten prüfen, **einen** nehmen. Jeder braucht:
 
-Vier Kandidaten. Jeder braucht:
+- eine **echte Primärquelle** (Journal, Jahr, Autoren), **per Websuche gegengeprüft**,
+  nicht aus dem Gedächtnis
+- **eine Zahl**, die eine Slide alleine tragen kann
+- etwas **Kontraintuitives**
+- **News-Register:** „3 Forscher fanden heraus …“, keine Allgemeinwissen-Behauptung
 
-- eine **echte Primärquelle** (Journal, Jahr, Autoren) — **per Websuche gegenprüfen**,
-  nicht aus dem Gedächtnis behaupten
-- **eine Zahl**, die eine Slide alleine tragen könnte
-- etwas **Kontraintuitives**. „Schlaf ist wichtig" ist kein Thema.
+## 2 · Texte
 
-**→ FRAGEN: welches Thema?** Vier Optionen, je zwei Sätze plus die Zahl.
+Erst der Hook, dann die übrigen Slides und die Caption. Drei bis sieben Slides,
+Länge folgt dem Thema. Zuspitzen ja, **erfinden nie**.
 
----
+- **Keine `facts`-Slides.** Die Slides erzählen die Geschichte (`cover`, `stat`, `evidence`, `cta`).
+- **Cover:** Hook, der Sub verrät die Pointe nicht.
+- **Slide 2 ist eine Szene, kein Methodenteil** (`docs/LERNEN.md` T1): Menschen, Ort, Handlung, endet mit
+  offener Spannung, die Slide 3 auflöst. Body ≤ ~30 Wörter, ≤ 2 Zahlen. Bedingungen, Stichprobe, Jahr,
+  Ablaufdetails später, auf die `evidence`-Slide oder in die Caption. Prüffrage: Will jemand, der nur
+  Slide 2 sieht, wissen, wie es ausgeht?
+- Wo es sie gibt: eine **kurze psychologische Erklärung** (Mechanismus, nicht nur Ergebnis).
+- Körpertext **erzählend und fesselnd**, Rehooks, verständlich. Was eine Slide nur wiederholt, fliegt raus.
+- **`evidence`-Slide** mit Journal, Jahr, Autoren: Pflicht.
+- Letzte Slide: ruhige Positionierung („wir posten wöchentlich Psychologie-Studien“), keine Aufforderung. App-Hinweis nur bei jedem dritten Post.
+- Farbregel: konkret = Akzent `[Klammern]`, verbindend = weiß, **keine Zeile einfarbig**.
+- `caption`: kern · detail · kontext · frage · **`Sources:`-Zeile** · genau 5 Hashtags.
+- **`alt` pro Slide**, ein Satz.
 
-## Schritt 2 · Die Texte
+Dateien: `posts/<nr>-<slug>.json` und `prompts/post-<nr>-<slug>.json` (ein Bild pro
+Slide, Variante `a`, Sieben-Block-Formel, Amber-Licht, schwarze Fusszone; Aufbau im README).
+Echte Personen dürfen im Bild vorkommen.
 
-Erst der Hook, dann die übrigen Slides und die Caption. Hier geht es **nur um die
-Aussage**, noch nicht darum, wie sie sitzt.
-Spannung aufbauen mit Rehooks, verständliche aussagen, und interessante kirze erklärungen. 
+## 3 · Video-Text-Bild und Videorecherche (gleich zu Beginn schicken)
 
-### Wie viele Slides
+Der Nutzer schneidet das Video selbst. Er bekommt von dir:
 
-ca. Drei bis sieben. Die Länge folgt dem Thema, nicht einem Schema.
-
-Pflicht in jedem Post:
-- **`cover`** — der Hook
-- **`cta`** — Positionierungs-Aussage, keine Aufforderung
-
-Dazwischen, so viele wie das Thema trägt:
-- **`facts`** — Headline plus Bullets oder text der näher erklärt. der Informationsträger
-- **`stat`** — Headline mit einer großen zahl und Eye catching image
-
-Faustregel: **eine Zahl trägt drei bis vier Slides, eine Geschichte trägt sechs
-bis sieben.** Lieber vier starke als sieben mit Füllmaterial. Wenn eine Slide nur
-wiederholt, was die vorige schon gesagt hat, gehört sie raus.
-
-Letzte slide Abschluss slide mit formierungen wie "wir posten Wöchentlich psychology facts" - irgendwas um die leute zum folgen zu bewegen.  
-
-### Regeln für die Texte
-
-- **konkret = Akzent** (`[Klammern]`) — Zahlen, Namen, Substantive
-- **verbindend = weiss** — Präpositionen, Füllwörter, Verben
-- **keine Zeile einfarbig**, sonst zieht das Auge nicht weiter
-- die Headline ist die ganze Nachricht, kein Teaser, keine Frage
-- Slide 2 ist ein **neuer, engerer Hook** — nie eine Wiederholung des Covers
-- `cta`: **App-Hinweis nur bei etwa jedem dritten Post**, sonst kippt es ins Werbliche
-- `caption` nach der 6-Block-Formel: kern · detail · kontext · frage ·
-  **sources** · genau 5 Hashtags
-- **`alt` pro Slide** — ein Satz, Motiv plus Headline. Buffer verlangt ihn später;
-  wer ihn hier nicht schreibt, erfindet ihn am Ende neu.
-
-**→ FRAGEN: Texte so?** starke hook fals unsicher 1-3 varianten vorschlagen, der Rest
-als kurze Liste. Noch nichts rendern.
-
----
-
-## Schritt 3 · Das fertige Rendering
-
-Alle Slides rendern und **als Bild schicken**. Geprüft wird, wie der Text auf der
-Fläche sitzt.
+**a) Das Text-Bild** (1080 × 1920, Text unten, oben Platz fürs Video), Deutsch und Englisch:
 
 ```bash
-CHROME_PATH=$(ls -d /opt/pw-browsers/chromium-*/chrome-linux/chrome | head -1)
-CHROME_PATH="$CHROME_PATH" node scripts/render-slides.mjs --post <x> --out /tmp/preview
+# videos/<post>/text.json schreiben (Format: Kopf von scripts/render-video-text.mjs), dann:
+CHROME_PATH=$(ls -d /opt/pw-browsers/chromium-*/chrome-linux/chrome | head -1) \
+  node scripts/render-video-text.mjs --spec videos/<post>/text.json
 ```
 
-Läuft **ohne generierte Bilder** — die Bildzone zeigt dann „BILD FEHLT".
+Regeln für den Text (Vorbild `videos/03-honest-placebo/text.json`):
+- **Hook sofort:** die ersten vier, fünf Zeilen tragen die Pointe („… Trotzdem ging es ihnen besser.“), Doppelpunkte statt Nebensätze.
+- **Kein Zitieren der Forscher im Fließtext** (Harvard, Namen, Skalennamen): das zerstört Lesefluss und Spannung. Das gehört in die Caption.
+- Wortlaut des Nutzers nicht umschreiben, nur straffen. Emojis lassen sich in Anton nicht setzen (Nutzer legt Sticker).
+- Body ≤ 12 Zeilen. Die Ausgabe warnt, wenn der Text tiefer als 86 % der Höhe endet: dann kürzen.
+- Ergebnis prüfen (Bild ansehen), dann mit `SendUserFile` schicken.
 
-### Das Seitenverhältnis ist nicht verhandelbar
+**b) Passende Videos recherchieren** (Websuche): 3 bis 5 Kandidaten zum Thema, je
+Link, was man sieht (ein Satz), Lizenz oder Quelle (Pexels, Pixabay, Archive.org,
+Wikimedia, YouTube CC …). Nur prüfen und verlinken, **nicht herunterladen und nicht
+zuschneiden**. Liste als `videos/<post>/README.md` ablegen und in der Nachricht nennen.
 
-`posts/*.json` steht auf **1080 × 1350 (4:5)**. Nicht auf 3:4 ändern: die
-Instagram-API lehnt 0,75 beim automatischen Veröffentlichen ab. Die Bildprompts
-bleiben bei `3:4` — ihre schwarze Fusszone fängt die Differenz ab. Begründung im
-README.
-
-### Die Stellschrauben
-
-Der Text ist **unten angeschlagen** und wächst nach oben. Die Schriftgrösse wird
-gesucht, bis **entweder** die Breite **oder** `headMax` erreicht ist.
-
-| Schraube | Wo | Wirkung |
-|---|---|---|
-| **Zeilenumbruch** | jeder Array-Eintrag in `headline` = eine Zeile | die stärkste Schraube, meist die einzige nötige |
-| `layout.headMax` | pro Slide | Höhendeckel. **Wirkt nur, wenn die Höhe begrenzt** |
-| `layout.photo` | pro Slide | wie weit die Bildzone reicht und wo der Verlauf einsetzt |
-| `padding` | pro Post, Default `0.045` | Seitenabstand |
-| `maxFontSize` | pro Post, Default `240` | Deckel nach oben |
-
-Defaults je Typ: `cover` 0,72/0,30 · `facts` 0,50/0,15 · `stat` 0,72/0,22 ·
-`evidence` 1,00/0,20 · `cta` 1,00/0,28 (`photo`/`headMax`).
-
-**`headMax` tut bei ein bis zwei Zeilen nichts** — dort begrenzt die Breite.
-Gemessen: zwei lange Zeilen mit `headMax` 0,22 gegen 0,30 ergeben ein
-bitidentisches Bild. Erst ab drei, vier kurzen Zeilen greift es.
-
-**`facts` braucht meist `layout.photo: 0.62`** — der Typ-Default 0,50 lässt ein
-leeres Band zwischen Bild und Headline stehen.
-
-### Worauf zu achten ist
-
-- **Unterlängen.** `Q`, `(`, `)` stossen in die Zeile darunter. Im Zweifel das
-  Wort tauschen — `=` statt `EQUALS`.
-- **Erzwungene Umbrüche.** Lange Wörter brechen am Bindestrich (`META-ANALYTIC`
-  wurde zu `META-` / `ANALYTIC`). Kürzen.
-- **Zu volle oder zu leere Textzone.** Zeilen anders umbrechen.
-
-**→ FRAGEN: sitzt der Text so?** Bei Beanstandungen nachjustieren und erneut zeigen.
-Die text rendering pipline darf bei neuen Ideen und anordnungen auch umgeschrieben/ erweitert werden.
----
-
-## Schritt 4 · Bildideen
-
-`prompts/post-<x>.json` bauen: **ein Bild pro Slide**, Variante `a`. Die
-b-Varianten sind Alternativen und werden nur nachgelegt, wenn ein Bild danebengeht
-— sie kosten sonst nur Geld.
-
-Jeder Prompt nach der Sieben-Block-Formel, **
-und schwarzer Fusszone in den unteren 
-
-
-**→ FRAGEN: Bildideen so?** Ein Satz pro Bild, nicht der Volltext-Prompt.
-
----
-
-## Danach — ohne weitere Freigabe
-
-### 1 · Prüfen und committen
+## 4 · Rendern, prüfen, Bilder
 
 ```bash
-node scripts/gen-images.mjs --file prompts/post-<x>.json --dry-run
+CHROME_PATH=$(ls -d /opt/pw-browsers/chromium-*/chrome-linux/chrome | head -1) \
+  node scripts/render-slides.mjs --post <x> --out /tmp/preview    # kostenlos, ohne Bilder
+node scripts/gen-images.mjs --file prompts/post-<x>.json --dry-run   # findet kaputtes JSON, fehlende IDs
 ```
 
-Committen und pushen. Der Push-Trigger leitet den Post über die GitHub-API aus den
-geänderten Dateien ab und generiert die **fehlenden** Bilder.
+Slides: **1080 × 1350 (4:5), nicht auf 3:4 zurückdrehen** (die Instagram-API lehnt 0,75 ab; die Bildprompts
+bleiben 3:4, ihre schwarze Fusszone fängt die Differenz ab). Auf Unterlängen (`Q`, `(`), erzwungene
+Umbrüche und zu volle Textzonen achten; Stellschrauben sind Zeilenumbruch, `layout.headMax`, `layout.photo`.
 
-### 2 · Den Lauf wirklich prüfen
+Committen und pushen (nur auf den vorgegebenen Branch). Der Push auf `prompts/**` startet
+`social-images.yml` und generiert die **fehlenden** Bilder. Das ist die **einzige** Stelle, die Geld
+kostet, und sie ist für einen neuen Post ausdrücklich freigegeben.
 
-**Grün heisst nicht fertig.** Der Workflow war schon zweimal grün und hat dabei
-alles übersprungen. Nach dem Lauf nachsehen, ob die Dateien auf `social-assets`
-tatsächlich neu sind:
+**Grün heißt nicht fertig.** Nach dem Lauf prüfen, ob die Dateien auf `social-assets` neu sind:
 
 ```bash
-git fetch origin social-assets -q
-git ls-tree -r origin/social-assets --name-only | grep <post>
+git fetch origin social-assets -q && git ls-tree -r origin/social-assets --name-only | grep <post>
 ```
 
-### 3 · Buffer-Entwurf anlegen
+Fehlen Bilder (429 = Guthaben leer, Sicherheitsfilter): melden, **nichts wiederholen**.
 
-Kanal `whatshouldido.app` (Instagram Business) in der Organisation
-„My Organization". Der Post wird **als Entwurf** angelegt, nie veröffentlicht und
-nie in die Queue geschoben — das entscheidet der Nutzer.
+## 5 · Canva
 
-Drei Fallstricke, alle schon einmal zugeschlagen:
+Fertigen Post nach Canva legen, damit der Nutzer dort weiterbearbeitet:
 
-- **Bild-URLs an den Commit hängen**, nicht an den Branch:
-  `raw.githubusercontent.com/RaynarGG/Instagram-Carousel/<sha>/out/...`
-  Bei gleichbleibender Branch-URL liefert Buffer sonst die alte, gecachte Datei.
-- **Bei `edit_post` immer `saveToDraft: true` mitgeben.** Weglassen setzt den
-  Entwurf auf „geplant", obwohl die Doku etwas anderes behauptet.
-- **`altText` ist Pflicht** pro Bild — kommt aus dem `alt`-Feld der Slide.
+```bash
+node scripts/export-canva-html.mjs --post <x> --out canva --image-base <raw-URL-mit-SHA> --images "s1a=...,s2a=..."
+```
 
-Danach dem Nutzer melden: Post-ID, Anzahl Slides, Status `draft`.
+Die HTML-Datei committen, dann Canva `import-design-from-url` mit der `raw.githubusercontent.com`-URL
+(**SHA-gepinnt**, nicht Branch). Danach `read-design` und auf **Überlauf** prüfen: Canva setzt Anton und
+Figtree breiter als Chromium, deshalb Reserve lassen; abgeschnittene Zeilen mit `edit-design` korrigieren.
+Der `commit` einer `edit-design`-Transaktion erfolgt erst nach Nutzerfreigabe. Link zum Design in die Nachricht.
 
----
+## 6 · Buffer-Entwurf
 
-## Kosten
+Kanäle: Instagram `whatshouldido.app` und TikTok (Organisation „My Organization“). **Nur als
+Entwurf** (`saveToDraft: true`), **nie veröffentlichen, nie in die Queue**: das entscheidet der Nutzer.
+Bild-URLs an den **Commit** hängen, nicht an den Branch. `altText` pro Bild ist Pflicht. IG:
+`{instagram:{type:"post",shouldShareToFeed:false}}`, TikTok: `{tiktok:{title}}`.
 
-Jedes Bild ist ein bezahlter API-Call.
+## 7 · Die eine Nachricht an den Nutzer
 
-- **Nie ohne Rückfrage generieren.**
-- Im Zweifel erst `only: s1a` — ein Call statt sieben.
-- `--dry-run` zeigt die Auswahl, ohne etwas zu kosten.
-- `neu_generieren` bleibt aus; vorhandene Bilder werden übersprungen.
+Kurz, fürs Handy: Thema in einem Satz · Hook · die zwei Text-Bilder · Video-Kandidaten (Links) ·
+Canva-Link · Buffer-Draft-IDs · **was nicht funktioniert hat**. Dann warten.
+
+## Kosten und Grenzen
+
+- Bilder nur für **neue** Posts generieren, **nie** vorhandene neu würfeln (`neu_generieren` bleibt aus).
+- Keine API-Keys in Dateien, Commits oder Prompts (`GEMINI_API_KEY` nur als GitHub-Secret).
+- `CLAUDE.md` wird nicht angefasst.
+- Nie auf einen anderen Branch pushen.

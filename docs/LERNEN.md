@@ -19,9 +19,21 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
   - Gegenprobe Post 06 (Manilow), bester Post mit 5.383 Aufrufen: Slide 2 ist eine Szene („walked him
     into a room where five strangers sat … asked him to guess how many had noticed“). Sie endet mit
     einer Frage, die man beantwortet haben will.
+- **Stand 18.10.:** Post 11 und 12 folgen der Regel. Post 11: 284 Aufrufe, 9,8 s Ø. Ohne Swipe-Daten
+  noch nicht bewertbar.
 - **Prüfen an:** Post 09 und 10 haben noch die alte Regel und ebenfalls methodenlastige Slides 2
   (52 Studenten, Bedingungen / 14 °C, 60 s, 30 s). Erwartung: Abbruch auf Slide 2. Ab Post 11 gilt die
   neue Regel, dann vergleichen.
+
+### T2 · Cover mit und ohne „N Researchers found that“ im Wechsel (Test seit 2026-10-18)
+- **Regel:** Montags-Posts behalten den Vorspann. Freitags-Posts stellen den Befund direkt als
+  Behauptung aufs Cover (Muster von Post 03 und 05).
+- **Beleg:** Die drei Posts mit 2.900 bis 5.400 TikTok-Aufrufen (03, 05, 06) hatten diesen Vorspann nicht
+  (06 nur ähnlich, als Szene). Alle Posts seit 07 haben ihn, und keiner kam über 901 Aufrufe (08: 901,
+  11: 284, 10: 57).
+  - Vermischt mit Auslieferungsproblemen (B3), deshalb ein Wechseltest statt einer Regel.
+- **Prüfen:** nach je zwei Montags- und Freitags-Posts die TikTok-Aufrufe vergleichen, nur bei gleichem
+  Postingweg (in der App gepostet).
 
 ## Beobachtungen (noch keine Regel)
 
@@ -35,6 +47,8 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
     Mechanismus.
 - **B2 · TikTok ist der Reichweitenkanal.** TikTok liegt bei 900 bis 5.400 Aufrufen, Instagram bei 3 bis 22
   Reichweite. Instagram-Zahlen sind derzeit nicht auswertbar.
+- **B4 · Zwei Posts in derselben Minute.** Post 10 und 09 gingen am 11.10. um 11:17 und 11:18 auf
+  TikTok raus. Post 09 hat 2 Aufrufe, Post 10 57. Besser höchstens ein Post pro Tag und Kanal.
 - **B3 · Auslieferungsfehler.** Post 02 auf TikTok hatte 0 Aufrufe, Post 07 auf TikTok 1 Aufruf. Beide
   zählen nicht in die Auswertung. Ursache beim Nutzer klären.
   - Vermutung (11.10.): Buffer-Sendungen per Queue kommen auf TikTok und Instagram nicht live an.
@@ -47,13 +61,26 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
 | 06 | Manilow-Shirt (Spotlight) | 5.383 | 116 | 2,2 % | 0 | 4,7 s |
 | 05 | Marmelade (Choice Overload) | 3.174 | 26 | 0,8 % | 0 | 1,2 s |
 | 03 | Ehrliches Placebo | 2.899 | 82 | 2,8 % | 5 | 3,2 s |
-| 08 | Schokolade/Trinkgeld | 899 | 10 | 1,1 % | 0 | 13,0 s |
+| 08 | Schokolade/Trinkgeld | 901 | 10 | 1,1 % | 0 | 12,2 s |
+| 11 | Bystander (Darley & Latané) | 284 | 4 | 1,4 % | 0 | 9,8 s |
+| 10 | Kälte / Peak-End | 57 | 3 | 5,3 % | 0 | 8,4 s |
+| 09 | IKEA-Effekt | 2 | 0 | – | 0 | – (gleichzeitig mit 10 gepostet) |
 | 07 | „Because“/Kopierer | 1 | 1 | – | 0 | – (Auslieferungsfehler) |
 | 02 | Einsamkeit | 0 | 1 | – | 0 | – (Auslieferungsfehler) |
 
-Stand der Metriken: 2026-10-11. Posts 09 und 10 sind erst seit 11.10. auf TikTok live, also noch zu frisch.
+Stand der Metriken: 2026-10-18. Post 12 ist laut Buffer noch nicht gesendet.
 
 ## Wochenlog
+
+### KW 42 · 2026-10-18
+- **Top:** Post 11 (Bystander) mit 284 Aufrufen. **Flop:** Post 09 (IKEA) mit 2 Aufrufen. Der Flop ist
+  ein Auslieferungsproblem, kein Inhaltsproblem (B4).
+- **Trend:** Die TikTok-Aufrufe sind seit Post 07 um den Faktor 5 bis 10 gefallen (von 2.900–5.400 auf
+  höchstens 901).
+- **Geändert:** Test T2 eingeführt, Cover-Vorspann im Wechsel Montag/Freitag.
+- **T1** wird befolgt (Post 11 und 12), ist aber ohne Swipe-Daten noch nicht bewertbar.
+- **Offen:** Post 12 ist noch nicht in Buffer gesendet. Die Queue-Zeilen ohne Metriken (B3) bestehen
+  weiter.
 
 ### KW 41 · 2026-10-11 · Sonntagslauf
 - **Neue auswertbare Posts:** keine. Post 09 (IKEA) und Post 10 (Kälte) sind erst seit 11.10. auf TikTok

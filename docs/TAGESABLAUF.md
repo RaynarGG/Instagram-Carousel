@@ -34,7 +34,10 @@ Erst der Hook, dann die übrigen Slides und die Caption. Drei bis sieben Slides,
 Länge folgt dem Thema. Zuspitzen ja, **erfinden nie**.
 
 - **Keine `facts`-Slides.** Die Slides erzählen die Geschichte (`cover`, `stat`, `evidence`, `cta`).
-- **Cover:** Hook, der Sub verrät die Pointe nicht.
+- **Cover:** Hook, der Sub verrät die Pointe nicht. **Test T2** (`docs/LERNEN.md`):
+  - **Montag:** Cover mit „[N RESEARCHERS] FOUND THAT …“.
+  - **Freitag:** Ohne diesen Vorspann. Der Befund steht direkt als Behauptung da, wie bei Post 03 („PLACEBO
+    WORKS EVEN WHEN YOU KNOW IT IS ONE“) oder Post 05. Die Forscher gehören dann auf Slide 2.
 - **Slide 2 ist eine Szene, kein Methodenteil** (`docs/LERNEN.md` T1): Menschen, Ort, Handlung, endet mit
   offener Spannung, die Slide 3 auflöst. Body ≤ ~30 Wörter, ≤ 2 Zahlen. Bedingungen, Stichprobe, Jahr,
   Ablaufdetails später, auf die `evidence`-Slide oder in die Caption. Prüffrage: Will jemand, der nur

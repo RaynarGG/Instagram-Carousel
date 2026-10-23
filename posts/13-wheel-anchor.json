@@ -1,0 +1,107 @@
+{
+  "post": "13-wheel-anchor",
+  "title": "A spinning wheel moved their guess from 25 to 45",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "A wheel of fortune stopped on a number. Then people were asked how many United Nations members are African countries. The number on the wheel pulled their answers toward it. 🎡",
+    "detail": "In a demonstration described by Tversky and Kahneman, a number between 0 and 100 was determined by spinning a wheel of fortune in front of the subjects. They first said whether that number was higher or lower than the true value, then estimated the percentage of African countries in the United Nations. Median estimate with 10 as the starting number: 25. With 65: 45. Payoffs for accuracy did not reduce the effect.",
+    "kontext": "The authors call this anchoring: people start from an initial value and adjust, but the adjustments are typically insufficient. A second demonstration: high school students had 5 seconds to estimate 8×7×6×5×4×3×2×1 or 1×2×3×4×5×6×7×8. Median 2,250 for the descending version, 512 for the ascending one. The correct answer is 40,320. One caveat: the paper reports medians in a short demonstration, without full sample details.",
+    "frage": "When did the first number you heard shape what you thought was a fair price or a good guess?",
+    "sources": "Sources: Tversky & Kahneman — Judgment under Uncertainty: Heuristics and Biases • Science 185(4157): 1124–1131, 1974",
+    "hashtags": "#psychology #anchoring #decisionmaking #cognitivebias #science"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "A [SPINNING WHEEL]",
+        "MOVED THEIR GUESS",
+        "FROM [25] TO [45]"
+      ],
+      "sub": "THE NUMBER ON THE WHEEL WAS [MEANINGLESS].",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A glowing wheel of fortune in a dark room with a needle between two numbers, a warm amber lamp beside it. Headline: A spinning wheel moved their guess from 25 to 45."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "A [WHEEL OF FORTUNE]",
+        "STOPS ON A [NUMBER]"
+      ],
+      "body": "People watch a [wheel of fortune] stop on a number. Then they are asked: what percentage of United Nations members are African countries? [Should the wheel matter?]",
+      "alt": "A group of people seen from behind watching a large wheel of fortune slow down in a dark room, warm amber light. Headline: A wheel of fortune stops on a number."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "WHEEL SAID [10]: GUESS [25]",
+        "WHEEL SAID [65]: GUESS [45]"
+      ],
+      "body": "Median answers: [25%] after the wheel showed 10, [45%] after it showed 65. The wheel had [nothing] to do with Africa. Money for accurate answers did not make the pull go away.",
+      "alt": "Two glowing numbers, a small one and a large one, hanging over a dark map silhouette of Africa in warm amber light. Headline: Wheel said 10, guess 25. Wheel said 65, guess 45."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "WE START AT A [NUMBER]",
+        "AND [STOP TOO SOON]"
+      ],
+      "body": "The authors call it [anchoring]: people begin at a starting value and adjust from it. The adjustments are typically [insufficient], so the answer stays close to where it began.",
+      "alt": "A ship anchor on a dark seabed with a chain pulled tight, warm amber light from above. Headline: We start at a number and stop too soon."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "SAME [PRODUCT]. [5 SECONDS].",
+        "TWO [ANSWERS]."
+      ],
+      "body": "High school students estimated 8×7×6×5×4×3×2×1 or 1×2×3×4×5×6×7×8. Median guesses: [2,250] when it started high, [512] when it started low. The correct answer: [40,320].",
+      "alt": "A blackboard with two rows of digits written in chalk, one counting down and one counting up, a warm amber lamp on the desk. Headline: Same product, five seconds, two answers."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "SCIENCE · VOL 185 · 1974",
+        "title": "Judgment under Uncertainty: Heuristics and Biases",
+        "authors": "Tversky & Kahneman · pp. 1124–1131"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Science, volume 185, 1974, Judgment under Uncertainty: Heuristics and Biases by Tversky and Kahneman."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "THE FIRST NUMBER YOU SEE ISN'T NEUTRAL.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

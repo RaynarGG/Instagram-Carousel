@@ -1,0 +1,116 @@
+{
+  "post": "13-wheel-anchor",
+  "title": "A spinning wheel moved their guess from 25 to 45",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Keine Personen mit Gesicht im Bild, keine Nachbildung von Tversky oder Kahneman.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "glowing-wheel-of-fortune",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-b",
+        "anchoring",
+        "wheel"
+      ],
+      "headline": "A spinning wheel moved their guess from 25 to 45",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark empty studio with a faint warm bokeh far behind, dissolving into shadow. Hero: a large wheel of fortune with unlabeled glowing segments and no legible numerals filling the upper two thirds of the frame, cropped by the frame edge, a thin needle frozen between two segments, shot straight on. In the upper right, a circular inset cut-out shows an extreme macro of the needle tip touching a segment edge with fine tick marks, crisp and bright. Lighting: dim cold blue ambient, plus a warm amber lamp inside the frame throwing orange rim light across the wheel rim. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "people-watching-wheel",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "setup",
+        "wheel"
+      ],
+      "headline": "A wheel of fortune stops on a number",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark room with a faint warm haze, dissolving into shadow. Hero: several people seen from behind filling the upper two thirds of the frame, cropped by the frame edge, watching a large wheel of fortune on a stand slow down, no faces visible, shot from the back of the room. In the upper right, a circular inset cut-out shows an extreme macro of a ratchet pointer clicking over a peg on the wheel, crisp and bright. Lighting: dim cold ambient, plus a warm amber spotlight inside the frame throwing orange rim light across the wheel and the nearest shoulders. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "two-numbers-over-map",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "contrast",
+        "numbers"
+      ],
+      "headline": "Wheel said 10, guess 25. Wheel said 65, guess 45",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark void with faint warm bokeh far behind, dissolving into shadow. Hero: a dark topographic relief silhouette of a continent filling the upper two thirds of the frame, cropped by the frame edge, two abstract glowing bars of different heights floating above it with no digits, shot from a slightly raised angle. In the upper right, a circular inset cut-out shows an extreme macro of a thin glowing measurement line crossing a ruler with fine ticks, crisp and bright. Lighting: dim ambient, plus a warm amber light source inside the frame throwing orange rim light across the relief and the taller bar. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "anchor-on-seabed",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "mechanism",
+        "anchor"
+      ],
+      "headline": "We start at a number and stop too soon",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark underwater scene with faint warm bokeh far behind, dissolving into shadow. Hero: a large iron ship anchor resting on the seabed filling the upper two thirds of the frame, cropped by the frame edge, its chain pulled tight and leading up out of frame, shot at a low angle. In the upper right, a circular inset cut-out shows an extreme macro of a chain link under tension with rust texture, crisp and bright. Lighting: dim cold blue ambient, plus a warm amber light shaft from above inside the frame throwing orange rim light along the chain and the anchor. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, deep blue and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "chalkboard-two-rows",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "example",
+        "numbers"
+      ],
+      "headline": "Same product, five seconds, two answers",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark classroom with a chalkboard dissolving into shadow. Hero: a chalkboard filling the upper two thirds of the frame, cropped by the frame edge, two rows of chalk digits written on it, one row counting down and one counting up, chalk dust in the air, shot straight on. In the upper right, a circular inset cut-out shows an extreme macro of a piece of chalk touching the board with fine dust, crisp and bright. Lighting: dim cold ambient, plus a warm amber desk lamp inside the frame throwing orange rim light across the chalk tray and the board. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, chalk-white and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "source",
+        "warm",
+        "reused"
+      ],
+      "headline": "Science, 1974",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": {
+        "post": "06-spotlight-manilow",
+        "id": "s6a"
+      }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "reused"
+      ],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "post": "08-candy-tips",
+  "title": "The second chocolate and the 21 percent",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "A waitress offered diners a chocolate with the check. Tips went up a little. Then she offered a second one as she walked away — and tips jumped 21%. 🍫🤯",
+    "detail": "Strohmetz, Rind, Fisher and Lynn ran it at a restaurant in central New York in 1998: 80 dining parties, one server, four conditions, a shuffled stack of cards deciding what she did at each table. No candy: the tip averaged 18.95% of the bill. One chocolate each: 19.59%. Two chocolates each, offered at once: 21.62%. One chocolate, then — turning back at the edge of the table — one more: 22.99%. Same candy in the last two conditions. Only the way it was given changed.",
+    "kontext": "The authors' read: not mood and not a better impression, but reciprocity. A gift that feels extra and personal creates a pull to give something back, and the only thing on the table to give is the tip. It fits the party-size result too: the more generous she looked, the bigger the table's response. In their own back-of-envelope sum, using the second-chocolate move at every table would have added $234.73 to $1,101.02 in tips.",
+    "frage": "When did a small extra gesture last make you give more than you planned to?",
+    "sources": "Sources: Strohmetz, Rind, Fisher & Lynn — Sweetening the Till: The Use of Candy to Increase Restaurant Tipping • Journal of Applied Social Psychology 32(2): 300–309, 2002",
+    "hashtags": "#psychology #persuasion #reciprocity #science #behavior"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[4 RESEARCHERS] FOUND THAT",
+        "A WAITRESS EARNED [21% MORE]",
+        "BY OFFERING [CHOCOLATE]",
+        "[TWICE] AT THE TABLE"
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A waitress in a black apron holds out a small wicker basket of foil-wrapped chocolates to a seated diner in a dim Italian-American restaurant, candlelight on the table. Headline: 4 researchers found that a waitress earned 21% more by offering chocolate twice at the table."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "IT STARTED WITH A [BASKET]",
+        "OF [MINIATURE CHOCOLATES]"
+      ],
+      "body": "Spring 1998. One [waitress] with five years of experience, [80 dining parties], four conditions. A shuffled stack of [index cards] told her what to do at each table: [no candy], one piece, two pieces, or one piece and then [one more].",
+      "alt": "A wicker basket of foil-wrapped miniature chocolates beside a fanned stack of index cards and a closed check folder on a restaurant table in warm lamplight. Headline: It started with a basket of miniature chocolates."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "ONE PIECE BARELY [MOVED] IT.",
+        "TWO PIECES [DID]."
+      ],
+      "body": "No candy: tips averaged [18.95%] of the bill. One piece each: [19.59%], a nudge. Two pieces each: [21.62%] — about [14% more] than no candy at all.",
+      "alt": "A diner's hand lays folded bills into a check folder beside two foil-wrapped chocolates on a dark restaurant table, amber light from a table lamp. Headline: One piece barely moved it. Two pieces did."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "SAME [TWO PIECES].",
+        "A [DIFFERENT] WAY OF GIVING."
+      ],
+      "body": "She offered [one], then turned back at the table's edge and offered [one more]. Tips hit [22.99%] — about [21% more] than no candy. The amount of candy was [identical]. The [gesture] was not.",
+      "alt": "A waitress pauses mid-turn at the edge of a restaurant table, holding the chocolate basket out a second time to two surprised diners. Headline: Same two pieces. A different way of giving."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "THE [CHOCOLATE] DIDN'T DO IT.",
+        "THE [FAVOUR] DID."
+      ],
+      "body": "The authors point to [reciprocity], not mood: an extra, personal gesture creates a pull to [give something back] — and the only thing on the table is the tip. The more generous she looked, the [bigger the table's response].",
+      "alt": "Two hands meet across a restaurant table in warm amber light, one offering a foil-wrapped chocolate, the other returning a folded bill. Headline: The chocolate didn't do it. The favour did."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF APPLIED SOCIAL PSYCHOLOGY · VOL 32 · NO 2 · 2002",
+        "title": "Sweetening the Till: The Use of Candy to Increase Restaurant Tipping",
+        "authors": "Strohmetz, Rind, Fisher & Lynn · pp. 300–309"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Applied Social Psychology, volume 32, number 2, 2002, Sweetening the Till: The Use of Candy to Increase Restaurant Tipping by Strohmetz, Rind, Fisher and Lynn."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "THE SAME CANDY, OFFERED TWICE, WAS WORTH MORE.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

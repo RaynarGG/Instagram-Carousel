@@ -1,0 +1,119 @@
+{
+  "post": "09-ikea-effect",
+  "title": "3 researchers found that building a box yourself makes it worth 63% more than the same box pre-built",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Die Person im Bild ist ein erfundenes Gesicht, keine Nachbildung von Norton, Mochon oder Ariely. Der Hook sagt 3 researchers, nicht deren Namen.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "kneeling-with-hex-key-and-black-box",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-b",
+        "diy",
+        "box"
+      ],
+      "headline": "3 researchers found that building a box yourself makes it worth 63% more than the same box pre-built",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a modest apartment living room at dusk, bare wooden floor, a window with a faint city glow, flat-pack cardboard and pale wooden panels scattered around, receding into shadow. Burned faintly into the far wall, enormous and semi-transparent, the silhouette of a hexagonal Allen key, roughly half the frame width, partly hidden behind the main subject. Hero: a young person kneeling on the floor filling the upper two thirds of the frame, cropped at the thighs by the frame edge, holding a small hex key in one hand and resting the other proudly on a freshly assembled plain black storage box, a printed instruction sheet on the floor beside them, fictional face, tired but quietly satisfied, shot at eye level. In the upper right, a circular inset cut-out shows an extreme macro of a hex key seated in a screw head, rendered sharper and brighter than the main scene. Lighting: cool dusk light from the window, plus a warm amber floor lamp inside the frame throwing orange rim light across the person and the box. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: charcoal and pale wood plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "two-black-boxes-flatpack-and-built",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "setup",
+        "boxes"
+      ],
+      "headline": "52 students, one black IKEA box",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a university lab table in a dim room, a pegboard wall and a shelf of cardboard boxes dissolving into shadow. Hero: two identical plain black storage boxes side by side on the table filling the upper two thirds of the frame, cropped by the frame edge, the left one still a flat pack of panels with a folded instruction sheet and a hex key, the right one fully assembled, shot slightly from above. In the upper right, a circular inset cut-out shows an extreme macro of the hex key and a bag of screws, crisp and bright. Lighting: dim ambient lab light, plus a warm amber desk lamp inside the frame throwing orange light across both boxes. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "two-coin-stacks-beside-black-box",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "money",
+        "bids"
+      ],
+      "headline": "Builders bid 78 cents, the rest bid 48",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark wooden table close up, a blurred plain black storage box behind, shadow all around. Hero: two small stacks of silver coins on the table, the left stack clearly taller than the right, filling the upper two thirds of the frame, cropped by the frame edge, a plain black assembled box at the left edge, shot at table height. In the upper right, a circular inset cut-out shows an extreme macro of a coin edge with fine ridges, crisp and bright. Lighting: dim ambient light, plus a warm amber desk lamp inside the frame throwing orange rim light across the coins. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, silver and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "amateur-origami-crane-on-palm",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "origami",
+        "craft"
+      ],
+      "headline": "Even amateur origami felt like a treasure",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: pure dark space with a faint warm bokeh far behind, a worn wooden desk edge crossing the lower frame. Hero: an open palm held out, filling the upper two thirds of the frame, cropped by the frame edge, carrying a slightly crumpled, imperfect paper origami crane in pale cream paper, creases visible, one wing a little uneven, shot at hand height. In the upper right, a circular inset cut-out shows an extreme macro of the paper creases and fibres, crisp and bright. Lighting: dim ambient, plus a warm amber desk lamp inside the frame throwing orange rim light across the palm and the paper. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cream paper and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "half-built-box-beside-finished-box",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "completion",
+        "box"
+      ],
+      "headline": "It only works if you finish, because it proves you can",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark workshop table, pegboard shapes dissolving into shadow. Hero: a half-assembled plain black storage box with one open side, two loose screws and a hex key lying beside it, next to a finished identical box, filling the upper two thirds of the frame, cropped by the frame edge, shot slightly from above. In the upper right, a circular inset cut-out shows an extreme macro of the two loose screws, crisp and bright. Lighting: dim ambient light, plus a warm amber desk lamp inside the frame throwing orange rim light across both boxes. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, steel grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "source",
+        "warm",
+        "reused"
+      ],
+      "headline": "Journal of Consumer Psychology, 2012",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": {
+        "post": "06-spotlight-manilow",
+        "id": "s6a"
+      }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "reused"
+      ],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

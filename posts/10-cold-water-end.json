@@ -1,0 +1,107 @@
+{
+  "post": "10-cold-water-end",
+  "title": "People picked more pain, because it ended better",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Two cold-water trials. One was the same pain plus 30 extra seconds. 69% of people chose to repeat the longer one. 🧊🤯",
+    "detail": "Kahneman, Fredrickson, Schreiber and Redelmeier had 32 students hold a hand in 14 °C water for 60 seconds. In a second trial the other hand stayed in for the same 60 seconds, then 30 seconds more while the water was warmed by one degree, to 15 °C. Asked to repeat one trial, 22 of 32 (69%) picked the longer one. Most also judged it the one with less overall discomfort.",
+    "kontext": "The authors' explanation is the peak-and-end pattern: retrospective judgments are dominated by the worst moment and the final moment, while duration is largely neglected. In both trials the worst moment was about equally bad, but the long trial ended slightly better. Of the 21 students who felt clear relief in the last 30 seconds, 17 (81%) picked it. Of the 11 who felt little or none, 6 picked the short one. One caveat: the sample was 32 young men, so this is a lab result, not a law.",
+    "frage": "Think of the last time something unpleasant ended on a good note. Did you remember it as better than it really was?",
+    "sources": "Sources: Kahneman, Fredrickson, Schreiber & Redelmeier — When More Pain Is Preferred to Less: Adding a Better End • Psychological Science 4(6): 401–405, 1993",
+    "hashtags": "#psychology #peakendrule #kahneman #memory #science"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[4 RESEARCHERS] FOUND THAT",
+        "[69%] OF PEOPLE PICKED",
+        "[MORE PAIN] OVER LESS",
+        "IF IT [ENDED] BETTER"
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A young person's hand held in a tub of ice water under a warm amber lamp, wincing slightly, a thermometer in the water. Headline: 4 researchers found that 69% of people picked more pain over less if it ended better."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "[32 STUDENTS] AND",
+        "A TUB OF [ICE WATER]"
+      ],
+      "body": "Trial one: a hand in [14 °C] water for [60 seconds]. Trial two: the other hand, the same [60 seconds], then [30 more] while the water was warmed by [one degree]. Afterwards they had to pick one trial to [repeat].",
+      "alt": "Two hands over a lab tub of ice water with a small digital thermometer and a stopwatch under a warm lamp. Headline: 32 students and a tub of ice water."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "[22 OF 32] CHOSE",
+        "THE [LONGER] TRIAL"
+      ],
+      "body": "The long trial held [all the pain] of the short one, [plus 30 seconds] more. Anyone minimizing pain would pick the short one: that share should have been [zero]. It was [69%].",
+      "alt": "A stopwatch showing 90 seconds beside a stopwatch showing 60 seconds on a dark lab table in amber light. Headline: 22 of 32 chose the longer trial."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "THEY EVEN [REMEMBERED] IT",
+        "AS THE [EASIER] ONE"
+      ],
+      "body": "Most said the long trial caused [less discomfort] and was [less cold] at its worst. Both wrong. [Six] even reported it was the [shorter] one. One student muttered: \"The choice I made doesn't seem to make [much sense].\"",
+      "alt": "A person sitting with a thoughtful expression and a questionnaire clipboard beside a lab water tub in warm amber light. Headline: They even remembered it as the easier one."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "MEMORY KEEPS [TWO MOMENTS]:",
+        "THE [WORST] AND THE [END]"
+      ],
+      "body": "The authors call it the [peak-and-end] pattern: duration barely counts. In both trials the worst moment was [equally bad], but the long one ended [warmer]. Of those who felt [relief] at the end, [81%] chose it.",
+      "alt": "A glowing thermometer with a falling temperature curve on a dark screen beside a warm lamp. Headline: Memory keeps two moments, the worst and the end."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "PSYCHOLOGICAL SCIENCE · VOL 4 · NO 6 · 1993",
+        "title": "When More Pain Is Preferred to Less: Adding a Better End",
+        "authors": "Kahneman, Fredrickson, Schreiber & Redelmeier · pp. 401–405"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Psychological Science, volume 4, number 6, 1993, When More Pain Is Preferred to Less: Adding a Better End by Kahneman, Fredrickson, Schreiber and Redelmeier."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "WE REMEMBER HOW IT ENDED. NOT HOW LONG IT LASTED.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

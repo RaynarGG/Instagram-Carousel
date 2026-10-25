@@ -19,6 +19,8 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
   - Gegenprobe Post 06 (Manilow), bester Post mit 5.383 Aufrufen: Slide 2 ist eine Szene („walked him
     into a room where five strangers sat … asked him to guess how many had noticed“). Sie endet mit
     einer Frage, die man beantwortet haben will.
+- **Stand 25.10.:** Post 11, 12 und 13 folgen der Regel. Post 12 hat nur 8 Aufrufe (Buffer-Queue),
+  ist also nicht bewertbar.
 - **Stand 18.10.:** Post 11 und 12 folgen der Regel. Post 11: 284 Aufrufe, 9,8 s Ø. Ohne Swipe-Daten
   noch nicht bewertbar.
 - **Prüfen an:** Post 09 und 10 haben noch die alte Regel und ebenfalls methodenlastige Slides 2
@@ -49,7 +51,15 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
   Reichweite. Instagram-Zahlen sind derzeit nicht auswertbar.
 - **B4 · Zwei Posts in derselben Minute.** Post 10 und 09 gingen am 11.10. um 11:17 und 11:18 auf
   TikTok raus. Post 09 hat 2 Aufrufe, Post 10 57. Besser höchstens ein Post pro Tag und Kanal.
-- **B3 · Auslieferungsfehler.** Post 02 auf TikTok hatte 0 Aufrufe, Post 07 auf TikTok 1 Aufruf. Beide
+- **B3 · Postingweg auf TikTok** (Stand 25.10.)
+  - Seit Oktober kamen Posts, die in der App abgesetzt wurden (`via: network`), auf 284 bis 901 Aufrufe
+    (Post 08, 11).
+  - Posts über die Buffer-Queue oder „Jetzt teilen“ kamen auf 0 bis 57 (Post 12: 8, Post 10: 57,
+    Post 09: 2, Post 07: 1).
+  - Im September gingen Buffer-Posts noch gut (03, 05, 06). Die Ursache ist also unklar, Vermutung:
+    fehlender Sound bei API-Fotoposts.
+  - Seit 25.10. erinnert die Post-Routine in ihrer Schlussnachricht daran, in der App zu posten.
+- **B3a · Auslieferungsfehler (alt).** Post 02 auf TikTok hatte 0 Aufrufe, Post 07 auf TikTok 1 Aufruf. Beide
   zählen nicht in die Auswertung. Ursache beim Nutzer klären.
   - Vermutung (11.10.): Buffer-Sendungen per Queue kommen auf TikTok und Instagram nicht live an.
     Live geht erst der Post, den der Nutzer in der App absetzt (`via: network`).
@@ -62,15 +72,26 @@ Vor jedem Post lesen. Wird von der Wochenanalyse (`docs/WOCHENANALYSE.md`) gepfl
 | 05 | Marmelade (Choice Overload) | 3.174 | 26 | 0,8 % | 0 | 1,2 s |
 | 03 | Ehrliches Placebo | 2.899 | 82 | 2,8 % | 5 | 3,2 s |
 | 08 | Schokolade/Trinkgeld | 901 | 10 | 1,1 % | 0 | 12,2 s |
+| 12 | Falsche Erinnerung (Loftus) | 8 | 0 | – | 0 | 10,8 s (Buffer-Queue) |
 | 11 | Bystander (Darley & Latané) | 284 | 4 | 1,4 % | 0 | 9,8 s |
 | 10 | Kälte / Peak-End | 57 | 3 | 5,3 % | 0 | 8,4 s |
 | 09 | IKEA-Effekt | 2 | 0 | – | 0 | – (gleichzeitig mit 10 gepostet) |
 | 07 | „Because“/Kopierer | 1 | 1 | – | 0 | – (Auslieferungsfehler) |
 | 02 | Einsamkeit | 0 | 1 | – | 0 | – (Auslieferungsfehler) |
 
-Stand der Metriken: 2026-10-18. Post 12 ist laut Buffer noch nicht gesendet.
+Stand der Metriken: 2026-10-25. Post 13 ist noch ein Buffer-Entwurf.
 
 ## Wochenlog
+
+### KW 43 · 2026-10-25
+- **Neu draußen:** Post 12 (Loftus) auf TikTok mit 8 Aufrufen über die Buffer-Queue, auf Instagram
+  mit 14 Aufrufen. Post 11 auf Instagram: 14 Aufrufe.
+- **Post 13** (Anker) ist der erste Freitags-Post nach T2, also ohne Vorspann. Er ist noch
+  Buffer-Entwurf, nicht gepostet.
+- Der **Montags-Lauf am 19.10.** hat keinen Post erzeugt. Es gibt keinen Commit dazu.
+- **T1 und T2:** nicht bewertbar. Kein neuer Post ist in der App gepostet worden.
+- **Geändert:** Die Schlussnachricht der Post-Routine enthält jetzt einen Posting-Hinweis (in der App,
+  mit Sound, ein Post pro Tag). Grund: B3, App 284–901 Aufrufe gegen Buffer 0–57.
 
 ### KW 42 · 2026-10-18
 - **Top:** Post 11 (Bystander) mit 284 Aufrufen. **Flop:** Post 09 (IKEA) mit 2 Aufrufen. Der Flop ist

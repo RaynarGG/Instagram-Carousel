@@ -127,6 +127,9 @@ Bild-URLs an den **Commit** hängen, nicht an den Branch. `altText` pro Bild ist
 Kurz, fürs Handy: Thema in einem Satz · Hook · die zwei Text-Bilder · Video-Kandidaten (Links) ·
 Canva-Link · Buffer-Draft-IDs · **was nicht funktioniert hat**. Dann warten.
 
+Dazu **eine Zeile Posting-Hinweis** (`docs/LERNEN.md` B3): auf TikTok **in der App** posten (mit Sound), nicht
+über die Buffer-Queue, und höchstens ein Post pro Tag und Kanal.
+
 ## Kosten und Grenzen
 
 - Bilder nur für **neue** Posts generieren, **nie** vorhandene neu würfeln (`neu_generieren` bleibt aus).

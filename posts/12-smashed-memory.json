@@ -1,0 +1,107 @@
+{
+  "post": "12-smashed-memory",
+  "title": "One verb changed what people remembered",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Same film of a car crash. One word in a question changed the answers. A week later 32% remembered broken glass that was never in the film. 🚗💥",
+    "detail": "Loftus and Palmer showed 150 students a film of a multiple car accident. Fifty were asked how fast the cars were going when they smashed into each other, fifty when they hit each other, fifty were not asked about speed. One week later, without seeing the film again, everyone was asked: did you see any broken glass? Smashed: 32% said yes (16 of 50). Hit: 14% (7 of 50). Control: 12% (6 of 50). There was no broken glass in the film.",
+    "kontext": "In an earlier experiment, 45 students saw seven short traffic films and estimated the speed with different verbs: smashed 40.8 mph, collided 39.3, bumped 38.1, hit 34.0, contacted 31.8. The authors' reading: questions asked after an event can cause a reconstruction of the memory of it. The verb added high speed to the picture, and broken glass fits high speed. One caveat: these were films of accidents shown to students, not real crashes, and the effect was shown with one question and one week of delay.",
+    "frage": "When did someone's wording last change how you remembered something that happened?",
+    "sources": "Sources: Loftus & Palmer — Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory • Journal of Verbal Learning and Verbal Behavior 13: 585–589, 1974",
+    "hashtags": "#psychology #memory #eyewitness #cognitivepsychology #science"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[2 RESEARCHERS] FOUND THAT",
+        "ONE [WORD] MADE [32%] OF PEOPLE",
+        "REMEMBER [BROKEN GLASS]",
+        "THAT WAS [NEVER THERE]"
+      ],
+      "micro": "SWIPE FOR MORE",
+      "alt": "A young man in a dark lecture hall staring at a screen showing a blurred car crash, eyes wide, a warm amber lamp beside him. Headline: 2 researchers found that one word made 32% of people remember broken glass that was never there."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "[STUDENTS] WATCH A [CAR CRASH]",
+        "IN A [LECTURE HALL]"
+      ],
+      "body": "[150 students] watch the same film of a car crash. Each gets one question about the speed, identical except for [one verb]. A week later, they return. [What do they remember?]",
+      "alt": "Rows of students seen from behind in a dark lecture hall, a projector beam showing a blurry road scene, warm amber light. Headline: Students watch a car crash in a lecture hall."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "[SMASHED] MEANT [32%]",
+        "[HIT] MEANT [14%]"
+      ],
+      "body": "Asked how fast the cars were going when they [smashed] into each other, [32%] later said they saw broken glass. With [hit]: [14%]. No speed question: [12%]. There was [no broken glass] in the film.",
+      "alt": "A single shard of glass lying on dark asphalt catching a warm amber light. Headline: Smashed meant 32%, hit meant 14%."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "ONE [VERB] MOVED THE CARS",
+        "FROM [31.8] TO [40.8] MPH"
+      ],
+      "body": "In the first experiment, [45 students] saw seven short traffic films. [Smashed] got the highest speed estimate. [Contacted] got the lowest. Same films. [Different verb].",
+      "alt": "An analog car speedometer needle in warm amber light on a dark dashboard, no legible numerals. Headline: One verb moved the cars from 31.8 to 40.8 mph."
+    },
+    {
+      "n": 5,
+      "type": "stat",
+      "image": "s5a",
+      "kicker": "",
+      "headline": [
+        "MEMORY ISN'T A [RECORDING]",
+        "IT GETS [REBUILT]"
+      ],
+      "body": "The authors' reading: questions asked after an event can [reconstruct] the memory of it. The verb added [high speed] to the picture, and broken glass fits high speed. The effect ran partly [through the speed estimate].",
+      "alt": "A strip of film frames on a dark desk under a warm lamp, a pencil redrawing one frame. Headline: Memory isn't a recording, it gets rebuilt."
+    },
+    {
+      "n": 6,
+      "type": "evidence",
+      "image": "s6a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF VERBAL LEARNING AND VERBAL BEHAVIOR · VOL 13 · 1974",
+        "title": "Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory",
+        "authors": "Loftus & Palmer · pp. 585–589"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Verbal Learning and Verbal Behavior, volume 13, 1974, Reconstruction of Automobile Destruction by Loftus and Palmer."
+    },
+    {
+      "n": 7,
+      "type": "cta",
+      "image": "s7a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "ASK DIFFERENTLY, REMEMBER DIFFERENTLY.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}

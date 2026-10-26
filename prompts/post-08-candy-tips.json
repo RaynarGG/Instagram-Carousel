@@ -1,0 +1,119 @@
+{
+  "post": "08-candy-tips",
+  "title": "A waitress earned 21% more by offering chocolate twice at the table",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Waitress und Gaeste sind erfundene Gesichter im Stil der 1990er, keine Nachbildung der Studienbeteiligten. Der Hook sagt 4 researchers, nicht deren Namen.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "waitress-offering-chocolate-basket",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-b",
+        "waitress",
+        "1998"
+      ],
+      "headline": "4 researchers found that a waitress earned 21% more by offering chocolate twice at the table",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dim Italian-American restaurant interior in 1998, dark wood booths, red-and-white checked tablecloths, candles in glass holders along the tables receding into shadow, a few blurred diners. Burned faintly into the far wall, enormous and semi-transparent, the silhouette of a hand holding out a wrapped chocolate, roughly half the frame width, partly hidden behind the main subjects. Hero: a waitress in a black apron stands beside a table filling the upper two thirds of the frame, cropped at the thighs by the frame edge, holding out a small wicker basket of foil-wrapped miniature chocolates toward a seated diner whose hand is just reaching in, her fictional face friendly and attentive, shot at eye level. In the upper right, a circular inset cut-out shows an extreme macro of the glittering foil-wrapped chocolates in the basket, rendered sharper and brighter than the main scene. Lighting: soft low interior light, plus a warm amber candle flame on the table inside the frame throwing orange rim light across the basket and her hands. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: deep restaurant reds and browns plus warm amber. High contrast, deep blacks, fine film grain, period photography look. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "basket-cards-check-folder",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "setup",
+        "cards"
+      ],
+      "headline": "It started with a basket of miniature chocolates",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: the corner of a restaurant table in 1998, checked tablecloth fading into darkness, a blurred candle and the shadow of a booth behind. Hero: a small wicker basket of foil-wrapped miniature chocolates beside a fanned stack of plain index cards and a closed leather check folder, filling the upper two thirds of the frame, cropped by the frame edge, a waitress hand in the corner drawing the top card from an apron pocket, shot slightly from above. In the upper right, a circular inset cut-out shows an extreme macro of one gold foil-wrapped chocolate, crisp and bright. Lighting: dim ambient restaurant light, plus a warm amber candle flame inside the frame throwing orange light across the basket and the card edges. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: reds, browns and gold foil plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "bills-in-check-folder-two-chocolates",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "tips",
+        "money"
+      ],
+      "headline": "One piece barely moved it. Two pieces did.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark restaurant table in 1998 seen close, the tablecloth pattern fading into shadow, the blurred glow of a candle behind. Hero: a diner hand lays folded banknotes into an open leather check folder, two foil-wrapped chocolates resting beside it on the cloth, filling the upper two thirds of the frame, cropped by the frame edge, shot at table height. In the upper right, a circular inset cut-out shows an extreme macro of the folded bills and a pen, crisp and bright. Lighting: dim ambient light, plus a warm amber candle flame inside the frame throwing orange rim light across the hand and the foil. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: dark reds, browns, gold foil plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "waitress-turning-back-second-offer",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "gesture",
+        "waitress"
+      ],
+      "headline": "Same two pieces. A different way of giving.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: the edge of a candlelit restaurant table in 1998, booths and diners dissolving into shadow. Hero: a waitress in a black apron caught mid-turn at the edge of the table, one foot already stepping away, holding the small wicker basket of foil-wrapped chocolates out a second time toward two surprised, smiling diners, filling the upper two thirds of the frame, cropped at the thighs by the frame edge, shot at eye level, fictional faces. In the upper right, a circular inset cut-out shows an extreme macro of her fingers holding the basket handle, crisp and bright. Lighting: dim ambient light, plus a warm amber candle flame on the table inside the frame throwing orange rim light across her apron and the basket. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: dark reds, browns plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "hands-exchanging-chocolate-and-bill",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "reciprocity",
+        "hands"
+      ],
+      "headline": "The chocolate did not do it. The favour did.",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: pure dark restaurant shadow, a faint warm candle bokeh far behind, a checked tablecloth edge crossing the lower frame. Hero: two hands meet across a table, filling the upper two thirds of the frame, one hand offering a single foil-wrapped chocolate on an open palm, the other hand returning a folded banknote, a thin warm light line running between them like a thread, cropped by the frame edge, shot at table height. In the upper right, a circular inset cut-out shows an extreme macro of the gold foil of the chocolate, crisp and bright. Lighting: dim ambient, plus a warm amber candle flame inside the frame throwing orange rim light across both hands. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: dark reds, browns plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "source",
+        "warm",
+        "reused"
+      ],
+      "headline": "Journal of Applied Social Psychology, 2002",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": {
+        "post": "06-spotlight-manilow",
+        "id": "s6a"
+      }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "reused"
+      ],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

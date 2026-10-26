@@ -1,0 +1,119 @@
+{
+  "post": "10-cold-water-end",
+  "title": "4 researchers found that 69% of people picked more pain over less if it ended better",
+  "defaults": {
+    "model": "gemini-3.1-flash-image",
+    "aspect_ratio": "3:4",
+    "image_size": "2K",
+    "mime_type": "image/jpeg"
+  },
+  "_likeness": "Die Person im Bild ist ein erfundenes Gesicht, keine Nachbildung von Kahneman oder den Mitautoren. Der Hook sagt 4 researchers, nicht deren Namen.",
+  "images": [
+    {
+      "id": "s1a",
+      "slug": "hand-in-ice-water-tub",
+      "slide": 1,
+      "variant": "a",
+      "keywords": [
+        "cover",
+        "archetype-b",
+        "pain",
+        "cold"
+      ],
+      "headline": "4 researchers found that 69% of people picked more pain over less if it ended better",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dim university lab, steel shelves and equipment dissolving into shadow. Burned faintly into the far wall, enormous and semi-transparent, the silhouette of a thermometer, roughly half the frame width, partly hidden behind the main subject. Hero: a young person seated at a lab bench filling the upper two thirds of the frame, cropped at the chest by the frame edge, one forearm submerged to the wrist in a clear plastic tub of ice water, fictional face, jaw tense and eyes narrowed in discomfort, shot at eye level. In the upper right, a circular inset cut-out shows an extreme macro of ice cubes and a thin digital thermometer probe in clear water, rendered sharper and brighter than the main scene. Lighting: cold blue ambient light from the equipment, plus a warm amber desk lamp inside the frame throwing orange rim light across the person's face and the tub. Tiny illegible technical annotation text in the top-left corner, like a lab dossier, thin tick marks down the right edge. Restricted palette: charcoal and cold blue-grey plus warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s2a",
+      "slug": "ice-water-tub-thermometer-stopwatch",
+      "slide": 2,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "setup",
+        "lab"
+      ],
+      "headline": "32 students and a tub of ice water",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark lab bench with a pegboard wall and a clipboard dissolving into shadow. Hero: a clear plastic tub of ice water filling the upper two thirds of the frame, cropped by the frame edge, a small digital thermometer clipped to the rim, a stopwatch resting on the bench beside it, an external pump and coiled tubing visible behind, no people in frame, shot at a slight low angle. In the upper right, a circular inset cut-out shows an extreme macro of the digital thermometer display with indistinct numerals, crisp and bright. Lighting: dim cold ambient light, plus a warm amber desk lamp inside the frame throwing orange rim light across the tub and the stopwatch. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, cold blue-grey and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s3a",
+      "slug": "two-stopwatches-ninety-and-sixty",
+      "slide": 3,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "number",
+        "comparison",
+        "time"
+      ],
+      "headline": "22 of 32 chose the longer trial",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: pure dark space with faint warm bokeh far behind, the edge of a worn steel lab bench crossing the lower frame. Hero: two analog stopwatches side by side filling the upper two thirds of the frame, cropped by the frame edge, the left one with its needle at the top of the dial, the right one noticeably further along, dials with abstract tick marks and no legible numerals, shot at bench level. In the upper right, a circular inset cut-out shows an extreme macro of a stopwatch needle and fine tick marks, crisp and bright. Lighting: dim ambient, plus a warm amber desk lamp inside the frame throwing orange rim light across the metal cases. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal, brushed steel and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s4a",
+      "slug": "thoughtful-person-questionnaire",
+      "slide": 4,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "scene",
+        "memory",
+        "person"
+      ],
+      "headline": "They even remembered it as the easier one",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dim waiting area of a lab, a chair and a small side table dissolving into shadow, a clear water tub far in the background. Hero: a young person seated and holding a clipboard with a questionnaire, filling the upper two thirds of the frame, cropped at the chest by the frame edge, fictional face, puzzled and slightly doubtful, one hand rubbing their chilled forearm, shot at eye level. In the upper right, a circular inset cut-out shows an extreme macro of a pen tip hovering over a checkbox on a form, crisp and bright. Lighting: dim ambient, plus a warm amber lamp inside the frame throwing orange rim light across the person's face and the clipboard. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s5a",
+      "slug": "temperature-curve-on-screen",
+      "slide": 5,
+      "variant": "a",
+      "keywords": [
+        "stat",
+        "mechanism",
+        "graph",
+        "end"
+      ],
+      "headline": "Memory keeps two moments, the worst and the end",
+      "prompt": "Ultra-detailed cinematic composite, 3:4 vertical. Backdrop: a dark control room, monitors and cables dissolving into shadow. Hero: a large glowing monitor filling the upper two thirds of the frame, cropped by the frame edge, showing an abstract line curve that climbs steeply to a sharp peak and then slopes gently down to the right edge, no axis labels or numerals, a mug of steaming water on the desk beside it, no people in frame, shot straight on. In the upper right, a circular inset cut-out shows an extreme macro of the glowing line on the screen with individual pixels visible, crisp and bright. Lighting: dim ambient, plus a warm amber desk lamp inside the frame throwing orange rim light across the desk and the mug. Tiny illegible technical annotation text in the top-left corner, thin tick marks along the right edge. Restricted palette: charcoal and warm amber. High contrast, deep blacks, fine film grain. The bottom 40 percent of the frame fades to pure solid black with no detail. no text, no lettering, no captions, no watermark, no logos, nothing legible, no borders, no frame, no collage grid lines"
+    },
+    {
+      "id": "s6a",
+      "slug": "journal-pages-under-lamp",
+      "slide": 6,
+      "variant": "a",
+      "keywords": [
+        "evidence",
+        "source",
+        "warm",
+        "reused"
+      ],
+      "headline": "Psychological Science, 1993",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 06-spotlight-manilow/s6a: Stapel bedruckter, mit Bleistift annotierter Journal-Seiten unter einer Schreibtischlampe, Text unlesbar.)",
+      "reuse": {
+        "post": "06-spotlight-manilow",
+        "id": "s6a"
+      }
+    },
+    {
+      "id": "s7a",
+      "slug": "morning-table-water-notebook",
+      "slide": 7,
+      "variant": "a",
+      "keywords": [
+        "cta",
+        "positioning",
+        "warm",
+        "reused"
+      ],
+      "headline": "We share daily findings from the world of psychology",
+      "prompt": "(Wiederverwendet — siehe reuse. Ursprungs-Prompt aus 03-honest-placebo/s5a: warmes Morgenlicht auf einem Holztisch, Wasserglas, aufgeschlagenes Notizbuch, gefaltete Lesebrille, niemand im Bild.)",
+      "reuse": {
+        "post": "03-honest-placebo",
+        "id": "s5a"
+      }
+    }
+  ]
+}

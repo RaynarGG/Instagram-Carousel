@@ -1,0 +1,95 @@
+{
+  "post": "14-one-dollar-lie",
+  "title": "Paid $1 to call a boring task fun, they believed it more than those paid $20",
+  "preset": "wsd-orange",
+  "brand": "PSYCHOLOGY.",
+  "kicker": "PSYCHOLOGY",
+  "width": 1080,
+  "height": 1350,
+  "_format": "1080x1350 = 4:5. NICHT 3:4 — die Instagram-API akzeptiert beim automatischen Veroeffentlichen nur 4:5 bis 1.91:1. Bildprompts bleiben 3:4, ihre schwarze Fusszone faengt die Differenz ab.",
+  "_syntax": "[Klammern] = Akzentfarbe mit Textur (nur in headline). **Sterne** = fett in bullets/body. Zeilenumbruch = eigener Array-Eintrag. `alt` pro Slide ist Pflicht — Buffer verlangt altText beim Upload.",
+  "caption": {
+    "kern": "Stanford, 1959. Students spent an hour on mind-numbing tasks, then told the next person waiting that it was fun. Paid $1, they later rated the tasks more enjoyable than those paid $20. 🧠",
+    "detail": "Festinger and Carlsmith had 71 male Stanford students do two dull tasks for one hour: 30 minutes of loading spools onto a tray, 30 minutes of turning pegs a quarter turn. Some were then hired for $1 or $20 to tell a waiting student the tasks were interesting and enjoyable. Afterwards, an interviewer who did not know their condition asked them to rate the tasks from -5 (dull) to +5 (enjoyable). Control group: -0.45. Paid $20: -0.05. Paid $1: +1.35. The difference between $1 and $20 was significant at the .03 level.",
+    "kontext": "The authors explain it with cognitive dissonance: saying something that contradicts your private opinion creates tension. With $20 there is an obvious reason for saying it. With $1 there is hardly one, so the private opinion tended to move toward what had been said. In the authors' words, the greater the reward beyond what was needed, the smaller the effect. Caveats: 20 people per group, 11 of the 71 were excluded (for example because they suspected the payment), all participants were male students in 1959, and the ratings come from an interview.",
+    "frage": "When did you last talk yourself into liking something you had just defended in front of someone else?",
+    "sources": "Sources: Festinger, L. & Carlsmith, J.M. — Cognitive Consequences of Forced Compliance • Journal of Abnormal and Social Psychology 58(2): 203–210, 1959",
+    "hashtags": "#psychology #cognitivedissonance #socialpsychology #behavior #science"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "type": "cover",
+      "image": "s1a",
+      "headline": [
+        "[2 RESEARCHERS] FOUND THAT [$1]",
+        "BEAT [$20] AT MAKING PEOPLE",
+        "LIKE A [BORING] TASK"
+      ],
+      "sub": "A STANFORD EXPERIMENT. 1959.",
+      "micro": "SWIPE FOR MORE",
+      "alt": "A wooden board of square pegs on a bare desk under a harsh lamp, a single folded banknote beside it, warm amber light. Headline: 2 researchers found that $1 beat $20 at making people like a boring task."
+    },
+    {
+      "n": 2,
+      "type": "stat",
+      "image": "s2a",
+      "kicker": "",
+      "headline": [
+        "A [BORING] HOUR.",
+        "THEN A [FAVOR]."
+      ],
+      "body": "Students spend an hour on [mind-numbing tasks]. Then they are asked to tell the next person it was [fun]. Some get [$1]. Some get [$20]. [Who ends up liking it?]",
+      "alt": "A bare room with a desk, a tray of spools and a wall clock, harsh lamp light with warm amber glow. Headline: A boring hour, then a favor."
+    },
+    {
+      "n": 3,
+      "type": "stat",
+      "image": "s3a",
+      "kicker": "",
+      "headline": [
+        "PAID [$1]: RATED IT [+1.35]",
+        "PAID [$20]: RATED IT [−0.05]"
+      ],
+      "body": "On a scale from −5 (dull) to +5 (enjoyable), the [$1] group rated the tasks [+1.35]. The [$20] group: [−0.05]. A control group that never said a word: [−0.45].",
+      "alt": "A single banknote next to a thick neat fan of banknotes on a dark desk, warm amber light. Headline: Paid $1, rated it +1.35. Paid $20, rated it minus 0.05."
+    },
+    {
+      "n": 4,
+      "type": "stat",
+      "image": "s4a",
+      "kicker": "",
+      "headline": [
+        "[$20] EXPLAINED IT.",
+        "[$1] DIDN'T."
+      ],
+      "body": "With [$20], saying it was fun made sense: they did it for the money. With [$1], there was hardly a reason, so their own opinion moved toward what they had said. The authors call the tension [cognitive dissonance].",
+      "alt": "A signed receipt slip, a pen and a single banknote on a dark desk, warm amber lamp light. Headline: $20 explained it. $1 didn't."
+    },
+    {
+      "n": 5,
+      "type": "evidence",
+      "image": "s5a",
+      "kicker": "",
+      "cite": {
+        "eyebrow": "JOURNAL OF ABNORMAL AND SOCIAL PSYCHOLOGY · VOL 58 · 1959",
+        "title": "Cognitive Consequences of Forced Compliance",
+        "authors": "Festinger & Carlsmith · pp. 203–210"
+      },
+      "micro": "THE STUDY, FOR ANYONE WHO WANTS TO READ IT",
+      "alt": "A stack of printed and annotated journal pages under a desk lamp. Citation: Journal of Abnormal and Social Psychology, volume 58, 1959, Cognitive Consequences of Forced Compliance by Festinger and Carlsmith."
+    },
+    {
+      "n": 6,
+      "type": "cta",
+      "image": "s6a",
+      "headline": [
+        "WE SHARE [DAILY]",
+        "[FINDINGS] FROM THE",
+        "[WORLD OF PSYCHOLOGY]"
+      ],
+      "tag": "WHAT YOU SAY CAN CHANGE WHAT YOU THINK.",
+      "alt": "A wooden kitchen table in warm morning light with a glass of water, an open notebook and pen, and folded reading glasses. Headline: We share daily findings from the world of psychology."
+    }
+  ]
+}
